@@ -1,12 +1,21 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import FloatingWidgets from "../components/floating-widgets";
+import ArticleSidebar from "../components/article-sidebar";
 import Link from "next/link";
+import posts from "../../data/posts.json";
+
+const SU_KIEN_CAT_ID = 94;
+
+const events = posts
+    .filter((p) => p.categories?.includes(SU_KIEN_CAT_ID))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export default function EventsPage() {
     return (
         <>
             <Header />
+
             <div className="breadcrumb">
                 <div className="container">
                     <Link href="/">Trang chủ</Link>
@@ -15,56 +24,61 @@ export default function EventsPage() {
                 </div>
             </div>
 
-            <section className="page-hero">
+            <section className="section">
                 <div className="container">
-                    <h1>Sự kiện thương hiệu</h1>
-                    <p>Các sự kiện và hoạt động nổi bật của ProCaffe</p>
-                </div>
-            </section>
+                    <h1
+                        className="archive-title"
+                        style={{
+                            fontSize: 24,
+                            fontWeight: 700,
+                            marginBottom: 24,
+                            fontFamily: "var(--font-heading)",
+                        }}
+                    >
+                        Sự kiện thương hiệu
+                    </h1>
 
-            <section className="content-section">
-                <div className="container">
-                    <div className="events-grid">
-                        <div className="event-card">
-                            <div className="event-image">
-                                <img src="/images/sliders/slider-4c.webp" alt="ProCaffe đạt chứng nhận 4C" />
-                            </div>
-                            <div className="event-content">
-                                <span className="event-date">2025</span>
-                                <h2>ProCaffe đạt chứng nhận 4C</h2>
-                                <p>ProCaffe vinh hạnh là nhà rang cà phê đầu tiên tại Việt Nam đạt chứng nhận 4C về phát triển bền vững trong chuỗi giá trị cà phê.</p>
-                            </div>
+                    <div className="article-layout">
+                        <div className="article-main">
+                            {events.map((post) => (
+                                <article key={post.id} className="blog-archive-post">
+                                    {post.featured_image && (
+                                        <Link href={`/blog/${post.slug}`} className="blog-archive-image">
+                                            <img
+                                                src={post.featured_image}
+                                                alt={post.title}
+                                                loading="lazy"
+                                            />
+                                        </Link>
+                                    )}
+                                    <div className="blog-archive-content">
+                                        <h2 className="blog-archive-title">
+                                            <Link href={`/blog/${post.slug}`}>
+                                                {post.title}
+                                            </Link>
+                                        </h2>
+                                        <span className="blog-archive-date">
+                                            {new Date(post.date).toLocaleDateString("vi-VN", {
+                                                year: "numeric",
+                                                month: "2-digit",
+                                                day: "2-digit",
+                                            })}
+                                        </span>
+                                        {post.excerpt && (
+                                            <p className="blog-archive-excerpt">{post.excerpt}</p>
+                                        )}
+                                    </div>
+                                </article>
+                            ))}
+
+                            {events.length === 0 && (
+                                <p style={{ color: "#888", fontStyle: "italic" }}>
+                                    Chưa có bài viết sự kiện nào.
+                                </p>
+                            )}
                         </div>
-                        <div className="event-card">
-                            <div className="event-image">
-                                <img src="/images/sliders/slider-kees.webp" alt="Kees van der Westen" />
-                            </div>
-                            <div className="event-content">
-                                <span className="event-date">2025</span>
-                                <h2>Ra mắt Kees van der Westen tại Việt Nam</h2>
-                                <p>ProCaffe chính thức trở thành nhà phân phối máy pha cà phê Kees van der Westen — thương hiệu huyền thoại từ Hà Lan.</p>
-                            </div>
-                        </div>
-                        <div className="event-card">
-                            <div className="event-image">
-                                <img src="/images/sliders/slider-barista-attitude.webp" alt="Barista Attitude" />
-                            </div>
-                            <div className="event-content">
-                                <span className="event-date">2025</span>
-                                <h2>Barista Attitude — Thế hệ mới</h2>
-                                <p>Giới thiệu dòng máy Barista Attitude mới với thiết kế hiện đại, phù hợp với phong cách cà phê đặc sản thế hệ mới.</p>
-                            </div>
-                        </div>
-                        <div className="event-card">
-                            <div className="event-image">
-                                <img src="/images/sliders/slider-address-change.png" alt="Thay đổi địa chỉ showroom" />
-                            </div>
-                            <div className="event-content">
-                                <span className="event-date">2025</span>
-                                <h2>Thay đổi địa chỉ showroom</h2>
-                                <p>ProCaffe thông báo chuyển showroom Hồ Chí Minh đến địa chỉ mới: Số 1 Đường C18, P. Bảy Hiền, TP.HCM (tầng 2, phía trên KAI Coffee)</p>
-                            </div>
-                        </div>
+
+                        <ArticleSidebar />
                     </div>
                 </div>
             </section>

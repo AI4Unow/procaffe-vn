@@ -1,7 +1,15 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import FloatingWidgets from "../components/floating-widgets";
+import ArticleSidebar from "../components/article-sidebar";
 import Link from "next/link";
+import posts from "../../data/posts.json";
+
+const KHUYEN_MAI_CAT_ID = 89;
+
+const promos = posts
+    .filter((p) => p.categories?.includes(KHUYEN_MAI_CAT_ID))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export default function PromotionsPage() {
     return (
@@ -16,53 +24,61 @@ export default function PromotionsPage() {
                 </div>
             </div>
 
-            <section className="page-hero promo-hero">
+            <section className="section">
                 <div className="container">
-                    <h1>Chương trình khuyến mãi</h1>
-                    <p>Cập nhật các ưu đãi mới nhất từ ProCaffe</p>
-                </div>
-            </section>
+                    <h1
+                        className="archive-title"
+                        style={{
+                            fontSize: 24,
+                            fontWeight: 700,
+                            marginBottom: 24,
+                            fontFamily: "var(--font-heading)",
+                        }}
+                    >
+                        Category: Khuyến Mãi
+                    </h1>
 
-            <section className="content-section">
-                <div className="container">
-                    <div className="promo-grid">
-                        <div className="promo-card featured">
-                            <div className="promo-badge">HOT</div>
-                            <div className="promo-image">
-                                <img src="/images/sliders/slider-banner-mar2026.jpg" alt="Tháng của nàng" />
-                            </div>
-                            <div className="promo-content">
-                                <h2>Tháng Của Nàng - Ưu Đãi Ngập Tràn</h2>
-                                <p>Quà tặng 5 triệu • Mua 1 tặng 1 • Giảm đến 70% cho các sản phẩm máy pha cà phê cao cấp</p>
-                                <div className="promo-meta">
-                                    <span>📅 Tháng 3/2026</span>
-                                    <span>🏷️ Tất cả sản phẩm</span>
-                                </div>
-                                <Link href="/products" className="btn-primary">Xem sản phẩm</Link>
-                            </div>
+                    <div className="article-layout">
+                        <div className="article-main">
+                            {promos.map((post) => (
+                                <article key={post.id} className="blog-archive-post">
+                                    {post.featured_image && (
+                                        <Link href={`/blog/${post.slug}`} className="blog-archive-image">
+                                            <img
+                                                src={post.featured_image}
+                                                alt={post.title}
+                                                loading="lazy"
+                                            />
+                                        </Link>
+                                    )}
+                                    <div className="blog-archive-content">
+                                        <h2 className="blog-archive-title">
+                                            <Link href={`/blog/${post.slug}`}>
+                                                {post.title}
+                                            </Link>
+                                        </h2>
+                                        <span className="blog-archive-date">
+                                            {new Date(post.date).toLocaleDateString("vi-VN", {
+                                                year: "numeric",
+                                                month: "2-digit",
+                                                day: "2-digit",
+                                            })}
+                                        </span>
+                                        {post.excerpt && (
+                                            <p className="blog-archive-excerpt">{post.excerpt}</p>
+                                        )}
+                                    </div>
+                                </article>
+                            ))}
+
+                            {promos.length === 0 && (
+                                <p style={{ color: "#888", fontStyle: "italic" }}>
+                                    Chưa có bài viết khuyến mãi nào.
+                                </p>
+                            )}
                         </div>
 
-                        <div className="promo-card">
-                            <div className="promo-image">
-                                <img src="/images/sliders/slider-bialetti-stranger.jpg" alt="Bialetti Stranger Things" />
-                            </div>
-                            <div className="promo-content">
-                                <h2>Bialetti x Stranger Things</h2>
-                                <p>Bộ sưu tập ấm Bialetti giới hạn phiên bản Stranger Things - Sản phẩm độc quyền tại ProCaffe</p>
-                                <Link href="/products?cat=bialetti" className="btn-outline">Chi tiết</Link>
-                            </div>
-                        </div>
-
-                        <div className="promo-card">
-                            <div className="promo-image">
-                                <img src="/images/sliders/slider-4c.webp" alt="Chứng nhận 4C" />
-                            </div>
-                            <div className="promo-content">
-                                <h2>ProCaffe đạt chứng nhận 4C</h2>
-                                <p>Vinh hạnh là nhà rang cà phê đầu tiên tại Việt Nam đạt chứng nhận 4C về phát triển bền vững cà phê</p>
-                                <Link href="/gioi-thieu" className="btn-outline">Tìm hiểu thêm</Link>
-                            </div>
-                        </div>
+                        <ArticleSidebar />
                     </div>
                 </div>
             </section>

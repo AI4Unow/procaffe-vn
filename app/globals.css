@@ -2670,6 +2670,97 @@ section {
   color: #fff;
 }
 
+/* ===== BLOG ARCHIVE POST (category listing) ===== */
+.blog-archive-post {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.blog-archive-post:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.blog-archive-image {
+  flex-shrink: 0;
+  width: 220px;
+}
+
+.blog-archive-image img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.blog-archive-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.blog-archive-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.blog-archive-title a {
+  color: #333;
+  text-decoration: none;
+}
+
+.blog-archive-title a:hover {
+  color: var(--primary);
+}
+
+.blog-archive-date {
+  display: block;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.blog-archive-excerpt {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Article body (long-form articles like dich-vu) */
+.article-body h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin: 28px 0 12px;
+  font-family: var(--font-heading, "Playfair Display", serif);
+}
+
+.article-body h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 24px 0 10px;
+}
+
+.article-body p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
 /* ===== ARTICLE LAYOUT (WordPress-style two-column) ===== */
 .article-layout {
   display: grid;
@@ -3085,6 +3176,18 @@ section {
 
   .events-grid {
     grid-template-columns: 1fr;
+  }
+
+  .blog-archive-post {
+    flex-direction: column;
+  }
+
+  .blog-archive-image {
+    width: 100%;
+  }
+
+  .blog-archive-image img {
+    height: 180px;
   }
 
   .benefits-grid {

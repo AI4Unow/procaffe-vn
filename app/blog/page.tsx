@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import ArticleSidebar from "../components/article-sidebar";
 import posts from "../../data/posts.json";
 import blogCategories from "../../data/blog-categories.json";
 
@@ -44,7 +45,7 @@ export default function BlogPage() {
                 <div className="container">
                     <div className="section-header">
                         <h1 style={{ fontFamily: "var(--font-heading)" }}>
-                            Tin tức & Kiến thức Cà phê
+                            Tin tức &amp; Kiến thức Cà phê
                         </h1>
                         <div className="accent-line" />
                         <p>Cập nhật xu hướng và chia sẻ kiến thức barista</p>
@@ -75,71 +76,77 @@ export default function BlogPage() {
                         ))}
                     </div>
 
-                    <div className="blog-grid">
-                        {paged.map((post) => (
-                            <Link
-                                key={post.id}
-                                href={`/blog/${post.slug}`}
-                                className="blog-card"
-                            >
-                                {post.featured_image && (
-                                    <div className="blog-card-image">
-                                        <img
-                                            src={post.featured_image}
-                                            alt={post.title}
-                                            loading="lazy"
-                                        />
-                                    </div>
-                                )}
-                                <div className="blog-card-content">
-                                    <span className="blog-card-date">
-                                        {new Date(post.date).toLocaleDateString("vi-VN", {
-                                            year: "numeric",
-                                            month: "long",
-                                            day: "numeric",
-                                        })}
-                                    </span>
-                                    <h3 className="blog-card-title">{post.title}</h3>
-                                    {post.excerpt && (
-                                        <p className="blog-card-excerpt">{post.excerpt}</p>
-                                    )}
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-
-                    {totalPages > 1 && (
-                        <div className="pagination">
-                            <button
-                                disabled={currentPage === 1}
-                                onClick={() => setCurrentPage(currentPage - 1)}
-                            >
-                                ← Trước
-                            </button>
-                            {Array.from({ length: Math.min(totalPages, 7) }, (_, i) => {
-                                let page: number;
-                                if (totalPages <= 7) page = i + 1;
-                                else if (currentPage <= 4) page = i + 1;
-                                else if (currentPage >= totalPages - 3) page = totalPages - 6 + i;
-                                else page = currentPage - 3 + i;
-                                return (
-                                    <button
-                                        key={page}
-                                        className={currentPage === page ? "active" : ""}
-                                        onClick={() => setCurrentPage(page)}
+                    <div className="article-layout">
+                        <div className="article-main">
+                            <div className="blog-grid">
+                                {paged.map((post) => (
+                                    <Link
+                                        key={post.id}
+                                        href={`/blog/${post.slug}`}
+                                        className="blog-card"
                                     >
-                                        {page}
+                                        {post.featured_image && (
+                                            <div className="blog-card-image">
+                                                <img
+                                                    src={post.featured_image}
+                                                    alt={post.title}
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                        )}
+                                        <div className="blog-card-content">
+                                            <span className="blog-card-date">
+                                                {new Date(post.date).toLocaleDateString("vi-VN", {
+                                                    year: "numeric",
+                                                    month: "long",
+                                                    day: "numeric",
+                                                })}
+                                            </span>
+                                            <h3 className="blog-card-title">{post.title}</h3>
+                                            {post.excerpt && (
+                                                <p className="blog-card-excerpt">{post.excerpt}</p>
+                                            )}
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+
+                            {totalPages > 1 && (
+                                <div className="pagination">
+                                    <button
+                                        disabled={currentPage === 1}
+                                        onClick={() => setCurrentPage(currentPage - 1)}
+                                    >
+                                        ← Trước
                                     </button>
-                                );
-                            })}
-                            <button
-                                disabled={currentPage === totalPages}
-                                onClick={() => setCurrentPage(currentPage + 1)}
-                            >
-                                Sau →
-                            </button>
+                                    {Array.from({ length: Math.min(totalPages, 7) }, (_, i) => {
+                                        let page: number;
+                                        if (totalPages <= 7) page = i + 1;
+                                        else if (currentPage <= 4) page = i + 1;
+                                        else if (currentPage >= totalPages - 3) page = totalPages - 6 + i;
+                                        else page = currentPage - 3 + i;
+                                        return (
+                                            <button
+                                                key={page}
+                                                className={currentPage === page ? "active" : ""}
+                                                onClick={() => setCurrentPage(page)}
+                                            >
+                                                {page}
+                                            </button>
+                                        );
+                                    })}
+                                    <button
+                                        disabled={currentPage === totalPages}
+                                        onClick={() => setCurrentPage(currentPage + 1)}
+                                    >
+                                        Sau →
+                                    </button>
+                                </div>
+                            )}
                         </div>
-                    )}
+
+                        <ArticleSidebar />
+                    </div>
                 </div>
             </section>
 

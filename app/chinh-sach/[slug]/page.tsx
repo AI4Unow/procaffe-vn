@@ -1,6 +1,7 @@
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import FloatingWidgets from "../../components/floating-widgets";
+import ArticleSidebar from "../../components/article-sidebar";
 import Link from "next/link";
 
 const policies: Record<string, { title: string; content: string[] }> = {
@@ -41,12 +42,13 @@ const policies: Record<string, { title: string; content: string[] }> = {
     "bao-mat": {
         title: "Chính sách bảo mật thông tin",
         content: [
-            "ProCaffe cam kết bảo vệ thông tin cá nhân của khách hàng:",
-            "**Thu thập thông tin:** Chỉ thu thập thông tin cần thiết cho việc xử lý đơn hàng và cung cấp dịch vụ.",
-            "**Mục đích sử dụng:** Thông tin chỉ được sử dụng để xử lý đơn hàng, giao hàng, bảo hành, và gửi thông tin khuyến mãi (với sự đồng ý).",
-            "**Bảo mật:** Áp dụng các biện pháp bảo mật tiêu chuẩn để bảo vệ dữ liệu khách hàng.",
-            "**Không chia sẻ:** Không bán, trao đổi hoặc chia sẻ thông tin cá nhân cho bên thứ ba trừ khi có sự đồng ý hoặc theo yêu cầu pháp luật.",
-            "**Quyền của khách hàng:** Khách hàng có quyền yêu cầu xem, chỉnh sửa hoặc xóa thông tin cá nhân.",
+            "Chính sách bảo mật thông tin cá nhận được dựa theo Điều 68 đến Điều 73, Mục 1 Bảo vệ thông tin cá nhân trong TMĐT (Chương V) quy định tại Nghị định 52/2013/NĐ-CP.",
+            "**1. Mục đích và phạm vi thu thập thông tin:** Thuật ngữ \"Thông tin cá nhân\" trong Chính Sách này nghĩa là thông tin nhận diện hoặc có khả năng nhận diện danh tính cá nhân của khách hàng. Những loại thông tin cá nhân mà chúng tôi xử lý bao gồm: Tên công ty, cửa hàng, đơn vị kinh doanh, địa chỉ giao dịch, mã số thuế, Họ Tên, địa chỉ liên lạc, Email, số điện thoại di động, số điện thoại bàn.",
+            "**2. Phạm vi sử dụng thông tin:** Thông tin cá nhân thu thập được sẽ chỉ được sử dụng trong nội bộ công ty. Công ty có thể công bố các thông tin cá nhân thu thập từ khách hàng cho bên khác như: các đại lý của chúng tôi, các dịch vụ tiếp nhận và giao sản phẩm, nhằm gửi sản phẩm đến cho khách hàng trong thời gian sớm nhất.",
+            "**3. Thời gian lưu trữ thông tin:** Công ty sẽ lưu trữ các thông tin cá nhân do khách hàng cung cấp trên các hệ thống nội bộ trong quá trình khách hàng tạo đơn hàng hoặc khi khách hàng có yêu cầu hủy các thông tin đã cung cấp.",
+            "**4. Địa chỉ đơn vị thu thập:** CÔNG TY CỔ PHẦN QUỐC TẾ BÁCH HỢP — Địa Chỉ: 1 Đường C18, P. 12, Quận Tân Bình, TP. HCM. Hotline: 0833066066. Email: info@procaffe.vn",
+            "**5. Phương tiện chỉnh sửa dữ liệu:** Khách hàng muốn chỉnh sửa thông tin cá nhân vui lòng liên hệ bộ phận chăm sóc khách hàng theo số hotline: 0833066066.",
+            "**6. Cam kết bảo mật:** Công ty sẽ không chia sẻ thông tin của quý khách cho bất kỳ một công ty nào khác ngoại trừ các đại lý, các bộ phận tiếp nhận đơn hàng và chuyển đơn hàng đến khách hàng. Công ty cam kết tuân thủ các quy tắc bảo mật thông tin cho khách hàng và các Nguyên tắc Bảo mật Quốc gia.",
         ],
     },
     "doi-tra": {
@@ -106,32 +108,35 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
                 </div>
             </div>
 
-            <section className="page-hero">
+            <section className="section">
                 <div className="container">
-                    <h1>{policy.title}</h1>
-                </div>
-            </section>
+                    <div className="article-layout">
+                        <div className="article-main">
+                            <h1 className="article-title">{policy.title}</h1>
 
-            <section className="content-section">
-                <div className="container">
-                    <div className="policy-content">
-                        {policy.content.map((para, i) => {
-                            const parts = para.split(/\*\*(.*?)\*\*/g);
-                            return (
-                                <p key={i}>
-                                    {parts.map((part, j) =>
-                                        j % 2 === 1 ? <strong key={j}>{part}</strong> : part
-                                    )}
+                            <div className="policy-content">
+                                {policy.content.map((para, i) => {
+                                    const parts = para.split(/\*\*(.*?)\*\*/g);
+                                    return (
+                                        <p key={i}>
+                                            {parts.map((part, j) =>
+                                                j % 2 === 1 ? <strong key={j}>{part}</strong> : part
+                                            )}
+                                        </p>
+                                    );
+                                })}
+                            </div>
+
+                            <div className="policy-contact">
+                                <p>
+                                    Mọi thắc mắc về chính sách, vui lòng liên hệ:
                                 </p>
-                            );
-                        })}
-                    </div>
-                    <div className="policy-contact">
-                        <p>
-                            Mọi thắc mắc về chính sách, vui lòng liên hệ:
-                        </p>
-                        <p><strong>Hotline CSKH:</strong> <a href="tel:0904569878">090.456.98.78</a></p>
-                        <p><strong>Email:</strong> <a href="mailto:info@procaffe.vn">info@procaffe.vn</a></p>
+                                <p><strong>Hotline CSKH:</strong> <a href="tel:0904569878">090.456.98.78</a></p>
+                                <p><strong>Email:</strong> <a href="mailto:info@procaffe.vn">info@procaffe.vn</a></p>
+                            </div>
+                        </div>
+
+                        <ArticleSidebar />
                     </div>
                 </div>
             </section>
