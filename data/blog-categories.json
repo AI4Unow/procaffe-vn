@@ -1,0 +1,233 @@
+[
+  {
+    "id": 90,
+    "name": "About Us",
+    "slug": "about-us",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 103,
+    "name": "Ấm Cà Phê",
+    "slug": "am-ca-phe",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 101,
+    "name": "Bình Xịt Kem Tươi Soda",
+    "slug": "binh-xit-kem-tuoi-soda",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 948,
+    "name": "Blog",
+    "slug": "blog",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 95,
+    "name": "Cà Phê Rang Xay",
+    "slug": "ca-phe-rang-xay",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 657,
+    "name": "Các hoạt động",
+    "slug": "cac-hoat-dong",
+    "parent": 0,
+    "count": 17
+  },
+  {
+    "id": 1602,
+    "name": "Cách pha cà phê phin ngon",
+    "slug": "cach-pha-ca-phe-phin-ngon",
+    "parent": 0,
+    "count": 13
+  },
+  {
+    "id": 88,
+    "name": "Câu Hỏi Thường Gặp",
+    "slug": "cau-hoi-thuong-gap",
+    "parent": 0,
+    "count": 99
+  },
+  {
+    "id": 66,
+    "name": "Chính Sách & Quy Định",
+    "slug": "chinh-sach-quy-dinh",
+    "parent": 0,
+    "count": 6
+  },
+  {
+    "id": 67,
+    "name": "Dịch Vụ",
+    "slug": "dich-vu",
+    "parent": 0,
+    "count": 2
+  },
+  {
+    "id": 104,
+    "name": "Dụng Cụ Pha Chế Phụ Kiện",
+    "slug": "dung-cu-pha-che-phu-kien",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 85,
+    "name": "Đánh giá sản phẩm",
+    "slug": "danh-gia-san-pham",
+    "parent": 0,
+    "count": 112
+  },
+  {
+    "id": 92,
+    "name": "Frequently Asked Questions",
+    "slug": "frequently-asked-questions",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 94,
+    "name": "Giải Thưởng & Sự Kiện",
+    "slug": "giai-thuong-su-kien",
+    "parent": 0,
+    "count": 55
+  },
+  {
+    "id": 65,
+    "name": "Giới Thiệu",
+    "slug": "gioi-thieu",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 105,
+    "name": "Hóa Chất Vệ Sinh Máy",
+    "slug": "hoa-chat-ve-sinh-may",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 89,
+    "name": "Khuyến Mãi",
+    "slug": "khuyen-mai",
+    "parent": 0,
+    "count": 9
+  },
+  {
+    "id": 1450,
+    "name": "Kinh doanh quán cà phê",
+    "slug": "kinh-doanh-quan-ca-phe",
+    "parent": 0,
+    "count": 21
+  },
+  {
+    "id": 99,
+    "name": "Máy Lọc Cà Phê",
+    "slug": "may-loc-ca-phe",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 97,
+    "name": "Máy Pha Cà Phê Capsule-Pod",
+    "slug": "may-pha-ca-phe-capsule-pod",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 96,
+    "name": "Máy Pha Cà Phê Thương Mại Công Suất Lớn",
+    "slug": "may-pha-ca-phe-thuong-mai-cong-suat-lon",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 81,
+    "name": "Máy Pha Cà Phê Văn Phòng Gia Đình",
+    "slug": "may-pha-ca-phe-van-phong-gia-dinh",
+    "parent": 0,
+    "count": 3
+  },
+  {
+    "id": 98,
+    "name": "Máy Xay Cà Phê",
+    "slug": "may-xay-ca-phe",
+    "parent": 0,
+    "count": 1
+  },
+  {
+    "id": 100,
+    "name": "Máy Xay Sinh Tố",
+    "slug": "may-xay-sinh-to",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 93,
+    "name": "Policy & Regulations",
+    "slug": "policy-regulations",
+    "parent": 0,
+    "count": 1
+  },
+  {
+    "id": 107,
+    "name": "Prizes & Events",
+    "slug": "prizes-events",
+    "parent": 0,
+    "count": 5
+  },
+  {
+    "id": 64,
+    "name": "Review Sản Phẩm",
+    "slug": "review-san-pham",
+    "parent": 0,
+    "count": 42
+  },
+  {
+    "id": 91,
+    "name": "Service",
+    "slug": "service",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 102,
+    "name": "Tách Cà Phê",
+    "slug": "tach-ca-phe",
+    "parent": 0,
+    "count": 0
+  },
+  {
+    "id": 1636,
+    "name": "TÀI LIỆU",
+    "slug": "tai-lieu",
+    "parent": 0,
+    "count": 1
+  },
+  {
+    "id": 106,
+    "name": "Tin Tức",
+    "slug": "tin-tuc",
+    "parent": 0,
+    "count": 124
+  },
+  {
+    "id": 1,
+    "name": "Uncategorized @vi",
+    "slug": "uncategorized-vi",
+    "parent": 0,
+    "count": 74
+  },
+  {
+    "id": 373,
+    "name": "Videos",
+    "slug": "videos",
+    "parent": 0,
+    "count": 0
+  }
+]
