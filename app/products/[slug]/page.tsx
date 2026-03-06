@@ -1,12 +1,13 @@
+"use client";
+
+import { useState, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import TrustBadgesSidebar from "../../components/trust-badges-sidebar";
 import products from "../../../data/products.json";
-
-export function generateStaticParams() {
-    return products.map((p) => ({ slug: p.slug }));
-}
+import categories from "../../../data/product-categories.json";
 
 function getProductImage(product: (typeof products)[0]): string {
     if (
@@ -37,13 +38,26 @@ function extractGalleryImages(content: string): string[] {
     return imgs.slice(0, 8);
 }
 
-export default async function ProductDetailPage({
-    params,
-}: {
-    params: Promise<{ slug: string }>;
-}) {
-    const { slug } = await params;
+function getCategoryBreadcrumb(
+    product: (typeof products)[0]
+): { name: string; slug: string } | null {
+    const cats = product.categories || [];
+    for (const catName of cats) {
+        const cat = categories.find((c) => c.name === catName);
+        if (cat && cat.parent !== 350 && cat.slug !== "may-pha-ca-phe-khuyen-mai") {
+            return { name: cat.name, slug: cat.slug };
+        }
+    }
+    return null;
+}
+
+function ProductDetailClient({ slug }: { slug: string }) {
     const product = products.find((p) => p.slug === slug);
+    const [activeTab, setActiveTab] = useState<"description" | "specs">(
+        "description"
+    );
+    const [selectedImage, setSelectedImage] = useState(0);
+
     if (!product) return notFound();
 
     const mainImage = getProductImage(product);
@@ -53,14 +67,23 @@ export default async function ProductDetailPage({
         ...galleryImages.filter((img) => img !== mainImage),
     ].slice(0, 6);
 
+    const catBreadcrumb = getCategoryBreadcrumb(product);
+
     /* Related products: same first category */
     const related = products
         .filter(
             (p) =>
                 p.id !== product.id &&
-                p.categories?.some((c: string) => product.categories?.includes(c))
+                p.categories?.some((c: string) =>
+                    product.categories?.includes(c)
+                )
         )
         .slice(0, 4);
+
+    /* Extract specs table from content if available */
+    const hasSpecsTable =
+        product.content?.includes("<table") ||
+        product.content?.includes("Thông số");
 
     return (
         <>
@@ -70,25 +93,44 @@ export default async function ProductDetailPage({
                 <div className="container">
                     <Link href="/">Trang chủ</Link>
                     <span className="breadcrumb-sep">/</span>
-                    <Link href="/products">Sản phẩm</Link>
-                    <span className="breadcrumb-sep">/</span>
+                    {catBreadcrumb && (
+                        <>
+                            <Link
+                                href={`/products?cat=${catBreadcrumb.slug}`}
+                            >
+                                {catBreadcrumb.name}
+                            </Link>
+                            <span className="breadcrumb-sep">/</span>
+                        </>
+                    )}
                     <span>{product.title}</span>
                 </div>
             </div>
 
             <section className="section product-detail-section">
                 <div className="container">
-                    <div className="product-detail">
+                    <div className="product-detail-3col">
                         {/* Gallery */}
                         <div className="product-gallery">
                             <div className="product-main-image">
-                                <img src={allImages[0]} alt={product.title} />
+                                <img
+                                    src={allImages[selectedImage] || allImages[0]}
+                                    alt={product.title}
+                                />
                             </div>
                             {allImages.length > 1 && (
                                 <div className="product-thumbnails">
-                                    {allImages.slice(1).map((img, i) => (
-                                        <div key={i} className="product-thumb">
-                                            <img src={img} alt={`${product.title} ${i + 2}`} loading="lazy" />
+                                    {allImages.map((img, i) => (
+                                        <div
+                                            key={i}
+                                            className={`product-thumb ${selectedImage === i ? "active" : ""}`}
+                                            onClick={() => setSelectedImage(i)}
+                                        >
+                                            <img
+                                                src={img}
+                                                alt={`${product.title} ${i + 1}`}
+                                                loading="lazy"
+                                            />
                                         </div>
                                     ))}
                                 </div>
@@ -97,24 +139,18 @@ export default async function ProductDetailPage({
 
                         {/* Info */}
                         <div className="product-info">
-                            <div className="product-categories-list">
-                                {product.categories?.map((cat: string) => (
-                                    <Link
-                                        key={cat}
-                                        href={`/products?cat=${encodeURIComponent(cat)}`}
-                                        className="product-cat-tag"
-                                    >
-                                        {cat}
-                                    </Link>
-                                ))}
-                            </div>
-
-                            <h1 className="product-detail-title">{product.title}</h1>
+                            <h1 className="product-detail-title">
+                                {product.title}
+                            </h1>
 
                             <div className="product-detail-price">
                                 <span className="price-label">Giá:</span>
                                 <span className="price-value">Liên hệ</span>
                             </div>
+
+                            <p className="product-vat-note">
+                                Giá đã bao gồm VAT. Trả góp lãi suất 0%
+                            </p>
 
                             {product.excerpt && (
                                 <div className="product-excerpt">
@@ -123,7 +159,10 @@ export default async function ProductDetailPage({
                             )}
 
                             <div className="product-actions">
-                                <a href="tel:09045698782" className="btn-primary">
+                                <a
+                                    href="tel:09045698782"
+                                    className="btn-primary"
+                                >
                                     📞 Gọi ngay: 090.456.98.78
                                 </a>
                                 <a
@@ -136,33 +175,87 @@ export default async function ProductDetailPage({
                                 </a>
                             </div>
 
-                            <div className="product-features">
-                                <div className="product-feature">
-                                    <span>✓</span> Hàng chính hãng — Bảo hành 12-36 tháng
-                                </div>
-                                <div className="product-feature">
-                                    <span>🚚</span> Miễn phí vận chuyển nội thành HCM & HN
-                                </div>
-                                <div className="product-feature">
-                                    <span>🔧</span> Hỗ trợ lắp đặt & đào tạo sử dụng
-                                </div>
-                                <div className="product-feature">
-                                    <span>↩️</span> Đổi trả trong 7 ngày
+                            {/* Callback Form */}
+                            <div className="callback-form">
+                                <p className="callback-label">
+                                    Để lại số điện thoại, chúng tôi sẽ gọi lại
+                                    ngay
+                                </p>
+                                <div className="callback-input-row">
+                                    <input
+                                        type="tel"
+                                        placeholder="Số điện thoại của bạn"
+                                        className="callback-input"
+                                    />
+                                    <button className="callback-btn">
+                                        Gửi
+                                    </button>
                                 </div>
                             </div>
+
+                            {/* Category tags */}
+                            <div className="product-meta-section">
+                                <span className="meta-label-inline">
+                                    Danh mục:
+                                </span>
+                                {product.categories?.map((cat: string) => (
+                                    <Link
+                                        key={cat}
+                                        href={`/products?cat=${encodeURIComponent(cat)}`}
+                                        className="product-cat-tag"
+                                    >
+                                        {cat}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
+
+                        {/* Trust Badges Sidebar */}
+                        <TrustBadgesSidebar />
                     </div>
 
-                    {/* Product content / description */}
-                    {product.content && (
-                        <div className="product-description">
-                            <h2>Mô tả sản phẩm</h2>
-                            <div
-                                className="product-content-body"
-                                dangerouslySetInnerHTML={{ __html: product.content }}
-                            />
+                    {/* Product Tabs */}
+                    <div className="product-tabs">
+                        <div className="product-tabs-nav">
+                            <button
+                                className={
+                                    activeTab === "description" ? "active" : ""
+                                }
+                                onClick={() => setActiveTab("description")}
+                            >
+                                Mô tả
+                            </button>
+                            {hasSpecsTable && (
+                                <button
+                                    className={
+                                        activeTab === "specs" ? "active" : ""
+                                    }
+                                    onClick={() => setActiveTab("specs")}
+                                >
+                                    Thông số kỹ thuật
+                                </button>
+                            )}
                         </div>
-                    )}
+
+                        <div className="product-tabs-content">
+                            {activeTab === "description" && product.content && (
+                                <div
+                                    className="product-content-body"
+                                    dangerouslySetInnerHTML={{
+                                        __html: product.content,
+                                    }}
+                                />
+                            )}
+                            {activeTab === "specs" && product.content && (
+                                <div
+                                    className="product-content-body product-specs-only"
+                                    dangerouslySetInnerHTML={{
+                                        __html: product.content,
+                                    }}
+                                />
+                            )}
+                        </div>
+                    </div>
 
                     {/* Related Products */}
                     {related.length > 0 && (
@@ -186,11 +279,12 @@ export default async function ProductDetailPage({
                                             />
                                         </div>
                                         <div className="product-card-info">
-                                            <span className="product-card-category">
-                                                {(p.categories || [])[0] || ""}
-                                            </span>
-                                            <h3 className="product-card-title">{p.title}</h3>
-                                            <div className="product-card-price">Liên hệ</div>
+                                            <h3 className="product-card-title">
+                                                {p.title}
+                                            </h3>
+                                            <div className="product-card-price">
+                                                Liên hệ
+                                            </div>
                                         </div>
                                     </Link>
                                 ))}
@@ -203,4 +297,14 @@ export default async function ProductDetailPage({
             <Footer />
         </>
     );
+}
+
+export default function ProductDetailPage({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) {
+    /* Use React.use() pattern for async params */
+    const { slug } = use(params);
+    return <ProductDetailClient slug={slug} />;
 }
