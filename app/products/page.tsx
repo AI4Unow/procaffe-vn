@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Header from "../components/header";
@@ -31,6 +31,14 @@ const topCategories = categories
     .sort((a, b) => b.count - a.count);
 
 export default function ProductsPage() {
+    return (
+        <Suspense fallback={<div style={{ minHeight: "100vh" }} />}>
+            <ProductsContent />
+        </Suspense>
+    );
+}
+
+function ProductsContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const catFromUrl = searchParams.get("cat") || "all";
