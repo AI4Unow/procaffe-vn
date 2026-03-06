@@ -24,7 +24,7 @@ export default function MembersPage() {
 
             <section className="content-section">
                 <div className="container">
-                    <div className="member-benefits">
+                    <div id="quyen-loi" className="member-benefits">
                         <h2>Quyền lợi thành viên</h2>
                         <div className="benefits-grid">
                             <div className="benefit-card">
@@ -59,7 +59,7 @@ export default function MembersPage() {
                         </div>
                     </div>
 
-                    <div className="content-block">
+                    <div id="tuyen-dung" className="content-block">
                         <h2>Tuyển dụng</h2>
                         <p>
                             ProCaffe luôn chào đón những đồng nghiệp mới đam mê cà phê và mong muốn phát triển

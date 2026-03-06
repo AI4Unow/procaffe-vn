@@ -26,7 +26,7 @@ export default function AboutPage() {
 
             <section className="content-section">
                 <div className="container">
-                    <div className="content-block">
+                    <div id="doi-tac" className="content-block">
                         <h2>Về ProCaffe</h2>
                         <p>
                             ProCaffe – thuộc Công ty Cổ phần Quốc tế Bách Hợp – là nhà cung cấp hàng đầu tại Việt Nam
@@ -37,7 +37,7 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="content-block">
+                    <div id="su-mang" className="content-block">
                         <h2>Sứ mệnh</h2>
                         <p>
                             Mang đến cho người Việt Nam những trải nghiệm cà phê đẳng cấp quốc tế,
@@ -47,7 +47,7 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="content-block">
+                    <div id="khach-hang" className="content-block">
                         <h2>Tầm nhìn</h2>
                         <p>
                             Trở thành hệ sinh thái cà phê toàn diện hàng đầu Đông Nam Á, nơi mỗi ly cà phê
@@ -55,7 +55,7 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="about-features">
+                    <div id="hoat-dong" className="about-features">
                         <div className="about-feature-card">
                             <div className="feature-icon">🏆</div>
                             <h3>13+ năm kinh nghiệm</h3>
@@ -78,7 +78,7 @@ export default function AboutPage() {
                         </div>
                     </div>
 
-                    <div className="content-block">
+                    <div id="doanh-nghiep" className="content-block">
                         <h2>Thông tin doanh nghiệp</h2>
                         <div className="company-info-grid">
                             <div className="info-item"><strong>Tên công ty:</strong> Công ty Cổ phần Quốc tế Bách Hợp</div>

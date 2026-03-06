@@ -17,11 +17,11 @@ const navItems = [
         label: "Giới thiệu",
         href: "/gioi-thieu",
         children: [
-            { label: "Sứ mạng - Tầm nhìn", href: "/gioi-thieu/su-mang" },
-            { label: "Các hoạt động", href: "/gioi-thieu/hoat-dong" },
-            { label: "Đối tác", href: "/gioi-thieu/doi-tac" },
-            { label: "Khách hàng", href: "/gioi-thieu/khach-hang" },
-            { label: "Nhà phân phối", href: "/gioi-thieu/nha-phan-phoi" },
+            { label: "Sứ mạng - Tầm nhìn", href: "/gioi-thieu#su-mang" },
+            { label: "Các hoạt động", href: "/gioi-thieu#hoat-dong" },
+            { label: "Đối tác", href: "/gioi-thieu#doi-tac" },
+            { label: "Khách hàng", href: "/gioi-thieu#khach-hang" },
+            { label: "Thông tin doanh nghiệp", href: "/gioi-thieu#doanh-nghiep" },
         ],
     },
     {
@@ -34,9 +34,9 @@ const navItems = [
             { label: "Máy pha cà phê Capsule-Pod", href: "/products?cat=may-pha-ca-phe" },
             { label: "Ấm pha cà phê Bialetti", href: "/products?cat=am-pha-ca-phe" },
             { label: "Máy pha Specialty coffee", href: "/products?cat=may-pha-ca-phe" },
-            { label: "Máy pha cà phê Espresso", href: "/products?cat=may-pha-ca-phe" },
+            { label: "Máy xay cà phê", href: "/products?cat=may-xay-ca-phe" },
             { label: "Máy bán cà phê tự động", href: "/products?cat=may-pha-ca-phe" },
-            { label: "Máy lọc cà phê", href: "/products?cat=may-pha-ca-phe" },
+            { label: "Phụ kiện", href: "/products?cat=phu-kien" },
         ],
     },
     {
@@ -58,10 +58,10 @@ const navItems = [
         label: "Dịch vụ",
         href: "/dich-vu",
         children: [
-            { label: "Sửa chữa - Bảo hành", href: "/dich-vu/sua-chua" },
-            { label: "Cho thuê máy", href: "/dich-vu/cho-thue" },
-            { label: "Khóa học pha chế", href: "/dich-vu/khoa-hoc" },
-            { label: "Setup quán cà phê", href: "/dich-vu/setup-quan" },
+            { label: "Sửa chữa - Bảo hành", href: "/dich-vu#sua-chua" },
+            { label: "Cho thuê máy", href: "/dich-vu#cho-thue" },
+            { label: "Khóa học pha chế", href: "/dich-vu#khoa-hoc" },
+            { label: "Setup quán cà phê", href: "/dich-vu#setup-quan" },
         ],
     },
     {
@@ -77,8 +77,8 @@ const navItems = [
         label: "Thành viên Procaffe",
         href: "/thanh-vien",
         children: [
-            { label: "Tuyển dụng", href: "/tuyen-dung" },
-            { label: "Đăng nhập", href: "/dang-nhap" },
+            { label: "Quyền lợi thành viên", href: "/thanh-vien#quyen-loi" },
+            { label: "Tuyển dụng", href: "/thanh-vien#tuyen-dung" },
         ],
     },
     {
