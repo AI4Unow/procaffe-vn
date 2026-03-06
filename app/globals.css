@@ -1043,6 +1043,242 @@ section {
   cursor: pointer;
 }
 
+/* Page layout: sidebar + content */
+.page-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-xl) 0;
+}
+
+.page-content {
+  min-width: 0;
+}
+
+/* Sidebar blocks */
+.sidebar-block {
+  margin-bottom: var(--space-lg);
+}
+
+.sidebar-block .sidebar-search {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  outline: none;
+}
+
+.sidebar-block .sidebar-search:focus {
+  border-color: var(--primary);
+}
+
+/* Sidebar category list matching procaffe.vn */
+.sidebar-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-categories li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebar-categories li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-categories button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: color 0.2s;
+  text-align: left;
+  font-family: inherit;
+}
+
+.sidebar-categories button:hover {
+  color: var(--primary-dark);
+}
+
+.sidebar-categories button.active {
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.sidebar-categories .cat-arrow {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.sidebar-categories .cat-count {
+  font-size: 11px;
+  color: #999;
+  font-weight: 400;
+}
+
+/* Sidebar CTA */
+.sidebar-cta {
+  background: linear-gradient(135deg, #fff5ee, #fff);
+  border: 1px solid var(--primary-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.sidebar-cta-icon {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.sidebar-cta h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.sidebar-cta p {
+  font-size: 12px;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+
+.sidebar-cta-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.sidebar-cta-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* Brand description section */
+.brand-description {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-title {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.brand-title::before,
+.brand-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background: var(--primary);
+}
+
+.brand-title::before {
+  left: 0;
+}
+
+.brand-title::after {
+  right: 0;
+}
+
+.brand-description p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
+}
+
+/* Product listing header */
+.product-listing-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.product-listing-header h1 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.result-count {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+/* Product card within page-content */
+.product-card-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-card-image img {
+  transform: scale(1.05);
+}
+
+.product-card-info {
+  padding: 10px 12px 14px;
+}
+
+.product-card-category {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.product-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 4px 0 6px;
+}
+
+.product-card-price {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
 .category-list {
   list-style: none;
   display: flex;

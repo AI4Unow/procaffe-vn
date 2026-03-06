@@ -25,10 +25,42 @@ function getProductCategory(product: (typeof products)[0]): string {
     return cats[0] || "";
 }
 
-/* Top-level categories with parent=0 */
-const topCategories = categories
-    .filter((c) => c.parent === 0 && c.count > 0)
-    .sort((a, b) => b.count - a.count);
+/* Custom-ordered sidebar categories matching procaffe.vn */
+const SIDEBAR_CATEGORY_ORDER = [
+    "may-pha-ca-phe-khuyen-mai",
+    "ca-phe-rang-xay",
+    "may-pha-ca-phe",
+    "may-xay-ca-phe",
+    "may-nen-ca-phe",
+    "may-xay-sinh-to-vitamix",
+    "am-pha-ca-phe",
+    "tach-ca-phe",
+    "dung-cu-barista",
+    "dung-cu-pha-che-phu-kien",
+    "loc-nuoc",
+    "linh-kien-may-pha-ca-phe",
+    "hoa-chat-ve-sinh-may",
+];
+
+const sidebarCategories = SIDEBAR_CATEGORY_ORDER
+    .map((slug) => categories.find((c) => c.slug === slug))
+    .filter(Boolean) as typeof categories;
+
+/* Brand categories (children of Thương hiệu id=350) */
+const BRAND_PARENT_ID = 350;
+
+function getBrandDescription(slug: string): string {
+    const cat = categories.find((c) => c.slug === slug);
+    if (cat && cat.parent === BRAND_PARENT_ID && cat.description) {
+        return cat.description;
+    }
+    return "";
+}
+
+function isBrandCategory(slug: string): boolean {
+    const cat = categories.find((c) => c.slug === slug);
+    return !!cat && cat.parent === BRAND_PARENT_ID;
+}
 
 export default function ProductsPage() {
     return (
@@ -135,28 +167,26 @@ function ProductsContent() {
                             <div className="sidebar-block">
                                 <h3 className="sidebar-title">Danh mục sản phẩm</h3>
                                 <ul className="sidebar-categories">
-                                    <li>
-                                        <button
-                                            className={selectedCategory === "all" ? "active" : ""}
-                                            onClick={() => handleCategoryChange("all")}
-                                        >
-                                            Tất cả sản phẩm
-                                            <span className="cat-count">{products.length}</span>
-                                        </button>
-                                    </li>
-                                    {topCategories.map((cat) => (
-                                        <li key={cat.id}>
-                                            <button
-                                                className={
-                                                    selectedCategory === cat.slug ? "active" : ""
-                                                }
-                                                onClick={() => handleCategoryChange(cat.slug)}
-                                            >
-                                                {cat.name}
-                                                <span className="cat-count">{cat.count}</span>
-                                            </button>
-                                        </li>
-                                    ))}
+                                    {sidebarCategories.map((cat) => {
+                                        const children = categories.filter(
+                                            (c) => c.parent === cat.id && c.count > 0
+                                        );
+                                        return (
+                                            <li key={cat.id} className={children.length > 0 ? "has-children" : ""}>
+                                                <button
+                                                    className={
+                                                        selectedCategory === cat.slug ? "active" : ""
+                                                    }
+                                                    onClick={() => handleCategoryChange(cat.slug)}
+                                                >
+                                                    {cat.name}
+                                                    {children.length > 0 && (
+                                                        <span className="cat-arrow">›</span>
+                                                    )}
+                                                </button>
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
                             </div>
 
@@ -173,6 +203,16 @@ function ProductsContent() {
 
                         {/* Content */}
                         <div className="page-content">
+                            {/* Brand description for brand categories */}
+                            {selectedCategory !== "all" && getBrandDescription(selectedCategory) && (
+                                <div className="brand-description">
+                                    <h2 className="brand-title">
+                                        {categories.find((c) => c.slug === selectedCategory)?.name?.toUpperCase()}
+                                    </h2>
+                                    <p>{getBrandDescription(selectedCategory)}</p>
+                                </div>
+                            )}
+
                             <div className="product-listing-header">
                                 <h1>
                                     {selectedCategory === "all"
