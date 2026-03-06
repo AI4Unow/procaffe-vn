@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -30,10 +31,31 @@ const topCategories = categories
     .sort((a, b) => b.count - a.count);
 
 export default function ProductsPage() {
-    const [selectedCategory, setSelectedCategory] = useState<string>("all");
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const catFromUrl = searchParams.get("cat") || "all";
+    const [selectedCategory, setSelectedCategory] = useState<string>(catFromUrl);
     const [searchTerm, setSearchTerm] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const perPage = 24;
+
+    /* Sync state when URL query param changes (e.g. browser back/forward) */
+    useEffect(() => {
+        const cat = searchParams.get("cat") || "all";
+        setSelectedCategory(cat);
+        setCurrentPage(1);
+    }, [searchParams]);
+
+    /* Update URL when category changes via sidebar click */
+    const handleCategoryChange = (slug: string) => {
+        setSelectedCategory(slug);
+        setCurrentPage(1);
+        if (slug === "all") {
+            router.push("/products", { scroll: false });
+        } else {
+            router.push(`/products?cat=${slug}`, { scroll: false });
+        }
+    };
 
     const filtered = useMemo(() => {
         let list = [...products];
@@ -108,10 +130,7 @@ export default function ProductsPage() {
                                     <li>
                                         <button
                                             className={selectedCategory === "all" ? "active" : ""}
-                                            onClick={() => {
-                                                setSelectedCategory("all");
-                                                setCurrentPage(1);
-                                            }}
+                                            onClick={() => handleCategoryChange("all")}
                                         >
                                             Tất cả sản phẩm
                                             <span className="cat-count">{products.length}</span>
@@ -123,10 +142,7 @@ export default function ProductsPage() {
                                                 className={
                                                     selectedCategory === cat.slug ? "active" : ""
                                                 }
-                                                onClick={() => {
-                                                    setSelectedCategory(cat.slug);
-                                                    setCurrentPage(1);
-                                                }}
+                                                onClick={() => handleCategoryChange(cat.slug)}
                                             >
                                                 {cat.name}
                                                 <span className="cat-count">{cat.count}</span>
