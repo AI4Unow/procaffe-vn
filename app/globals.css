@@ -2292,6 +2292,114 @@ section {
   background: #e65100;
 }
 
+/* Service Pricing Tables */
+.service-pricing-table {
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+.service-pricing-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.service-pricing-table th {
+  background: #333;
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.service-pricing-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.service-pricing-table tr:nth-child(even) td {
+  background: #f9f9f9;
+}
+
+.service-pricing-table tr:hover td {
+  background: #fff3e0;
+}
+
+.service-pricing-table a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.service-pricing-table small {
+  color: #888;
+  font-size: 12px;
+}
+
+.promo-price {
+  color: #d32f2f;
+  font-weight: 700;
+}
+
+.promo-note {
+  color: #d32f2f !important;
+  font-weight: 600;
+}
+
+/* Service Contact Grid */
+.service-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.service-contact-card {
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.service-contact-card:hover {
+  border-color: var(--primary);
+}
+
+.service-contact-card h4 {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.service-contact-card p {
+  margin: 0;
+}
+
+.service-contact-card a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .service-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-pricing-table {
+    font-size: 12px;
+  }
+
+  .service-pricing-table th,
+  .service-pricing-table td {
+    padding: 8px 10px;
+  }
+}
+
 /* Promotions */
 .promo-grid {
   display: grid;

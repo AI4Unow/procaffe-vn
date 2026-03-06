@@ -58,10 +58,12 @@ const navItems = [
         label: "Dịch vụ",
         href: "/dich-vu",
         children: [
-            { label: "Sửa chữa - Bảo hành", href: "/dich-vu#sua-chua" },
-            { label: "Cho thuê máy", href: "/dich-vu#cho-thue" },
-            { label: "Khóa học pha chế", href: "/dich-vu#khoa-hoc" },
-            { label: "Setup quán cà phê", href: "/dich-vu#setup-quan" },
+            { label: "Sửa chữa - Bảo hành", href: "/dich-vu" },
+            { label: "Cho thuê máy pha cà phê", href: "/dich-vu/cho-thue-may-pha-ca-phe" },
+            { label: "Dịch vụ sau bán hàng", href: "/dich-vu/sau-ban-hang" },
+            { label: "Mua cà phê tặng máy", href: "/dich-vu/mua-ca-phe-tang-may" },
+            { label: "Khóa học pha chế", href: "/dich-vu/khoa-hoc-pha-che-ca-phe" },
+            { label: "Setup quán cà phê", href: "/dich-vu/setup-quan-cafe" },
         ],
     },
     {

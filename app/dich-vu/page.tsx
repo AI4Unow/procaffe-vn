@@ -32,7 +32,7 @@ export default function ServicesPage() {
                                     nên cân nhắc khi chọn nhà cung cấp.
                                 </p>
 
-                                <h2 id="sua-chua">Vì sao nên bảo trì máy pha cà phê</h2>
+                                <h2>Vì sao nên bảo trì máy pha cà phê</h2>
                                 <p>
                                     Khác với những đồ gia dụng như tivi, tủ lạnh,.., máy pha cà phê gia dụng
                                     hoặc chuyên nghiệp cần được chăm sóc thường xuyên bởi cả người dùng và kỹ
@@ -66,12 +66,15 @@ export default function ServicesPage() {
                                     cung cấp giải pháp trọn gói toàn diện cho khách hàng.
                                 </p>
 
-                                <h3 id="cho-thue">1. Lắp đặt máy pha cà phê</h3>
+                                <h3>1. Lắp đặt máy pha cà phê</h3>
                                 <p>
-                                    Tất cả máy pha cà phê bao gồm máy mới và máy cũ (đã qua sử dụng) bán ra đều
-                                    được nhà cung cấp uy tín lắp đặt (miễn phí tại nội thành), hướng dẫn sử dụng
-                                    và bảo dưỡng cơ bản cho khách hàng.
+                                    Khách hàng hầu như không thể tự lắp đặt máy chuyên nghiệp, do phải:
                                 </p>
+                                <ul>
+                                    <li>Đấu nối nước trực tiếp vào nguồn.</li>
+                                    <li>Tính toán áp lực nước cấp phù hợp, lắp lọc nước.</li>
+                                    <li>Nối điện cho máy 3 pha.</li>
+                                </ul>
 
                                 <div className="about-image-block">
                                     <img
@@ -83,23 +86,37 @@ export default function ServicesPage() {
 
                                 <h3>2. Hướng dẫn vận hành</h3>
                                 <p>
-                                    Kỹ thuật viên hướng dẫn chi tiết cách sử dụng máy pha cà phê, phương pháp vệ
-                                    sinh hàng ngày, và các lưu ý quan trọng trong quá trình vận hành để đảm bảo
-                                    chất lượng cà phê luôn ổn định.
+                                    Việc vận hành ban đầu, kể cả máy gia dụng, không dễ như dùng nồi cơm điện,
+                                    vì máy phải trải qua giai đoạn mồi nước trong hệ thống (water prime) nên
+                                    tốt nhất hãy để cho kỹ thuật được đào tạo vận hành.
                                 </p>
 
-                                <h3 id="khoa-hoc">3. Vệ sinh</h3>
+                                <h3>3. Vệ sinh</h3>
                                 <p>
-                                    Vệ sinh máy pha cà phê đúng cách là yếu tố tiên quyết để đảm bảo hương vị
-                                    cà phê luôn thơm ngon và kéo dài tuổi thọ máy. Nhà cung cấp hướng dẫn quy
-                                    trình vệ sinh chuẩn và cung cấp hóa chất vệ sinh chuyên dụng.
+                                    Việc sử dụng máy và vệ sinh cũng cần được hướng dẫn đúng cách – câu của bền
+                                    tại người phát huy giá trị ở đây. Vệ sinh máy cần thực hiện theo hướng dẫn
+                                    mỗi ngày. Định kỳ mỗi 6kg cà phê sử dụng thì cũng cần dùng thuốc vệ sinh
+                                    chuyên dụng.
                                 </p>
+                                <ul>
+                                    <li>Với máy cơ chuyên nghiệp: vệ sinh group head, tay cầm, vòi steam.</li>
+                                    <li>Với máy tự động: vệ sinh hệ thống tạo bọt sữa và cối ép (brewing unit).</li>
+                                </ul>
 
                                 <h3>4. Đào tạo pha chế</h3>
                                 <p>
-                                    Đào tạo pha chế cà phê từ cơ bản đến nâng cao, bao gồm kỹ thuật pha espresso,
-                                    latte art, và các công thức thức uống phổ biến. Chương trình đào tạo phù hợp
-                                    cho cả quán cà phê mới và quán đang hoạt động.
+                                    Đào tạo pha chế là việc rất quan trọng. Nhà cung cấp có tâm không chỉ hướng
+                                    dẫn cách pha chế từng loại thức uống cơ bản, còn hướng dẫn khách hàng về việc:
+                                </p>
+                                <ul>
+                                    <li>Giữ vệ sinh an toàn cho đồ uống (hygiene)</li>
+                                    <li>Cách bảo quản cà phê</li>
+                                    <li>Cách tạo ra công thức riêng hoặc cách pha chế riêng phù hợp cho quán.</li>
+                                    <li>Và quan trọng nhất, các phương cách để nhân viên pha chế đều tay (consistency).</li>
+                                </ul>
+                                <p>
+                                    Việc đào tạo không thể chỉ làm một lần là xong mà cần định kỳ đào tạo lại,
+                                    sửa chữa thao tác kỹ thuật chưa đúng, và cập nhật thức uống mới.
                                 </p>
 
                                 <div className="about-image-block">
@@ -110,11 +127,15 @@ export default function ServicesPage() {
                                     />
                                 </div>
 
-                                <h3 id="setup-quan">5. Bảo trì máy pha cà phê định kỳ</h3>
+                                <h3>5. Bảo trì máy pha cà phê định kỳ</h3>
                                 <p>
-                                    Bảo trì định kỳ giúp phát hiện sớm các vấn đề kỹ thuật, thay thế linh kiện
-                                    hao mòn, và đảm bảo máy luôn hoạt động ở trạng thái tốt nhất. Chương trình
-                                    bảo trì được thiết kế riêng cho từng loại máy và từng mô hình kinh doanh.
+                                    Tuỳ mức độ sử dụng và thoả thuận, định kỳ hàng tuần hoặc hàng tháng, nhà
+                                    cung cấp cử kỹ thuật có tay nghề tới kiểm tra các thông số kỹ thuật của máy.
+                                    Sau đó, họ sẽ đề xuất hoặc cảnh báo những chi tiết hao mòn nên thay thế, đề
+                                    xuất tẩy canxi cho bình đun tránh đóng cặn (nếu máy cảnh báo)…. Nếu máy phát
+                                    sinh sự cố bất thường, việc phản ứng nhanh hay chậm, hiệu quả xử lý sự cố
+                                    của kỹ thuật viên ra sao, phụ tùng chính hãng sẵn có hay không… đều phản ánh
+                                    sự tín nhiệm của nhà cung cấp ấy.
                                 </p>
 
                                 <div className="about-image-block">
@@ -126,16 +147,11 @@ export default function ServicesPage() {
                                 </div>
 
                                 <p>
-                                    Kỹ thuật viên của ProCaffe được đào tạo bởi chính các hãng sản xuất, đảm bảo
-                                    nắm vững kiến thức chuyên môn và sử dụng linh kiện chính hãng trong quá trình
-                                    bảo trì và sửa chữa.
-                                </p>
-
-                                <h3>6. Chế độ bảo hành tin cậy</h3>
-                                <p>
-                                    ProCaffe cam kết bảo hành chính hãng cho tất cả sản phẩm, với thời gian bảo
-                                    hành từ 12-24 tháng tùy sản phẩm. Đội ngũ kỹ thuật viên luôn sẵn sàng hỗ trợ
-                                    xử lý sự cố nhanh chóng.
+                                    Vì vậy, ngoài việc so sánh các yếu tố giá cả, chất lượng, tính năng, hay
+                                    thương hiệu, người tiêu dùng thông minh cần tìm hiểu rõ, và văn bản hoá
+                                    các thoả thuận quan trọng trên. Với những ai trót yêu thích một chiếc máy
+                                    xách tay từ nước ngoài vẫn có thể yên tâm với dịch vụ của nhà cung cấp như
+                                    Procaffe.
                                 </p>
 
                                 <div
