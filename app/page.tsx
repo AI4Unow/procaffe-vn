@@ -1,305 +1,203 @@
 import Link from "next/link";
-import Image from "next/image";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import products from "../data/products.json";
-import categories from "../data/product-categories.json";
+import FloatingWidgets from "./components/floating-widgets";
 import posts from "../data/posts.json";
 
-/* Featured product categories with curated images */
-const featuredCategories = [
-  {
-    name: "Máy pha cà phê gia đình",
-    slug: "may-pha-ca-phe",
-    image: "https://procaffe.vn/wp-content/uploads/2024/01/gaggia-classic-2024-1.jpg",
-    description: "Saeco, Gaggia, Lelit — espresso tại nhà",
-    count: 173,
-  },
-  {
-    name: "Máy pha cà phê chuyên nghiệp",
-    slug: "may-pha-ca-phe",
-    image: "https://procaffe.vn/wp-content/uploads/2023/08/wega-io-1-1.jpg",
-    description: "Wega, Astoria — cho quán, nhà hàng, khách sạn",
-    count: 50,
-  },
-  {
-    name: "Máy xay cà phê",
-    slug: "may-xay-ca-phe",
-    image: "https://procaffe.vn/wp-content/uploads/2023/09/eureka-mignon-specialita-mau-den.jpg",
-    description: "Eureka, Mahlkönig — xay chính xác",
-    count: 69,
-  },
-  {
-    name: "Ấm Moka Bialetti",
-    slug: "am-pha-ca-phe",
-    image: "https://procaffe.vn/wp-content/uploads/2023/08/bialetti-moka-express-3-cups-1.jpg",
-    description: "Ấm pha cà phê Ý chính hãng",
-    count: 69,
-  },
+/* Slider banner images from FTP download */
+const sliderBanners = [
+  { src: "/images/sliders/slider-4c.webp", alt: "ProCaffe chứng nhận 4C", href: "/" },
+  { src: "/images/sliders/slider-banner-mar2026.jpg", alt: "Chương trình tháng 3/2026", href: "/" },
+  { src: "/images/sliders/slider-address-change.png", alt: "Thay đổi địa chỉ", href: "/" },
+  { src: "/images/sliders/slider-bialetti-stranger.jpg", alt: "Bialetti Stranger Things", href: "/" },
+  { src: "/images/sliders/slider-phin.webp", alt: "Máy pha cà phê phin", href: "/" },
+  { src: "/images/sliders/slider-kees.webp", alt: "Kees van der Westen", href: "/" },
+  { src: "/images/sliders/slider-barista-attitude.webp", alt: "Barista Attitude", href: "/" },
+  { src: "/images/sliders/slider-4c-alt.webp", alt: "ProCaffe 4C", href: "/" },
 ];
 
-const brandLogos = [
-  { name: "Saeco", src: "https://procaffe.vn/wp-content/uploads/2023/08/brand-saeco@2x.jpg" },
-  { name: "Lelit", src: "https://procaffe.vn/wp-content/uploads/2023/08/brand-lelit@2x.jpg" },
-  { name: "Gaggia", src: "https://procaffe.vn/wp-content/uploads/2023/08/brand-gaggia@2x.jpg" },
-  { name: "Eureka", src: "https://procaffe.vn/wp-content/uploads/2023/08/brand-eureka@2x.jpg" },
-  { name: "Wega", src: "https://procaffe.vn/wp-content/uploads/2023/08/brand-wega@2x.jpg" },
-  { name: "Bialetti", src: "https://procaffe.vn/wp-content/uploads/2023/08/brand-bialetti@2x.jpg" },
-  { name: "Synesso", src: "https://procaffe.vn/wp-content/uploads/2023/08/brand-synesso@2x.jpg" },
+/* Brand logos downloaded from FTP (2025/02/) */
+const brandLogos = Array.from({ length: 21 }, (_, i) => ({
+  src: `/images/brands/${i + 1}.png`,
+  alt: `Brand partner ${i + 1}`,
+}));
+
+/* Category focus blocks matching sidebar-introduction.php */
+const categoryBlocks = [
+  {
+    image: "/images/categories/banner-caffe-1.jpg",
+    title: "MÁY PHA CÀ PHÊ GIA ĐÌNH - VĂN PHÒNG",
+    description:
+      "Những chiếc máy pha cà phê gia đình tự động, được trang bị công nghệ hiện đại, thiết kế sang trọng của Gaggia, Saeco đáp ứng mọi nhu cầu thưởng thức cà phê từ espresso, americano, tới latte, cappuccino chỉ với một nút nhấn.",
+    links: [
+      { label: "Máy pha cappuccino tự động", href: "/products?cat=may-pha-ca-phe" },
+      { label: "Máy espresso tự động", href: "/products?cat=may-pha-ca-phe" },
+      { label: "Máy Pha Cà Phê Espresso Bán Tự Động", href: "/products?cat=may-pha-ca-phe" },
+      { label: "Máy pha cà phê Capsule-Pod", href: "/products?cat=may-pha-ca-phe" },
+      { label: "Ấm pha cà phê Bialetti", href: "/products?cat=am-pha-ca-phe" },
+    ],
+    position: "left",
+  },
+  {
+    image: "/images/categories/banner-caffe-2.jpg",
+    title: "MÁY PHA CÀ PHÊ CHUYÊN NGHIỆP",
+    description:
+      "Máy pha cà phê chuyên nghiệp Wega, Saeco, Kees van der Westen dùng trong quán cà phê, nhà hàng, khách sạn, đáp ứng công suất phục vụ lớn với tốc độ nhanh, chất lượng espresso đặc sản đỉnh cao, đảm bảo tính đồng đều về chất lượng, và khả năng kiểm soát nguyên liệu, doanh thu.",
+    links: [
+      { label: "Máy pha Specialty coffee", href: "/products?cat=may-pha-ca-phe" },
+      { label: "Máy pha cà phê Espresso", href: "/products?cat=may-pha-ca-phe" },
+      { label: "Máy pha cà phê tự động dùng cho khách sạn", href: "/products?cat=may-pha-ca-phe" },
+      { label: "Máy bán cà phê tự động", href: "/products?cat=may-pha-ca-phe" },
+      { label: "Máy lọc cà phê", href: "/products?cat=may-pha-ca-phe" },
+    ],
+    position: "right",
+  },
+  {
+    image: "/images/categories/banner-caffe-3.jpg",
+    title: "CÀ PHÊ",
+    description:
+      "Từ những cao nguyên trù phú Nam Mỹ hay những mảnh đất đầy nắng gió khắc nghiệt ở châu Phi, tới những tầng nham thạch phun trào từ hàng triệu năm trước ở Á châu, những hạt cà phê chất chứa tinh túy của thiên nhiên thế giới đã hiện diện tại Việt Nam với ProCaffe.",
+    links: [
+      { label: "Cà phê Procaffe", href: "/products?cat=ca-phe-rang-xay" },
+      { label: "Cà phê Heritage", href: "/products?cat=ca-phe-rang-xay" },
+      { label: "Cà phê viên nén Gimoka", href: "/products?cat=ca-phe-rang-xay" },
+    ],
+    position: "left",
+  },
+  {
+    image: "/images/categories/banner-caffe-4.jpg",
+    title: "MÁY XAY CÀ PHÊ",
+    description:
+      "Các nhà chuyên sản xuất máy xay cafe như Eureka, Fiorenzato luôn dẫn đầu R&D với những công nghệ hiện đại nhất, đáp ứng những yêu cầu khắt khe nhất về tính đồng nhất, kiểm soát nhiệt độ, độ chính xác về khối lượng hay mức bột cà phê giữ lại trong máy cực thấp...",
+    links: [
+      { label: "Mahlkonig", href: "/products?cat=may-xay-ca-phe" },
+      { label: "Eureka", href: "/products?cat=may-xay-ca-phe" },
+      { label: "Fiorenzato", href: "/products?cat=may-xay-ca-phe" },
+      { label: "Baratza", href: "/products?cat=may-xay-ca-phe" },
+      { label: "Cunill", href: "/products?cat=may-xay-ca-phe" },
+      { label: "WPM", href: "/products?cat=may-xay-ca-phe" },
+    ],
+    position: "right",
+  },
 ];
-
-function getProductImage(product: typeof products[0]): string {
-  if (product.featured_image) return product.featured_image;
-  return "https://procaffe.vn/wp-content/uploads/woocommerce-placeholder-600x400.png";
-}
-
-function getProductCategory(product: typeof products[0]): string {
-  const cats = product.categories || [];
-  const priorityNames = ["Máy pha cà phê", "Máy Xay Cà Phê", "Ấm pha cà phê", "Dụng cụ Barista"];
-  for (const name of priorityNames) {
-    if (cats.includes(name)) return name;
-  }
-  return cats[0] || "";
-}
 
 export default function HomePage() {
-  const featuredProducts = products.slice(0, 8);
-  const latestPosts = posts.slice(0, 3);
+  const latestPosts = posts.slice(0, 6);
 
   return (
     <>
       <Header />
 
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-slide">
-          <div className="container">
-            <div className="hero-content">
-              <span className="hero-badge">🏆 Đại lý chính hãng</span>
-              <h1 className="hero-title">
-                Giải pháp cà phê toàn diện cho doanh nghiệp & gia đình
-              </h1>
-              <p className="hero-subtitle">
-                ProCaffe — nhà phân phối chính thức máy pha cà phê Saeco, Wega,
-                Lelit, Gaggia, Eureka tại Việt Nam. Tư vấn miễn phí, bảo hành
-                chính hãng, giao hàng toàn quốc.
-              </p>
-              <Link href="/products" className="hero-cta">
-                Khám phá sản phẩm
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-                </svg>
-              </Link>
-            </div>
-          </div>
+      {/* Hero Slider */}
+      <HeroSlider banners={sliderBanners} />
+
+      {/* Brand Slogan Bar */}
+      <section className="brand-slogan-bar">
+        <div className="slogan-separator">
+          <span className="slogan-line" />
+          <span className="slogan-text">
+            <span className="slogan-icon">☕</span>
+            Procaffe - Nhà cung cấp hàng đầu các giải pháp toàn diện liên quan đến cà phê tại Việt Nam
+          </span>
+          <span className="slogan-line" />
         </div>
       </section>
 
-      {/* Brand Partners */}
+      {/* Brand Logo Carousel */}
       <section className="brand-partners">
-        <div className="container">
-          <h2>Đối tác thương hiệu</h2>
-          <div className="brand-logos">
-            {brandLogos.map((brand) => (
-              <img
-                key={brand.name}
-                src={brand.src}
-                alt={brand.name}
-                loading="lazy"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Product Categories */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <h2>Danh mục sản phẩm</h2>
-            <div className="accent-line" />
-            <p>Chọn giải pháp phù hợp cho không gian cà phê của bạn</p>
-          </div>
-          <div className="category-grid">
-            {featuredCategories.map((cat) => (
-              <Link key={cat.slug + cat.name} href={`/products?cat=${cat.slug}`} className="category-card">
-                <img src={cat.image} alt={cat.name} loading="lazy" />
-                <div className="category-card-content">
-                  <h3 className="category-card-title">{cat.name}</h3>
-                  <p className="category-card-count">
-                    {cat.description} • {cat.count} sản phẩm
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Intro / About */}
-      <section className="section intro-section">
-        <div className="container">
-          <div className="intro-grid">
-            <div className="intro-content">
-              <h2>ProCaffe — The leading Total Coffee Solutions Provider</h2>
-              <p>
-                Với hơn 15 năm kinh nghiệm, ProCaffe tự hào là đơn vị tiên
-                phong trong lĩnh vực cung cấp giải pháp cà phê toàn diện tại
-                Việt Nam. Chúng tôi đồng hành cùng các quán cà phê, nhà hàng,
-                khách sạn và hộ gia đình trên hành trình nâng tầm chất lượng cà
-                phê.
-              </p>
-              <div className="intro-features">
-                <div className="intro-feature">
-                  <span className="intro-feature-icon">✓</span>
-                  <div>
-                    <h4>Đại lý chính hãng</h4>
-                    <p>Đại lý ủy quyền chính thức tại Việt Nam</p>
-                  </div>
-                </div>
-                <div className="intro-feature">
-                  <span className="intro-feature-icon">🔧</span>
-                  <div>
-                    <h4>Bảo hành chuyên nghiệp</h4>
-                    <p>Đội ngũ kỹ thuật viên được đào tạo trực tiếp từ nhà sản xuất</p>
-                  </div>
-                </div>
-                <div className="intro-feature">
-                  <span className="intro-feature-icon">🚚</span>
-                  <div>
-                    <h4>Giao hàng toàn quốc</h4>
-                    <p>Free ship nội thành HCM & Hà Nội</p>
-                  </div>
-                </div>
-                <div className="intro-feature">
-                  <span className="intro-feature-icon">☕</span>
-                  <div>
-                    <h4>Tư vấn miễn phí</h4>
-                    <p>Tư vấn giải pháp phù hợp cho mọi nhu cầu</p>
-                  </div>
-                </div>
-              </div>
+        <div className="brand-logos-track">
+          {[...brandLogos, ...brandLogos].map((brand, i) => (
+            <div key={i} className="brand-logo-item">
+              <img src={brand.src} alt={brand.alt} loading="lazy" />
             </div>
-            <div className="intro-image">
-              <img
-                src="https://procaffe.vn/wp-content/uploads/2023/08/home-office-coffee.jpg"
-                alt="Cà phê chuyên nghiệp"
-                loading="lazy"
-              />
+          ))}
+        </div>
+      </section>
+
+      {/* Category Focus Blocks */}
+      <section className="category-intro">
+        {categoryBlocks.map((block, i) => (
+          <div key={i} className={`category-row category-row-${block.position}`}>
+            <div className="category-image-half">
+              <img src={block.image} alt={block.title} loading="lazy" />
+            </div>
+            <div className="category-info-half">
+              <h2 className="category-info-title">{block.title}</h2>
+              <p className="category-info-desc">{block.description}</p>
+              <ul className="category-info-links">
+                {block.links.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href}>
+                      <span className="link-bullet">✦</span> {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        </div>
+        ))}
       </section>
 
-      {/* Featured Products */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <h2>Sản phẩm nổi bật</h2>
-            <div className="accent-line" />
-            <p>Những sản phẩm được yêu thích nhất tại ProCaffe</p>
-          </div>
-          <div className="product-grid">
-            {featuredProducts.map((product) => (
-              <Link
-                key={product.id}
-                href={`/products/${product.slug}`}
-                className="product-card"
-              >
-                <div className="product-card-image">
-                  <img
-                    src={getProductImage(product)}
-                    alt={product.title}
-                    loading="lazy"
-                  />
-                </div>
-                <div className="product-card-info">
-                  <span className="product-card-category">
-                    {getProductCategory(product)}
-                  </span>
-                  <h3 className="product-card-title">{product.title}</h3>
-                  <div className="product-card-price">Liên hệ</div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <Link href="/products" className="view-all-btn">
-              Xem tất cả sản phẩm
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-              </svg>
+      {/* YouTube Video + Blog Posts */}
+      <section className="video-blog-section">
+        <div className="video-blog-row">
+          <div className="video-half">
+            <div className="video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/ZbujxQ8iIWs"
+                title="ProCaffe YouTube"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            <Link href="/blog" className="view-more-link">
+              ≫ Xem thêm
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Consultancy CTA */}
-      <section className="consultancy-cta">
-        <div className="container">
-          <h2>Bạn cần tư vấn giải pháp cà phê?</h2>
-          <p>
-            Đội ngũ chuyên gia ProCaffe sẵn sàng hỗ trợ bạn chọn thiết bị phù
-            hợp nhất với nhu cầu và ngân sách
-          </p>
-          <a href="tel:09045698782" className="cta-button-white">
-            📞 Gọi ngay: 090.456.98.78
-          </a>
-        </div>
-      </section>
-
-      {/* Blog / Tin tức */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <h2>Tin tức & Kiến thức</h2>
-            <div className="accent-line" />
-            <p>Cập nhật xu hướng cà phê và chia sẻ kiến thức barista</p>
-          </div>
-          <div className="blog-grid">
-            {latestPosts.map((post) => (
-              <Link
-                key={post.id}
-                href={`/blog/${post.slug}`}
-                className="blog-card"
-              >
-                {post.featured_image && (
-                  <div className="blog-card-image">
-                    <img
-                      src={post.featured_image}
-                      alt={post.title}
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                <div className="blog-card-content">
-                  <span className="blog-card-date">
-                    {new Date(post.date).toLocaleDateString("vi-VN", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </span>
-                  <h3 className="blog-card-title">{post.title}</h3>
-                  {post.excerpt && (
-                    <p className="blog-card-excerpt">{post.excerpt}</p>
+          <div className="blog-half">
+            <div className="blog-grid-small">
+              {latestPosts.map((post) => (
+                <Link key={post.id} href={`/blog/${post.slug}`} className="blog-thumb-card">
+                  {post.featured_image && (
+                    <div className="blog-thumb-image">
+                      <img src={post.featured_image} alt={post.title} loading="lazy" />
+                    </div>
                   )}
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <Link href="/blog" className="view-all-btn">
-              Xem tất cả bài viết
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
-              </svg>
+                  <p className="blog-thumb-title">{post.title}</p>
+                </Link>
+              ))}
+            </div>
+            <Link href="/blog" className="view-more-link">
+              ≫ Xem thêm
             </Link>
           </div>
         </div>
       </section>
 
       <Footer />
+      <FloatingWidgets />
     </>
+  );
+}
+
+/* Client-side Hero Slider component */
+function HeroSlider({ banners }: { banners: typeof sliderBanners }) {
+  return (
+    <section className="hero-slider">
+      <div className="slider-track">
+        {banners.map((b, i) => (
+          <div key={i} className="slider-slide">
+            <Link href={b.href}>
+              <img src={b.src} alt={b.alt} />
+            </Link>
+          </div>
+        ))}
+      </div>
+      <div className="slider-dots">
+        {banners.map((_, i) => (
+          <span key={i} className={`slider-dot${i === 0 ? " active" : ""}`} />
+        ))}
+      </div>
+    </section>
   );
 }
