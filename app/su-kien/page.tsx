@@ -1,7 +1,7 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import FloatingWidgets from "../components/floating-widgets";
-import ArticleSidebar from "../components/article-sidebar";
+import TrustBadgesSidebar from "../components/trust-badges-sidebar";
 import Link from "next/link";
 import posts from "../../data/posts.json";
 
@@ -10,6 +10,12 @@ const SU_KIEN_CAT_ID = 94;
 const events = posts
     .filter((p) => p.categories?.includes(SU_KIEN_CAT_ID))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+export const metadata = {
+    title: "Giải Thưởng & Sự Kiện - ProCaffe",
+    description:
+        "Tin tức sự kiện, giải thưởng và hoạt động thương hiệu của ProCaffe – nhà cung cấp giải pháp cà phê hàng đầu Việt Nam.",
+};
 
 export default function EventsPage() {
     return (
@@ -20,7 +26,7 @@ export default function EventsPage() {
                 <div className="container">
                     <Link href="/">Trang chủ</Link>
                     <span className="breadcrumb-sep">/</span>
-                    <span>Sự kiện thương hiệu</span>
+                    <span>Giải Thưởng &amp; Sự Kiện</span>
                 </div>
             </div>
 
@@ -35,7 +41,7 @@ export default function EventsPage() {
                             fontFamily: "var(--font-heading)",
                         }}
                     >
-                        Sự kiện thương hiệu
+                        Category: Giải Thưởng &amp; Sự Kiện
                     </h1>
 
                     <div className="article-layout">
@@ -78,7 +84,7 @@ export default function EventsPage() {
                             )}
                         </div>
 
-                        <ArticleSidebar />
+                        <TrustBadgesSidebar />
                     </div>
                 </div>
             </section>
