@@ -16,10 +16,9 @@ export default function AboutPage() {
                 </div>
             </div>
 
-            <section className="page-hero">
+            <section className="page-header-simple" style={{ padding: "40px 0", background: "#fff", textAlign: "left" }}>
                 <div className="container">
-                    <h1>Sứ mạng – Tầm nhìn – Chiến lược</h1>
-                    <p>ProCaffe là đối tác đồng hành tin cậy về cà phê và các giải pháp chuyên nghiệp</p>
+                    <h1 style={{ color: "#333", fontSize: "32px", fontWeight: "bold", margin: 0 }}>Sứ mạng – Tầm nhìn – Chiến lược</h1>
                 </div>
             </section>
 
