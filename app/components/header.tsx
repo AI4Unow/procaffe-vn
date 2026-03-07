@@ -79,7 +79,7 @@ const navItems = [
         ],
     },
     {
-        label: "Thành viên Procaffe",
+        label: "THÀNH VIÊN PROCAFFE",
         href: "/thanh-vien",
         children: [
             { label: "Tuyển dụng", href: "/thanh-vien/tuyen-dung" },
@@ -150,13 +150,20 @@ export default function Header() {
                         </Link>
                         <div className="header-cart-area">
                             <Link href="/products" className="header-cart">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f37021" strokeWidth="2">
-                                    <circle cx="9" cy="21" r="1" />
-                                    <circle cx="20" cy="21" r="1" />
-                                    <path d="m1 1 4 2 2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                                </svg>
-                                <span className="cart-count">0</span>
-                                <span className="cart-label">Thanh toán</span>
+                                <div className="cart-icon-wrapper" style={{ position: 'relative' }}>
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f37021" strokeWidth="2">
+                                        <circle cx="9" cy="21" r="1" />
+                                        <circle cx="20" cy="21" r="1" />
+                                        <path d="m1 1 4 2 2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                                    </svg>
+                                    <span className="cart-count">0</span>
+                                </div>
+                                <div className="cart-icon-wrapper" style={{ marginLeft: '12px', display: 'flex', alignItems: 'center' }}>
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f37021" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                                        <line x1="1" y1="10" x2="23" y2="10" />
+                                    </svg>
+                                </div>
                             </Link>
                         </div>
                     </div>
