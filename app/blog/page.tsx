@@ -6,25 +6,22 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import ArticleSidebar from "../components/article-sidebar";
 import posts from "../../data/posts.json";
-import blogCategories from "../../data/blog-categories.json";
+import { BLOG_CATEGORIES } from "../../data/blog-data";
 
 export default function BlogPage() {
-    const [selectedCat, setSelectedCat] = useState<number | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
     const perPage = 12;
 
-    const topCats = blogCategories
-        .filter((c) => c.count > 0)
-        .sort((a, b) => b.count - a.count)
-        .slice(0, 10);
+    const sorted = useMemo(
+        () =>
+            [...posts].sort(
+                (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+            ),
+        []
+    );
 
-    const filtered = useMemo(() => {
-        if (!selectedCat) return posts;
-        return posts.filter((p) => p.categories?.includes(selectedCat));
-    }, [selectedCat]);
-
-    const totalPages = Math.ceil(filtered.length / perPage);
-    const paged = filtered.slice(
+    const totalPages = Math.ceil(sorted.length / perPage);
+    const paged = sorted.slice(
         (currentPage - 1) * perPage,
         currentPage * perPage
     );
@@ -37,7 +34,7 @@ export default function BlogPage() {
                 <div className="container">
                     <Link href="/">Trang chủ</Link>
                     <span className="breadcrumb-sep">/</span>
-                    <span>Tin tức</span>
+                    <span>Cẩm nang</span>
                 </div>
             </div>
 
@@ -45,34 +42,28 @@ export default function BlogPage() {
                 <div className="container">
                     <div className="section-header">
                         <h1 style={{ fontFamily: "var(--font-heading)" }}>
-                            Tin tức &amp; Kiến thức Cà phê
+                            Cẩm nang
                         </h1>
                         <div className="accent-line" />
-                        <p>Cập nhật xu hướng và chia sẻ kiến thức barista</p>
+                        <p>Cập nhật xu hướng và chia sẻ kiến thức cà phê</p>
                     </div>
 
-                    {/* Category tabs */}
+                    {/* Category navigation tabs */}
                     <div className="blog-category-tabs">
-                        <button
-                            className={!selectedCat ? "active" : ""}
-                            onClick={() => {
-                                setSelectedCat(null);
-                                setCurrentPage(1);
-                            }}
+                        <Link
+                            href="/blog"
+                            className="blog-cat-tab active"
                         >
                             Tất cả
-                        </button>
-                        {topCats.map((cat) => (
-                            <button
-                                key={cat.id}
-                                className={selectedCat === cat.id ? "active" : ""}
-                                onClick={() => {
-                                    setSelectedCat(cat.id);
-                                    setCurrentPage(1);
-                                }}
+                        </Link>
+                        {BLOG_CATEGORIES.map((cat) => (
+                            <Link
+                                key={cat.slug}
+                                href={`/blog/category/${cat.slug}`}
+                                className="blog-cat-tab"
                             >
                                 {cat.name}
-                            </button>
+                            </Link>
                         ))}
                     </div>
 
@@ -96,15 +87,22 @@ export default function BlogPage() {
                                         )}
                                         <div className="blog-card-content">
                                             <span className="blog-card-date">
-                                                {new Date(post.date).toLocaleDateString("vi-VN", {
-                                                    year: "numeric",
-                                                    month: "long",
-                                                    day: "numeric",
-                                                })}
+                                                {new Date(post.date).toLocaleDateString(
+                                                    "vi-VN",
+                                                    {
+                                                        year: "numeric",
+                                                        month: "long",
+                                                        day: "numeric",
+                                                    }
+                                                )}
                                             </span>
-                                            <h3 className="blog-card-title">{post.title}</h3>
+                                            <h3 className="blog-card-title">
+                                                {post.title}
+                                            </h3>
                                             {post.excerpt && (
-                                                <p className="blog-card-excerpt">{post.excerpt}</p>
+                                                <p className="blog-card-excerpt">
+                                                    {post.excerpt}
+                                                </p>
                                             )}
                                         </div>
                                     </Link>
@@ -115,29 +113,49 @@ export default function BlogPage() {
                                 <div className="pagination">
                                     <button
                                         disabled={currentPage === 1}
-                                        onClick={() => setCurrentPage(currentPage - 1)}
+                                        onClick={() =>
+                                            setCurrentPage(currentPage - 1)
+                                        }
                                     >
                                         ← Trước
                                     </button>
-                                    {Array.from({ length: Math.min(totalPages, 7) }, (_, i) => {
-                                        let page: number;
-                                        if (totalPages <= 7) page = i + 1;
-                                        else if (currentPage <= 4) page = i + 1;
-                                        else if (currentPage >= totalPages - 3) page = totalPages - 6 + i;
-                                        else page = currentPage - 3 + i;
-                                        return (
-                                            <button
-                                                key={page}
-                                                className={currentPage === page ? "active" : ""}
-                                                onClick={() => setCurrentPage(page)}
-                                            >
-                                                {page}
-                                            </button>
-                                        );
-                                    })}
+                                    {Array.from(
+                                        {
+                                            length: Math.min(totalPages, 7),
+                                        },
+                                        (_, i) => {
+                                            let page: number;
+                                            if (totalPages <= 7) page = i + 1;
+                                            else if (currentPage <= 4)
+                                                page = i + 1;
+                                            else if (
+                                                currentPage >=
+                                                totalPages - 3
+                                            )
+                                                page = totalPages - 6 + i;
+                                            else page = currentPage - 3 + i;
+                                            return (
+                                                <button
+                                                    key={page}
+                                                    className={
+                                                        currentPage === page
+                                                            ? "active"
+                                                            : ""
+                                                    }
+                                                    onClick={() =>
+                                                        setCurrentPage(page)
+                                                    }
+                                                >
+                                                    {page}
+                                                </button>
+                                            );
+                                        }
+                                    )}
                                     <button
                                         disabled={currentPage === totalPages}
-                                        onClick={() => setCurrentPage(currentPage + 1)}
+                                        onClick={() =>
+                                            setCurrentPage(currentPage + 1)
+                                        }
                                     >
                                         Sau →
                                     </button>

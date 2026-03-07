@@ -70,9 +70,12 @@ const navItems = [
         label: "Cẩm nang",
         href: "/blog",
         children: [
-            { label: "Kinh doanh quán cà phê", href: "/blog" },
-            { label: "Cách pha cà phê", href: "/blog" },
-            { label: "Videos", href: "/blog" },
+            { label: "Kinh doanh quán cà phê", href: "/blog/category/kinh-doanh-quan-ca-phe" },
+            { label: "Cách pha cà phê", href: "/blog/category/cach-pha-ca-phe" },
+            { label: "Tin tức", href: "/blog/category/tin-tuc" },
+            { label: "Câu hỏi thường gặp", href: "/blog/category/cau-hoi-thuong-gap" },
+            { label: "Đánh giá sản phẩm", href: "/blog/category/danh-gia-san-pham" },
+            { label: "Videos", href: "/blog/category/videos" },
         ],
     },
     {

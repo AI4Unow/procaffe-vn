@@ -1831,6 +1831,251 @@ section {
   border-color: var(--primary);
 }
 
+/* Blog Category Tabs */
+.blog-category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--space-xl);
+}
+
+.blog-cat-tab {
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  background: #fff;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.blog-cat-tab:hover,
+.blog-cat-tab.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* Blog Post Article */
+.blog-post-article {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 0 0 var(--space-lg);
+}
+
+.blog-post-title {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-family: var(--font-heading);
+  color: var(--dark);
+  line-height: 1.35;
+  margin-bottom: var(--space-sm);
+}
+
+.blog-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.blog-post-date {
+  color: var(--gray);
+}
+
+.blog-post-categories {
+  display: flex;
+  gap: 8px;
+}
+
+.blog-post-cat-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.blog-post-cat-link:hover {
+  text-decoration: underline;
+}
+
+/* Related News (Tin liên quan) - above body like original */
+.blog-related-news {
+  background: #f8f9fa;
+  border-left: 3px solid var(--primary);
+  padding: 16px 20px;
+  margin-bottom: var(--space-lg);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.blog-related-news h3 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+}
+
+.blog-related-news ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blog-related-news li {
+  padding: 4px 0;
+}
+
+.blog-related-news li::before {
+  content: "▸ ";
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.blog-related-news a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+
+.blog-related-news a:hover {
+  color: var(--primary);
+}
+
+/* Blog Post Hero Image */
+.blog-post-hero {
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.blog-post-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Blog Post Content */
+.blog-post-content {
+  line-height: 1.8;
+  color: var(--dark);
+  font-size: 15px;
+}
+
+.blog-post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  margin: 16px 0;
+}
+
+.blog-post-content p {
+  margin-bottom: 14px;
+}
+
+.blog-post-content h2,
+.blog-post-content h3 {
+  margin: 28px 0 14px;
+  color: #8b1a1a;
+  font-family: var(--font-heading);
+}
+
+.blog-post-content h2 {
+  font-size: 20px;
+}
+
+.blog-post-content h3 {
+  font-size: 17px;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+  padding-left: 24px;
+  margin-bottom: 14px;
+}
+
+.blog-post-content li {
+  margin-bottom: 6px;
+}
+
+.blog-post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.blog-post-content th,
+.blog-post-content td {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.blog-post-content th {
+  background: var(--light-gray);
+  font-weight: 600;
+}
+
+.blog-post-content blockquote {
+  border-left: 3px solid var(--primary);
+  padding: 12px 20px;
+  margin: 16px 0;
+  background: #faf8f5;
+  font-style: italic;
+  color: #555;
+}
+
+.blog-post-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.blog-post-content a:hover {
+  color: var(--primary-dark);
+}
+
+/* Blog Post Tags */
+.blog-post-tags {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.blog-post-tags-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.blog-post-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--light-gray);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  color: var(--dark);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.blog-post-tag:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
 /* ===== Contact Page ===== */
 .contact-hero {
   background: linear-gradient(135deg, var(--primary) 0%, var(--coffee-brown) 100%);
