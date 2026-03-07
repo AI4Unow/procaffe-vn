@@ -82,8 +82,9 @@ const navItems = [
         label: "Thành viên Procaffe",
         href: "/thanh-vien",
         children: [
-            { label: "Quyền lợi thành viên", href: "/thanh-vien#quyen-loi" },
-            { label: "Tuyển dụng", href: "/thanh-vien#tuyen-dung" },
+            { label: "Tuyển dụng", href: "/thanh-vien/tuyen-dung" },
+            { label: "Khách hàng thành viên", href: "/thanh-vien/dang-ky" },
+            { label: "Cộng tác viên", href: "/thanh-vien/cong-tac-vien" },
         ],
     },
     {
