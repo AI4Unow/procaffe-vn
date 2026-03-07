@@ -51,6 +51,16 @@ function getCategoryBreadcrumb(
     return null;
 }
 
+function extractPrice(product: (typeof products)[0]): string | null {
+    const text = (product.excerpt || "") + " " + (product.content || "");
+    const priceRegex = /(\d{1,3}(?:\.\d{3}){1,3})\s*(?:đ|VND|₫)/i;
+    const match = text.match(priceRegex);
+    if (match) {
+        return match[1] + "đ";
+    }
+    return null;
+}
+
 function ProductDetailClient({ slug }: { slug: string }) {
     const product = products.find((p) => p.slug === slug);
     const [activeTab, setActiveTab] = useState<"description" | "specs">(
@@ -84,6 +94,8 @@ function ProductDetailClient({ slug }: { slug: string }) {
     const hasSpecsTable =
         product.content?.includes("<table") ||
         product.content?.includes("Thông số");
+
+    const price = extractPrice(product);
 
     return (
         <>
@@ -145,7 +157,7 @@ function ProductDetailClient({ slug }: { slug: string }) {
 
                             <div className="product-detail-price">
                                 <span className="price-label">Giá:</span>
-                                <span className="price-value">Liên hệ</span>
+                                <span className="price-value">{price || "Liên hệ"}</span>
                             </div>
 
                             <p className="product-vat-note">
@@ -283,7 +295,7 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                                 {p.title}
                                             </h3>
                                             <div className="product-card-price">
-                                                Liên hệ
+                                                {extractPrice(p) || "Liên hệ"}
                                             </div>
                                         </div>
                                     </Link>

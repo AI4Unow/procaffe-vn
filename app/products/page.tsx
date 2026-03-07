@@ -21,6 +21,16 @@ function getProductImage(product: (typeof products)[0]): string {
     return "/images/placeholder-product.svg";
 }
 
+function extractPrice(product: (typeof products)[0]): string | null {
+    const text = (product.excerpt || "") + " " + (product.content || "");
+    const priceRegex = /(\d{1,3}(?:\.\d{3}){1,3})\s*(?:đ|VND|₫)/i;
+    const match = text.match(priceRegex);
+    if (match) {
+        return match[1] + "đ";
+    }
+    return null;
+}
+
 /* Custom-ordered sidebar categories matching procaffe.vn */
 const SIDEBAR_CATEGORY_ORDER = [
     "may-pha-ca-phe-khuyen-mai",
@@ -405,7 +415,7 @@ function ProductsContent() {
                                                 {product.title}
                                             </h3>
                                             <div className="product-card-price">
-                                                Liên hệ
+                                                {extractPrice(product) || "Liên hệ"}
                                             </div>
                                         </div>
                                     </Link>

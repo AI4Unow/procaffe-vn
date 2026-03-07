@@ -66,7 +66,7 @@ export default async function BlogCategoryPage({
 
                     <div className="article-layout">
                         <div className="article-main">
-                            <BlogCategoryGrid posts={allPosts} />
+                            <BlogCategoryList posts={allPosts} />
                         </div>
 
                         <ArticleSidebar />
@@ -79,39 +79,46 @@ export default async function BlogCategoryPage({
     );
 }
 
-function BlogCategoryGrid({ posts }: { posts: typeof import("../../../../data/posts.json") }) {
+function BlogCategoryList({ posts }: { posts: typeof import("../../../../data/posts.json") }) {
     return (
         <>
-            <div className="blog-grid">
+            <div className="blog-archive-list">
                 {posts.map((post) => (
-                    <Link
-                        key={post.id}
-                        href={`/blog/${post.slug}`}
-                        className="blog-card"
-                    >
+                    <article key={post.id} className="blog-archive-post">
                         {post.featured_image && (
-                            <div className="blog-card-image">
-                                <img
-                                    src={post.featured_image}
-                                    alt={post.title}
-                                    loading="lazy"
-                                />
+                            <div className="blog-post-thumbnail">
+                                <Link href={`/blog/${post.slug}`}>
+                                    <img
+                                        src={post.featured_image}
+                                        alt={post.title}
+                                        loading="lazy"
+                                    />
+                                </Link>
                             </div>
                         )}
-                        <div className="blog-card-content">
-                            <span className="blog-card-date">
+                        <div className="blog-post-content">
+                            <h2 className="blog-post-title">
+                                <Link href={`/blog/${post.slug}`}>
+                                    {post.title}
+                                </Link>
+                            </h2>
+                            <div className="blog-post-meta">
                                 {new Date(post.date).toLocaleDateString("vi-VN", {
                                     year: "numeric",
                                     month: "long",
                                     day: "numeric",
                                 })}
-                            </span>
-                            <h3 className="blog-card-title">{post.title}</h3>
+                            </div>
                             {post.excerpt && (
-                                <p className="blog-card-excerpt">{post.excerpt}</p>
+                                <div className="blog-post-excerpt">
+                                    <p>{post.excerpt}</p>
+                                </div>
                             )}
+                            <Link href={`/blog/${post.slug}`} className="read-more">
+                                Đọc tiếp »
+                            </Link>
                         </div>
-                    </Link>
+                    </article>
                 ))}
             </div>
 
