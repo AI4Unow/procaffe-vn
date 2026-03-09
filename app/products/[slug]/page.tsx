@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import TrustBadgesSidebar from "../../components/trust-badges-sidebar";
+import ProductReviewSection from "../../components/product-review-section";
 import products from "../../../data/products.json";
 import categories from "../../../data/product-categories.json";
 
@@ -83,7 +84,7 @@ function extractPrice(product: (typeof products)[0]): {
 
 function ProductDetailClient({ slug }: { slug: string }) {
     const product = products.find((p) => p.slug === slug);
-    const [activeTab, setActiveTab] = useState<"description" | "specs">(
+    const [activeTab, setActiveTab] = useState<"description" | "specs" | "reviews">(
         "description"
     );
     const [selectedImage, setSelectedImage] = useState(0);
@@ -274,6 +275,14 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                     Thông số kỹ thuật
                                 </button>
                             )}
+                            <button
+                                className={
+                                    activeTab === "reviews" ? "active" : ""
+                                }
+                                onClick={() => setActiveTab("reviews")}
+                            >
+                                Đánh giá
+                            </button>
                         </div>
 
                         <div className="product-tabs-content">
@@ -291,6 +300,12 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                     dangerouslySetInnerHTML={{
                                         __html: product.content,
                                     }}
+                                />
+                            )}
+                            {activeTab === "reviews" && (
+                                <ProductReviewSection
+                                    slug={slug}
+                                    productTitle={product.title}
                                 />
                             )}
                         </div>

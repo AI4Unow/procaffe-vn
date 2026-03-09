@@ -1,0 +1,78 @@
+{
+    "synesso-s200": [
+        {
+            "id": "r1",
+            "name": "Phuong Thanh",
+            "gender": "chi",
+            "rating": 5,
+            "text": "Máy nhiều công năng, pha cà phê nhanh, ngon đúng vị, phù hợp cho các quán cà phê lớn, sang trọng tinh tế",
+            "date": "2024-07-08"
+        }
+    ],
+    "lelit-bianca-pl162t": [
+        {
+            "id": "r2",
+            "name": "Minh Tuấn",
+            "gender": "anh",
+            "rating": 5,
+            "text": "Máy pha espresso tuyệt vời cho gia đình. Flow control mượt mà, nhiệt độ ổn định. Rất hài lòng với chất lượng!",
+            "date": "2024-09-15"
+        },
+        {
+            "id": "r3",
+            "name": "Hương Giang",
+            "gender": "chi",
+            "rating": 4,
+            "text": "Máy đẹp, chất lượng tốt. Espresso rất ngon. Chỉ hơi nặng nên khó di chuyển.",
+            "date": "2024-08-20"
+        }
+    ],
+    "lelit-marax-pl62x": [
+        {
+            "id": "r4",
+            "name": "Đức Anh",
+            "gender": "anh",
+            "rating": 5,
+            "text": "Máy chạy rất ổn định, PID chính xác. Pha espresso tại nhà chuẩn như quán. Recommend cho ai yêu cà phê!",
+            "date": "2024-10-02"
+        }
+    ],
+    "gaggia-classic-e24": [
+        {
+            "id": "r5",
+            "name": "Thanh Hà",
+            "gender": "chi",
+            "rating": 5,
+            "text": "Máy nhỏ gọn, phù hợp cho gia đình. Pha espresso ngon, đánh sữa tốt. Giá hợp lý so với chất lượng.",
+            "date": "2024-11-10"
+        },
+        {
+            "id": "r6",
+            "name": "Quốc Việt",
+            "gender": "anh",
+            "rating": 4,
+            "text": "Gaggia Classic E24 rất bền, thiết kế đẹp. Espresso đậm đà, đúng vị Ý. Bảo hành tốt từ ProCaffe.",
+            "date": "2024-12-05"
+        }
+    ],
+    "mahlkonig-x54-chrome": [
+        {
+            "id": "r7",
+            "name": "Bảo Ngọc",
+            "gender": "chi",
+            "rating": 5,
+            "text": "Máy xay êm, bột đều, rất nhanh. Thiết kế sang trọng phù hợp decor quán. Hài lòng 100%!",
+            "date": "2025-01-18"
+        }
+    ],
+    "eureka-mignon-manuale": [
+        {
+            "id": "r8",
+            "name": "Hoàng Nam",
+            "gender": "anh",
+            "rating": 5,
+            "text": "Eureka Manuale xay espresso rất tốt, bột đều và mịn. Tiếng ồn thấp, phù hợp dùng tại nhà.",
+            "date": "2025-02-14"
+        }
+    ]
+}
