@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import seedReviews from "../../data/product-reviews-seed.json";
+import allReviewsData from "../../data/reviews.json";
 
 interface Review {
     id: string;
@@ -12,23 +12,47 @@ interface Review {
     date: string;
 }
 
+interface ReviewRecord {
+    id: number;
+    product_slug: string;
+    author_name: string;
+    rating: number;
+    text: string;
+    date: string;
+    status?: string;
+    is_reply?: boolean;
+}
+
 function getStorageKey(slug: string) {
     return `procaffe_reviews_${slug}`;
 }
 
 function loadReviews(slug: string): Review[] {
-    const seed = (seedReviews as Record<string, Review[]>)[slug] || [];
-    if (typeof window === "undefined") return seed;
-    try {
-        const raw = localStorage.getItem(getStorageKey(slug));
-        if (raw) {
-            const userReviews: Review[] = JSON.parse(raw);
-            return [...seed, ...userReviews];
+    // Load reviews from reviews.json (managed via admin panel)
+    const dbReviews: Review[] = (allReviewsData as ReviewRecord[])
+        .filter((r) => r.product_slug === slug && r.status !== "pending" && !r.is_reply)
+        .map((r) => ({
+            id: String(r.id),
+            name: r.author_name,
+            gender: "anh" as const,
+            rating: r.rating,
+            text: r.text,
+            date: r.date,
+        }));
+
+    // Also load any user-submitted reviews from localStorage
+    if (typeof window !== "undefined") {
+        try {
+            const raw = localStorage.getItem(getStorageKey(slug));
+            if (raw) {
+                const userReviews: Review[] = JSON.parse(raw);
+                return [...dbReviews, ...userReviews];
+            }
+        } catch {
+            /* ignore */
         }
-    } catch {
-        /* ignore */
     }
-    return seed;
+    return dbReviews;
 }
 
 function saveUserReview(slug: string, review: Review) {

@@ -1,0 +1,122 @@
+[
+  {
+    "wp_comment_id": 4706,
+    "product_slug": "am-pha-ca-phe-bialetti-moka-express-3-mau",
+    "product_title": "Ấm pha cà phê Bialetti Moka Express 3 màu",
+    "author_name": "Thuỳ Anh",
+    "rating": 5,
+    "text": "Thiết kế ấm rất đẹp và tinh tế. Cầm chắc tay, cảm giác rất chất lượng",
+    "date": "2026-03-07",
+    "is_reply": false,
+    "status": "approved",
+    "id": 1
+  },
+  {
+    "wp_comment_id": 4719,
+    "product_slug": "bialetti-moka-express",
+    "product_title": "Bialetti Moka Express",
+    "author_name": "hạnh",
+    "rating": 5,
+    "text": "Ấm pha cà phê Moka Express được làm từ 100% hợp kim nhôm chất lượng cao, dày và chắc chắn. Thiết kế đặc trưng bát giác 8 mặt độc đáo cho phép khuếch tán nhiệt hoàn hảo để tăng cường mùi thơm của cà phê.",
+    "date": "2026-03-07",
+    "is_reply": false,
+    "status": "approved",
+    "id": 2
+  },
+  {
+    "wp_comment_id": 4696,
+    "product_slug": "saeco-se-180",
+    "product_title": "SAECO SE 180",
+    "author_name": "Tường",
+    "rating": 5,
+    "text": "Máy thiết kế sang, công suất mạnh",
+    "date": "2026-03-06",
+    "is_reply": false,
+    "status": "approved",
+    "id": 3
+  },
+  {
+    "wp_comment_id": 4677,
+    "product_slug": "wega-pegaso",
+    "product_title": "Wega Pegaso EVD/2",
+    "author_name": "Hoàng Lộc",
+    "rating": 5,
+    "text": "Pegaso 2GR cho mình cảm giác rất yên tâm khi vận hành – đơn giản, ổn định và ít phải lo lắng khi chạy giờ cao điểm. Steam mạnh và nhiệt khá ổn định nên làm việc cả ngày vẫn cứ là ok.",
+    "date": "2026-03-05",
+    "is_reply": false,
+    "status": "approved",
+    "id": 4
+  },
+  {
+    "wp_comment_id": 4132,
+    "product_slug": "saeco-aulika-evo-top-ri-hsc",
+    "product_title": "Saeco Aulika EVO TOP/RI HSC",
+    "author_name": "Hfd",
+    "rating": 5,
+    "text": "Dùng với nhu cầu cao",
+    "date": "2025-12-01",
+    "is_reply": false,
+    "status": "approved",
+    "id": 5
+  },
+  {
+    "wp_comment_id": 3130,
+    "product_slug": "ca-phe-hoa-tan-nguyen-chat-procaffe-speciale",
+    "product_title": "Procaffe Speciale (hòa tan, sấy lạnh)",
+    "author_name": "Nam Anh",
+    "rating": 5,
+    "text": "Cafe thơm, đậm đà, ngọt béo",
+    "date": "2025-01-08",
+    "is_reply": false,
+    "status": "approved",
+    "id": 6
+  },
+  {
+    "wp_comment_id": 2899,
+    "product_slug": "may-pha-ca-phe-gaggia-viva-deluxe",
+    "product_title": "Gaggia Viva Deluxe",
+    "author_name": "Mai Nguyễn",
+    "rating": 5,
+    "text": "Máy có thiết kế cổ điển, tạo crema hoàn hảo và pha capuchino, latte chất lượng.",
+    "date": "2024-10-08",
+    "is_reply": false,
+    "status": "approved",
+    "id": 7
+  },
+  {
+    "wp_comment_id": 1430,
+    "product_slug": "bialetti-moka-express",
+    "product_title": "Bialetti Moka Express",
+    "author_name": "Hồng Nhung",
+    "rating": 5,
+    "text": "fantastico! mỗi sáng 1 ly cà phê thế này với 1 lát bánh mứt dâu là tuyệt vời ông mặt trời! ấm moka thì chỉ có mua bialetti thôi.",
+    "date": "2021-09-04",
+    "is_reply": false,
+    "status": "approved",
+    "id": 8
+  },
+  {
+    "wp_comment_id": 1308,
+    "product_slug": "bialetti-moka-express-nera",
+    "product_title": "Bialetti Moka Express Nera",
+    "author_name": "Giauyen",
+    "rating": 5,
+    "text": "Màu quyền lực. Đẹp",
+    "date": "2021-08-08",
+    "is_reply": false,
+    "status": "approved",
+    "id": 9
+  },
+  {
+    "wp_comment_id": 479,
+    "product_slug": "ca-phe-hoa-tan-nguyen-chat-procaffe-speciale",
+    "product_title": "Procaffe Speciale (hòa tan, sấy lạnh)",
+    "author_name": "QUYNH",
+    "rating": 5,
+    "text": "Caffe thơm lắm.",
+    "date": "2021-07-02",
+    "is_reply": false,
+    "status": "approved",
+    "id": 10
+  }
+]
