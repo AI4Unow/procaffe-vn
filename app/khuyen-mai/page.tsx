@@ -24,15 +24,28 @@ function getProductImage(product: (typeof products)[0]): string {
     return "/images/placeholder-product.svg";
 }
 
-function extractPrice(product: (typeof products)[0]): string | null {
+function formatVND(priceStr: string): string {
+    const num = parseInt(priceStr, 10);
+    if (isNaN(num) || num === 0) return "";
+    return num.toLocaleString("vi-VN") + "đ";
+}
+
+function extractPrice(product: (typeof products)[0]): {
+    regular: string | null;
+    sale: string | null;
+} {
+    const p = product as typeof product & { regular_price?: string; sale_price?: string };
+    if (p.regular_price) {
+        return {
+            regular: formatVND(p.regular_price),
+            sale: p.sale_price ? formatVND(p.sale_price) : null,
+        };
+    }
     const text = (product.excerpt || "") + " " + (product.content || "");
-    /* Match patterns like 16.980.000đ or 16.980.000 VND or Giá niêm yết: XX.XXX.XXXđ */
     const priceRegex = /(\d{1,3}(?:\.\d{3}){1,3})\s*(?:đ|VND|₫)/i;
     const match = text.match(priceRegex);
-    if (match) {
-        return match[1] + "đ";
-    }
-    return null;
+    if (match) return { regular: match[1] + "đ", sale: null };
+    return { regular: null, sale: null };
 }
 
 /* Sidebar categories matching products page */
@@ -169,7 +182,11 @@ export default function PromotionsPage() {
                                                     {product.title}
                                                 </h3>
                                                 <div className="product-card-price">
-                                                    {price || "Liên hệ"}
+                                                    {price.sale ? (
+                                                        <><span className="price-original">{price.regular}</span> <span className="price-sale">{price.sale}</span></>
+                                                    ) : (
+                                                        price.regular || "Liên hệ"
+                                                    )}
                                                 </div>
                                             </div>
                                         </Link>

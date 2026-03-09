@@ -3931,6 +3931,31 @@ section {
   color: var(--primary);
 }
 
+.price-original {
+  text-decoration: line-through;
+  color: var(--gray);
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.price-sale {
+  color: #e53935;
+  font-weight: 700;
+}
+
+.product-detail-price .price-sale {
+  font-size: 22px;
+}
+
+.product-card-price .price-original {
+  font-size: 12px;
+}
+
+.product-card-price .price-sale {
+  font-size: 15px;
+}
+
 .product-vat-note {
   font-size: 12px;
   color: var(--gray);
