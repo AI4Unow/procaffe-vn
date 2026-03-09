@@ -1,58 +1,58 @@
 [
-    {
-        "id": 1,
-        "order": 1,
-        "image": "/images/sliders/slider-4c.webp",
-        "alt": "ProCaffe chứng nhận 4C",
-        "link": "/"
-    },
-    {
-        "id": 2,
-        "order": 2,
-        "image": "/images/sliders/slider-banner-mar2026.jpg",
-        "alt": "Chương trình tháng 3/2026",
-        "link": "/"
-    },
-    {
-        "id": 3,
-        "order": 3,
-        "image": "/images/sliders/slider-address-change.png",
-        "alt": "Thay đổi địa chỉ",
-        "link": "/"
-    },
-    {
-        "id": 4,
-        "order": 4,
-        "image": "/images/sliders/slider-bialetti-stranger.jpg",
-        "alt": "Bialetti Stranger Things",
-        "link": "/"
-    },
-    {
-        "id": 5,
-        "order": 5,
-        "image": "/images/sliders/slider-phin.webp",
-        "alt": "Máy pha cà phê phin",
-        "link": "/"
-    },
-    {
-        "id": 6,
-        "order": 6,
-        "image": "/images/sliders/slider-kees.webp",
-        "alt": "Kees van der Westen",
-        "link": "/"
-    },
-    {
-        "id": 7,
-        "order": 7,
-        "image": "/images/sliders/slider-barista-attitude.webp",
-        "alt": "Barista Attitude",
-        "link": "/"
-    },
-    {
-        "id": 8,
-        "order": 8,
-        "image": "/images/sliders/slider-4c-alt.webp",
-        "alt": "ProCaffe 4C",
-        "link": "/"
-    }
+  {
+    "id": 1,
+    "order": 1,
+    "image": "/images/sliders/slider-4c.webp",
+    "alt": "ProCaffe chứng nhận 4C",
+    "link": "/"
+  },
+  {
+    "id": 2,
+    "order": 2,
+    "image": "/images/sliders/slider-banner-mar2026.jpg",
+    "alt": "Chương trình tháng 3/2026",
+    "link": "/"
+  },
+  {
+    "id": 3,
+    "order": 3,
+    "image": "/images/sliders/slider-address-change.png",
+    "alt": "Thay đổi địa chỉ",
+    "link": "/"
+  },
+  {
+    "id": 4,
+    "order": 4,
+    "image": "/images/sliders/slider-bialetti-stranger.jpg",
+    "alt": "Bialetti Stranger Things",
+    "link": "/"
+  },
+  {
+    "id": 5,
+    "order": 5,
+    "image": "/images/sliders/slider-phin.webp",
+    "alt": "Máy pha cà phê phin",
+    "link": "/"
+  },
+  {
+    "id": 6,
+    "order": 6,
+    "image": "/images/sliders/slider-kees.webp",
+    "alt": "Kees van der Westen",
+    "link": "/"
+  },
+  {
+    "id": 7,
+    "order": 7,
+    "image": "/images/sliders/slider-barista-attitude.webp",
+    "alt": "Barista Attitude",
+    "link": "/"
+  },
+  {
+    "id": 8,
+    "order": 8,
+    "image": "/images/sliders/slider-4c-alt.webp",
+    "alt": "ProCaffe 4C - Updated via Admin",
+    "link": "/"
+  }
 ]
