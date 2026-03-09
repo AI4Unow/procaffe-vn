@@ -320,6 +320,33 @@ function ProductsContent() {
                                 </ul>
                             </div>
 
+                            {/* Brand categories sidebar */}
+                            <div className="sidebar-block">
+                                <h3 className="sidebar-title">Thương hiệu</h3>
+                                <ul className="sidebar-categories">
+                                    {categories
+                                        .filter((c) => c.parent === BRAND_PARENT_ID && c.count > 0)
+                                        .sort((a, b) => a.name.localeCompare(b.name))
+                                        .map((brand) => (
+                                            <li key={brand.id}>
+                                                <button
+                                                    className={
+                                                        selectedCategory === brand.slug
+                                                            ? "active"
+                                                            : ""
+                                                    }
+                                                    onClick={() =>
+                                                        handleCategoryChange(brand.slug)
+                                                    }
+                                                >
+                                                    {brand.name}
+                                                    <span className="cat-count">({brand.count})</span>
+                                                </button>
+                                            </li>
+                                        ))}
+                                </ul>
+                            </div>
+
                             {/* Phone CTA */}
                             <div className="sidebar-cta">
                                 <div className="sidebar-cta-icon">📞</div>
