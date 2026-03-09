@@ -4783,3 +4783,181 @@ section {
     padding: 16px;
   }
 }
+
+/* ===== THUONG HIEU (BRANDS) PAGE ===== */
+.thuong-hieu-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.thuong-hieu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 12px 14px;
+  text-align: center;
+  transition: var(--transition);
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.thuong-hieu-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.thuong-hieu-logo {
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.thuong-hieu-logo img {
+  max-width: 90px;
+  max-height: 55px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: filter 0.3s;
+}
+
+.thuong-hieu-card:hover .thuong-hieu-logo img {
+  filter: grayscale(0);
+}
+
+.thuong-hieu-name-fallback {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.thuong-hieu-info h3 {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--dark);
+}
+
+.thuong-hieu-count {
+  font-size: 11px;
+  color: var(--gray);
+  margin-top: 2px;
+  display: block;
+}
+
+/* Product grid 4-column variant */
+.product-grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Reviews list for thuong-hieu page */
+.reviews-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.reviews-list .review-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.reviews-list .review-item:last-child {
+  border-bottom: none;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.review-author {
+  font-size: 14px;
+  color: var(--dark);
+}
+
+.review-stars {
+  color: #f5a623;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.review-date {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--gray);
+  white-space: nowrap;
+}
+
+.review-product-name {
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 500;
+  margin: 0;
+}
+
+.review-content {
+  font-size: 14px;
+  color: var(--dark);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive: thuong-hieu page */
+@media (max-width: 900px) {
+  .thuong-hieu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-grid-4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .thuong-hieu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .product-grid-4col {
+    grid-template-columns: 1fr;
+  }
+
+  .review-header {
+    flex-wrap: wrap;
+  }
+
+  .review-date {
+    margin-left: 52px;
+  }
+}
