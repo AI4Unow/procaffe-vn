@@ -3875,6 +3875,34 @@ section {
   overflow: hidden;
   background: #fafafa;
   margin-bottom: var(--space-sm);
+  position: relative;
+}
+
+/* ===== SALE BADGE ===== */
+.sale-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #e53935;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  z-index: 2;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(229, 57, 53, 0.3);
+}
+
+.product-card-image {
+  position: relative;
+}
+
+.product-card-image .sale-badge {
+  top: 8px;
+  left: 8px;
+  font-size: 11px;
+  padding: 3px 8px;
 }
 
 .product-main-image img {

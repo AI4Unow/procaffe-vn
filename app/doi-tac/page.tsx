@@ -4,20 +4,20 @@ import FloatingWidgets from "../components/floating-widgets";
 import Link from "next/link";
 
 const partners = [
-    { name: "Saeco", logo: "https://procaffe.vn/wp-content/uploads/2023/02/saeco-logo.png" },
-    { name: "Wega", logo: "https://procaffe.vn/wp-content/uploads/2023/02/wega-logo.png" },
-    { name: "Gaggia", logo: "https://procaffe.vn/wp-content/uploads/2023/02/gaggia-logo.png" },
-    { name: "Eureka", logo: "https://procaffe.vn/wp-content/uploads/2023/02/eureka-logo.png" },
-    { name: "Bialetti", logo: "https://procaffe.vn/wp-content/uploads/2023/02/bialetti-logo.png" },
-    { name: "Vitamix", logo: "https://procaffe.vn/wp-content/uploads/2023/02/vitamix-logo.png" },
-    { name: "Lelit", logo: "https://procaffe.vn/wp-content/uploads/2023/02/lelit-logo.png" },
-    { name: "Fiorenzato", logo: "https://procaffe.vn/wp-content/uploads/2023/02/fiorenzato-logo.png" },
-    { name: "Mahlkönig", logo: "https://procaffe.vn/wp-content/uploads/2023/02/mahlkonig-logo.png" },
-    { name: "Kees van der Westen", logo: "https://procaffe.vn/wp-content/uploads/2024/01/Kees-Van-der-Westen-Logo.png" },
-    { name: "Synesso", logo: "https://procaffe.vn/wp-content/uploads/2024/01/Synesso-Logo.png" },
-    { name: "Barista Attitude", logo: "https://procaffe.vn/wp-content/uploads/2024/01/Barista-Attitude-Logo.png" },
-    { name: "Coffee Queen", logo: "https://procaffe.vn/wp-content/uploads/2023/02/coffee-queen-logo.png" },
-    { name: "Gimoka", logo: "https://procaffe.vn/wp-content/uploads/2023/02/gimoka-logo.png" },
+    { name: "Saeco", logo: "/images/brands/16.png" },
+    { name: "Wega", logo: "/images/brands/1.png" },
+    { name: "Gaggia", logo: "/images/brands/14.png" },
+    { name: "Eureka", logo: "/images/brands/6.png" },
+    { name: "Bialetti", logo: "/images/brands/12.png" },
+    { name: "Vitamix", logo: "/images/brands/3.png" },
+    { name: "Lelit", logo: "/images/brands/15.png" },
+    { name: "Fiorenzato", logo: "/images/brands/8.png" },
+    { name: "Mahlkönig", logo: "/images/brands/18.png" },
+    { name: "Kees van der Westen", logo: "/images/brands/21.png" },
+    { name: "Synesso", logo: "/images/brands/20.png" },
+    { name: "Barista Attitude", logo: "/images/brands/5.png" },
+    { name: "Coffee Queen", logo: "/images/brands/4.png" },
+    { name: "Gimoka", logo: "/images/brands/10.png" },
 ];
 
 export default function PartnersPage() {

@@ -61,14 +61,21 @@ function formatVND(priceStr: string): string {
 function extractPrice(product: (typeof products)[0]): {
     regular: string | null;
     sale: string | null;
+    salePercent: number | null;
 } {
     const p = product as typeof product & { regular_price?: string; sale_price?: string };
 
     // Use JSON fields first (available for all 611 products)
     if (p.regular_price) {
+        const regNum = parseInt(p.regular_price, 10);
+        const saleNum = p.sale_price ? parseInt(p.sale_price, 10) : 0;
+        const percent = (regNum > 0 && saleNum > 0 && saleNum < regNum)
+            ? Math.round(((regNum - saleNum) / regNum) * 100)
+            : null;
         return {
             regular: formatVND(p.regular_price),
             sale: p.sale_price ? formatVND(p.sale_price) : null,
+            salePercent: percent,
         };
     }
 
@@ -77,9 +84,9 @@ function extractPrice(product: (typeof products)[0]): {
     const priceRegex = /(\d{1,3}(?:\.\d{3}){1,3})\s*(?:đ|VND|₫)/i;
     const match = text.match(priceRegex);
     if (match) {
-        return { regular: match[1] + "đ", sale: null };
+        return { regular: match[1] + "đ", sale: null, salePercent: null };
     }
-    return { regular: null, sale: null };
+    return { regular: null, sale: null, salePercent: null };
 }
 
 function ProductDetailClient({ slug }: { slug: string }) {
@@ -146,6 +153,9 @@ function ProductDetailClient({ slug }: { slug: string }) {
                         {/* Gallery */}
                         <div className="product-gallery">
                             <div className="product-main-image">
+                                {price.salePercent && (
+                                    <span className="sale-badge">SALE {price.salePercent}%</span>
+                                )}
                                 <img
                                     src={allImages[selectedImage] || allImages[0]}
                                     alt={product.title}

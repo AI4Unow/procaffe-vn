@@ -4,16 +4,16 @@ import FloatingWidgets from "../components/floating-widgets";
 import Link from "next/link";
 
 const customers = [
-    { name: "Trung Nguyên", logo: "https://procaffe.vn/wp-content/uploads/2023/02/trung-nguyen-logo.png" },
-    { name: "Phúc Long", logo: "https://procaffe.vn/wp-content/uploads/2023/02/phuc-long-logo.png" },
-    { name: "The Coffee House", logo: "https://procaffe.vn/wp-content/uploads/2023/02/the-coffee-house-logo.png" },
-    { name: "Accor Hotels", logo: "https://procaffe.vn/wp-content/uploads/2023/02/accor-logo.png" },
-    { name: "Mercure", logo: "https://procaffe.vn/wp-content/uploads/2023/02/mercure-logo.png" },
-    { name: "Novotel", logo: "https://procaffe.vn/wp-content/uploads/2023/02/novotel-logo.png" },
-    { name: "Sofitel", logo: "https://procaffe.vn/wp-content/uploads/2023/02/sofitel-logo.png" },
-    { name: "Pullman", logo: "https://procaffe.vn/wp-content/uploads/2023/02/pullman-logo.png" },
-    { name: "Sheraton", logo: "https://procaffe.vn/wp-content/uploads/2023/02/sheraton-logo.png" },
-    { name: "Hilton", logo: "https://procaffe.vn/wp-content/uploads/2023/02/hilton-logo.png" },
+    { name: "Trung Nguyên", category: "Chuỗi cà phê" },
+    { name: "Phúc Long", category: "Chuỗi cà phê" },
+    { name: "The Coffee House", category: "Chuỗi cà phê" },
+    { name: "Accor Hotels", category: "Khách sạn quốc tế" },
+    { name: "Mercure", category: "Khách sạn quốc tế" },
+    { name: "Novotel", category: "Khách sạn quốc tế" },
+    { name: "Sofitel", category: "Khách sạn cao cấp" },
+    { name: "Pullman", category: "Khách sạn cao cấp" },
+    { name: "Sheraton", category: "Khách sạn cao cấp" },
+    { name: "Hilton", category: "Khách sạn cao cấp" },
 ];
 
 export default function CustomersPage() {
@@ -39,8 +39,17 @@ export default function CustomersPage() {
                 <div className="container">
                     <div className="logo-grid">
                         {customers.map((c, i) => (
-                            <div key={i} className="logo-grid-item">
-                                <img src={c.logo} alt={c.name} title={c.name} />
+                            <div key={i} className="logo-grid-item" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 16px' }}>
+                                <div style={{
+                                    width: 64, height: 64, borderRadius: '50%',
+                                    background: '#E65100', color: '#fff',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    fontSize: 24, fontWeight: 700, marginBottom: 12
+                                }}>
+                                    {c.name.charAt(0)}
+                                </div>
+                                <strong style={{ fontSize: 14, textAlign: 'center' }}>{c.name}</strong>
+                                <span style={{ fontSize: 12, color: '#888', marginTop: 4 }}>{c.category}</span>
                             </div>
                         ))}
                     </div>
@@ -52,3 +61,4 @@ export default function CustomersPage() {
         </>
     );
 }
+

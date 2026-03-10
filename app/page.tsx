@@ -80,6 +80,31 @@ const categoryBlocks = [
     ],
     position: "right",
   },
+  {
+    image: "/images/categories/banner-caffe-5.jpg",
+    title: "MÁY XAY VITAMIX",
+    description:
+      "Vitamix - thương hiệu máy xay sinh tố hàng đầu thế giới với công nghệ lưỡi dao bền bỉ, motor mạnh mẽ, phù hợp cho quán cà phê, nhà hàng và gia đình. Khả năng xay nhuyễn mọi nguyên liệu từ đá, trái cây đến các loại hạt cứng.",
+    links: [
+      { label: "Vitamix Drink Machine Two-Speed", href: "/products?cat=may-xay-vitamix" },
+      { label: "Vitamix The Quiet One", href: "/products?cat=may-xay-vitamix" },
+      { label: "Vitamix Blending Station", href: "/products?cat=may-xay-vitamix" },
+    ],
+    position: "left",
+  },
+  {
+    image: "/images/categories/banner-caffe-6.jpg",
+    title: "PHỤ KIỆN - PHỤ TÙNG",
+    description:
+      "Đầy đủ phụ kiện, linh kiện thay thế cho máy pha cà phê, máy xay cà phê. Từ tách cà phê, tamper, pitcher cho tới phin lọc, hóa chất vệ sinh máy, giúp bạn duy trì và tối ưu hiệu suất hoạt động của thiết bị.",
+    links: [
+      { label: "Bộ tách và đĩa cà phê", href: "/products?cat=phu-kien" },
+      { label: "Phụ kiện pha cà phê", href: "/products?cat=phu-kien" },
+      { label: "Hóa chất vệ sinh máy", href: "/products?cat=phu-kien" },
+      { label: "Linh kiện thay thế", href: "/products?cat=phu-kien" },
+    ],
+    position: "right",
+  },
 ];
 
 export default function HomePage() {
