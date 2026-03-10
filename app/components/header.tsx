@@ -41,7 +41,7 @@ const navItems = [
     },
     {
         label: "Thương hiệu",
-        href: "/products",
+        href: "/thuong-hieu",
         children: [
             { label: "Bialetti", href: "/products?cat=bialetti" },
             { label: "Wega", href: "/products?cat=wega" },
