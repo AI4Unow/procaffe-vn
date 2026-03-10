@@ -5,19 +5,19 @@ import Link from "next/link";
 
 const partners = [
     { name: "Saeco", logo: "/images/brands/16.png" },
-    { name: "Wega", logo: "/images/brands/1.png" },
+    { name: "Wega", logo: "/images/brands/11.png" },
     { name: "Gaggia", logo: "/images/brands/14.png" },
-    { name: "Eureka", logo: "/images/brands/6.png" },
+    { name: "Eureka", logo: "/images/brands/18.png" },
     { name: "Bialetti", logo: "/images/brands/12.png" },
-    { name: "Vitamix", logo: "/images/brands/3.png" },
+    { name: "Vitamix", logo: "/images/brands/21.png" },
     { name: "Lelit", logo: "/images/brands/15.png" },
     { name: "Fiorenzato", logo: "/images/brands/8.png" },
-    { name: "Mahlkönig", logo: "/images/brands/18.png" },
-    { name: "Kees van der Westen", logo: "/images/brands/21.png" },
+    { name: "Mahlkönig", logo: "/images/brands/6.png" },
+    { name: "Kees van der Westen", logo: "/images/brands/1.png" },
     { name: "Synesso", logo: "/images/brands/20.png" },
-    { name: "Barista Attitude", logo: "/images/brands/5.png" },
-    { name: "Coffee Queen", logo: "/images/brands/4.png" },
-    { name: "Gimoka", logo: "/images/brands/10.png" },
+    { name: "Barista Attitude", logo: "/images/brands/7.png" },
+    { name: "Coffee Queen", logo: "/images/brands/19.png" },
+    { name: "Gimoka", logo: "/images/brands/5.png" },
 ];
 
 export default function PartnersPage() {

@@ -16,7 +16,7 @@ const sliderBanners = [
   { src: "/images/sliders/slider-4c-alt.webp", alt: "ProCaffe 4C", href: "/" },
 ];
 
-/* Brand logos to match original site: Synesso, Saeco, Lelit, Gaggia, Crem, Fiorenzato, Mahlkonig, Eureka, Bialetti */
+/* Brand logos: Synesso(20), Saeco(16), Lelit(15), Gaggia(14), CREM(19), Fiorenzato(8), Mahlkönig(6), Eureka(18), Bialetti(12) */
 const targetBrands = [20, 16, 15, 14, 19, 8, 6, 18, 12];
 const brandLogos = targetBrands.map(id => ({
   src: `/images/brands/${id}.png`,

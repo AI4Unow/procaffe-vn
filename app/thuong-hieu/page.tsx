@@ -15,27 +15,27 @@ const brandCategories = (categories as typeof categories)
 
 /* Brand logos from /images/brands/ with ID mapping */
 const brandLogoMap: Record<string, number> = {
-    synesso: 20,
-    saeco: 16,
-    lelit: 15,
-    gaggia: 14,
-    kuvings: 19,
+    "kees-van-der-westen": 1,
+    puqpress: 2,
+    cino: 3,
+    // 4 = whip-it (no brand category in data)
+    gimoka: 5,
+    mahlkonig: 6,
+    "barista-attitude": 7,
     fiorenzato: 8,
-    eureka: 6,
-    mahlkonig: 18,
+    bwt: 9,
+    "bravilor-bonamat": 10,
+    wega: 11,
     bialetti: 12,
-    wega: 1,
-    vitamix: 3,
-    "coffee-queen": 4,
-    "barista-attitude": 5,
-    casadio: 7,
-    cunill: 9,
-    gimoka: 10,
-    konitz: 11,
-    "la-spaziale": 13,
-    heritage: 17,
-    procaffe: 2,
-    "kees-van-der-westen": 21,
+    heritage: 13,
+    gaggia: 14,
+    lelit: 15,
+    saeco: 16,
+    // 17 = Eureka Oro variant
+    eureka: 18,
+    "coffee-queen": 19, // CREM brand logo
+    synesso: 20,
+    vitamix: 21,
 };
 
 function getProductImage(product: (typeof products)[0]): string {
