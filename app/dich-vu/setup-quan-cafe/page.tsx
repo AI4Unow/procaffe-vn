@@ -96,7 +96,7 @@ export default function SetupQuanPage() {
 
                                 <div className="about-image-block">
                                     <img
-                                        src="https://procaffe.vn/wp-content/uploads/2024/02/dich-vu-set-up-quan-cafe-1.jpg"
+                                        src="/images/content/dich-vu-set-up-quan-cafe-1.jpg"
                                         alt="dịch vụ set-up quán cafe"
                                         style={{ maxWidth: 800, width: "100%" }}
                                     />
@@ -177,7 +177,7 @@ export default function SetupQuanPage() {
 
                                 <div className="about-image-block">
                                     <img
-                                        src="https://procaffe.vn/wp-content/uploads/2023/07/banner-procaffe-group.jpg"
+                                        src="/images/content/banner-procaffe-group.jpg"
                                         alt="ProCaffe Group"
                                         style={{ maxWidth: 800, width: "100%" }}
                                     />

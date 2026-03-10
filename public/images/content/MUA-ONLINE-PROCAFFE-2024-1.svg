@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" rx="12" fill="#FFF5EE"/>
+  <rect x="40" y="40" width="720" height="320" rx="16" fill="#fff" stroke="#F37021" stroke-width="2"/>
+  <text x="400" y="170" text-anchor="middle" fill="#F37021" font-family="sans-serif" font-size="28" font-weight="700">🛒 MUA ONLINE</text>
+  <text x="400" y="210" text-anchor="middle" fill="#4A2C1A" font-family="sans-serif" font-size="20" font-weight="600">PROCAFFE 2024</text>
+  <text x="400" y="260" text-anchor="middle" fill="#666" font-family="sans-serif" font-size="14">Mua hàng trực tuyến dễ dàng, an toàn</text>
+  <text x="400" y="290" text-anchor="middle" fill="#666" font-family="sans-serif" font-size="14">Giao hàng toàn quốc – Thanh toán linh hoạt</text>
+</svg>

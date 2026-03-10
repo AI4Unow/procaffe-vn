@@ -35,6 +35,16 @@ function formatVND(priceStr: string): string {
     return num.toLocaleString("vi-VN") + "đ";
 }
 
+function getDiscountPercent(product: (typeof products)[0]): number | null {
+    const p = product as typeof product & { regular_price?: string; sale_price?: string };
+    const regular = parseInt(p.regular_price || "0", 10);
+    const sale = parseInt(p.sale_price || "0", 10);
+    if (regular > 0 && sale > 0 && sale < regular) {
+        return Math.round((1 - sale / regular) * 100);
+    }
+    return null;
+}
+
 function extractPrice(product: (typeof products)[0]): {
     regular: string | null;
     sale: string | null;
@@ -137,7 +147,7 @@ export default function PromotionsPage() {
                             {/* Promo Banner */}
                             <div className="promo-banner">
                                 <img
-                                    src="https://procaffe.vn/wp-content/uploads/2026/03/banner-website.jpg"
+                                    src="/images/content/banner-website.jpg"
                                     alt="Khuyến mãi tháng 3"
                                     loading="lazy"
                                 />
@@ -164,6 +174,7 @@ export default function PromotionsPage() {
                             <div className="product-grid product-grid-3col">
                                 {promoProducts.map((product) => {
                                     const price = extractPrice(product);
+                                    const discount = getDiscountPercent(product);
                                     return (
                                         <Link
                                             key={product.id}
@@ -178,8 +189,8 @@ export default function PromotionsPage() {
                                                     alt={product.title}
                                                     loading="lazy"
                                                 />
-                                                <span className="promo-badge">
-                                                    KM
+                                                <span className="promo-badge" style={{ background: '#e00' }}>
+                                                    {discount ? `SALE ${discount}%` : 'SALE'}
                                                 </span>
                                             </div>
                                             <div className="product-card-info">

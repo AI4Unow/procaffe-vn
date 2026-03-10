@@ -47,7 +47,7 @@ export default function AboutPage() {
                     {/* Team photo */}
                     <div className="about-image-block">
                         <img
-                            src="https://procaffe.vn/wp-content/uploads/2023/04/tam-nhin-procaffe-1.jpg"
+                            src="/images/content/tam-nhin-procaffe-1.jpg"
                             alt="Đội ngũ ProCaffe tại sự kiện triển lãm"
                             width={900}
                             height={511}
@@ -99,7 +99,7 @@ export default function AboutPage() {
                     {/* Showroom photo */}
                     <div className="about-image-block">
                         <img
-                            src="https://procaffe.vn/wp-content/uploads/2023/04/MAY-PHA-CAFE-HA-NOI.jpg"
+                            src="/images/content/MAY-PHA-CAFE-HA-NOI.jpg"
                             alt="Một góc showroom ProCaffe Hà Nội"
                             width={700}
                             height={700}

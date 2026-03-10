@@ -33,7 +33,7 @@ export default function ConsultingServicePage() {
 
                             <div className="article-content">
                                 <img
-                                    src="https://procaffe.vn/wp-content/uploads/2018/06/slider-home-2018.jpg"
+                                    src="/images/content/slider-home-2018.svg"
                                     alt="Tư vấn giải pháp kinh doanh cà phê chuyên nghiệp"
                                     style={{ width: "100%", borderRadius: "8px", marginBottom: "30px" }}
                                 />

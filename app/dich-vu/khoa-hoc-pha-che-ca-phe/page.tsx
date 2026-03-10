@@ -71,7 +71,7 @@ export default function KhoaHocPage() {
 
                                 <div className="about-image-block">
                                     <img
-                                        src="https://procaffe.vn/wp-content/uploads/2024/02/khoa-hoc-pha-che-ca-phe-1.jpg"
+                                        src="/images/content/khoa-hoc-pha-che-ca-phe-1.jpg"
                                         alt="khóa học pha chế cà phê"
                                         style={{ maxWidth: 800, width: "100%" }}
                                     />
@@ -181,7 +181,7 @@ export default function KhoaHocPage() {
 
                                 <div className="about-image-block">
                                     <img
-                                        src="https://procaffe.vn/wp-content/uploads/2024/02/khoa-hoc-pha-che-ca-phe-2.jpg"
+                                        src="/images/content/khoa-hoc-pha-che-ca-phe-2.jpg"
                                         alt="khóa học pha chế cà phê giảng viên"
                                         style={{ maxWidth: 800, width: "100%" }}
                                     />
@@ -205,7 +205,7 @@ export default function KhoaHocPage() {
 
                                 <div className="about-image-block">
                                     <img
-                                        src="https://procaffe.vn/wp-content/uploads/2023/07/banner-procaffe-group.jpg"
+                                        src="/images/content/banner-procaffe-group.jpg"
                                         alt="ProCaffe Group"
                                         style={{ maxWidth: 800, width: "100%" }}
                                     />

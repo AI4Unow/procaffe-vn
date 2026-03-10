@@ -8,28 +8,28 @@ import Link from "next/link";
 const jobPositions = [
     {
         title: "Key Account Manager – Quản Lý Dự Án HORECA",
-        image: "https://procaffe.vn/wp-content/uploads/2025/06/quan-ly-du-an-procaffe-1.jpg",
+        image: "/images/content/quan-ly-du-an-procaffe-1.jpg",
         description:
             "Tuyển dụng Key Account Manager – thu nhập cạnh tranh, môi trường chuyên nghiệp, cơ hội phát triển không giới hạn. Chúng tôi đang tìm kiếm một ứng viên bản lĩnh, giao tiếp tốt, có ít nhất 2 năm kinh nghiệm bán hàng B2B, đặc biệt trong ngành hàng điện gia dụng hoặc kênh HORECA / F&B.",
         link: "/thanh-vien/tuyen-dung",
     },
     {
         title: "Kế toán bán hàng Hà Nội",
-        image: "https://procaffe.vn/wp-content/uploads/2025/06/KE-TOAN-VIEN.jpg",
+        image: "/images/content/KE-TOAN-VIEN.jpg",
         description:
             "Đi làm ngay – Thu nhập 9–15 triệu, không giới hạn độ tuổi. Nếu bạn đã có từ 1 năm kinh nghiệm, tốt nghiệp Cao đẳng/Đại học chuyên ngành Tài chính – Kế toán, thành thạo Excel và phần mềm kế toán (ưu tiên biết Amis).",
         link: "/thanh-vien/tuyen-dung",
     },
     {
         title: "KỸ THUẬT VIÊN CƠ ĐIỆN TỬ",
-        image: "https://procaffe.vn/wp-content/uploads/2025/02/ky-thuat-vien-co-dien-tu.jpg",
+        image: "/images/content/ky-thuat-vien-co-dien-tu.jpg",
         description:
             "Tuyển dụng Chuyên viên Kỹ thuật Cơ điện tử làm việc tại Tân Bình. Thu nhập từ 8–12 triệu. Nếu bạn là nam từ 25 tuổi, tốt nghiệp ngành Cơ Điện Tử, có tư duy kỹ thuật tốt và thích làm việc thực tế.",
         link: "/thanh-vien/tuyen-dung",
     },
     {
         title: "KẾ TOÁN VIÊN",
-        image: "https://procaffe.vn/wp-content/uploads/2025/02/ke-toan-vien-ho-chi-minh.jpg",
+        image: "/images/content/ke-toan-vien-ho-chi-minh.jpg",
         description:
             "Tuyển dụng Kế Toán Viên – làm việc tại Tân Bình, TP.HCM | Lương cao. Bạn là người cẩn thận, trung thực và muốn gắn bó với công việc kế toán chuyên sâu trong lĩnh vực nhập khẩu.",
         link: "/thanh-vien/tuyen-dung",
@@ -77,7 +77,7 @@ export default function RecruitmentPage() {
                                         <div className="job-card-body">
                                             <h3 className="job-card-title">{job.title}</h3>
                                             <p className="job-card-desc">{job.description}</p>
-                                            <span className="job-card-price">Liên hệ</span>
+                                            <a href="tel:02835264108" className="cta-phone-btn" style={{ fontSize: 13, padding: '6px 16px' }}>📞 Liên hệ</a>
                                         </div>
                                     </div>
                                 ))}

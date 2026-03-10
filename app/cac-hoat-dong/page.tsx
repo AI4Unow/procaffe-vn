@@ -15,7 +15,7 @@ const timelineData = [
             {
                 title: "ProCaffe Group – Nhà phân phối độc quyền thương hiệu WEGA tại Việt Nam",
                 content: `Chúng tôi tự hào thông báo ProCaffe là nhà phân phối độc quyền thương hiệu máy pha cà phê WEGA tại Việt Nam, mang đến cơ hội tiếp cận trực tiếp sản phẩm chính hãng từ Ý cho các quán cà phê, chuỗi F&B và barista chuyên nghiệp trên toàn quốc.`,
-                image: "https://procaffe.vn/wp-content/uploads/2025/01/z6253768693693_55b3baee3a8cf58cbb1ba6acf506e61c.jpg",
+                image: "/images/content/wega-certification.svg",
                 imageAlt: "Giấy chứng nhận nhà phân phối độc quyền WEGA tại Việt Nam",
             },
             {
@@ -30,7 +30,7 @@ const timelineData = [
             {
                 title: "CafeShow Việt Nam 2023 - Sự kiện không thể bỏ qua của người yêu cà phê",
                 content: `CafeShow Việt Nam, sự kiện cà phê hàng năm đã trở thành điểm hẹn của các tín đồ yêu cà phê trên khắp cả nước. Được tổ chức vào tháng 4 hàng năm tại SECC quận 7, Tp. HCM, sự kiện này tập trung các gian hàng chất lượng và những máy móc thiết bị tân tiến nhất ngành F&B.`,
-                image: "https://procaffe.vn/wp-content/uploads/2023/04/tam-nhin-procaffe-1.jpg",
+                image: "/images/content/tam-nhin-procaffe-1.jpg",
                 imageAlt: "Đội ngũ ProCaffe tại CafeShow 2023",
             },
         ],

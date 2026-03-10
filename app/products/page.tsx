@@ -380,7 +380,7 @@ function ProductsContent() {
                             {/* Promo Banner */}
                             <div className="promo-banner">
                                 <img
-                                    src="https://procaffe.vn/wp-content/uploads/2026/03/banner-website.jpg"
+                                    src="/images/content/banner-website.jpg"
                                     alt="Khuyến mãi tháng 3"
                                     loading="lazy"
                                 />

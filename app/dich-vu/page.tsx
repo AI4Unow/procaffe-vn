@@ -4,6 +4,50 @@ import FloatingWidgets from "../components/floating-widgets";
 import ArticleSidebar from "../components/article-sidebar";
 import Link from "next/link";
 
+export const metadata = {
+    title: "Dịch vụ | ProCaffe - Dịch vụ bảo trì, sửa chữa máy pha cà phê",
+    description: "Dịch vụ bảo trì, sửa chữa, cho thuê máy pha cà phê chuyên nghiệp từ ProCaffe. Đội ngũ kỹ thuật giàu kinh nghiệm, phụ tùng chính hãng.",
+};
+
+const serviceCards = [
+    {
+        icon: "🔧",
+        title: "Sửa chữa & Bảo dưỡng",
+        desc: "Bảo trì định kỳ, sửa chữa máy pha cà phê chuyên nghiệp",
+        href: "#bao-tri",
+    },
+    {
+        icon: "📋",
+        title: "Cho thuê máy pha cà phê",
+        desc: "Thuê máy pha cà phê chuyên nghiệp cho quán, sự kiện",
+        href: "/dich-vu/cho-thue-may-pha-ca-phe",
+    },
+    {
+        icon: "☕",
+        title: "Mua cà phê tặng máy",
+        desc: "Chương trình mua cà phê tặng máy pha hấp dẫn",
+        href: "/dich-vu/mua-ca-phe-tang-may",
+    },
+    {
+        icon: "🎓",
+        title: "Khóa học pha chế",
+        desc: "Đào tạo pha chế cà phê chuyên nghiệp",
+        href: "/dich-vu/khoa-hoc-pha-che-ca-phe",
+    },
+    {
+        icon: "🏪",
+        title: "Setup quán café",
+        desc: "Tư vấn và setup quán cà phê trọn gói",
+        href: "/dich-vu/setup-quan-cafe",
+    },
+    {
+        icon: "💡",
+        title: "Tư vấn giải pháp",
+        desc: "Tư vấn giải pháp cà phê cho doanh nghiệp",
+        href: "/dich-vu/tu-van-giai-phap",
+    },
+];
+
 export default function ServicesPage() {
     return (
         <>
@@ -17,13 +61,40 @@ export default function ServicesPage() {
                 </div>
             </div>
 
-            <section className="section">
+            {/* Service Directory Grid */}
+            <section className="content-section" style={{ paddingBottom: 0 }}>
+                <div className="container">
+                    <div className="shop-title-bar">
+                        <div className="shop-title-line" />
+                        <h1>DỊCH VỤ PROCAFFE</h1>
+                        <div className="shop-title-line" />
+                    </div>
+                    <div className="services-directory-grid">
+                        {serviceCards.map((svc, idx) => (
+                            <Link
+                                key={idx}
+                                href={svc.href}
+                                className="service-dir-card"
+                            >
+                                <span className="service-dir-icon">
+                                    {svc.icon}
+                                </span>
+                                <h3>{svc.title}</h3>
+                                <p>{svc.desc}</p>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Maintenance Article */}
+            <section className="section" id="bao-tri">
                 <div className="container">
                     <div className="article-layout">
                         <div className="article-main">
-                            <h1 className="article-title">
+                            <h2 className="article-title">
                                 Dịch vụ bảo trì máy pha cà phê
-                            </h1>
+                            </h2>
                             <span className="article-date">23/09/2020</span>
 
                             <div className="article-body">
@@ -52,7 +123,7 @@ export default function ServicesPage() {
 
                                 <div className="about-image-block">
                                     <img
-                                        src="https://procaffe.vn/wp-content/uploads/2017/09/dich-vu-bao-tri-may-pha-ca-phe.jpg"
+                                        src="/images/services/dich-vu-bao-tri.svg"
                                         alt="bảo trì máy pha cà phê"
                                         style={{ maxWidth: 500, width: "100%" }}
                                     />
@@ -78,7 +149,7 @@ export default function ServicesPage() {
 
                                 <div className="about-image-block">
                                     <img
-                                        src="https://procaffe.vn/wp-content/uploads/2017/09/lap-dat-may-pha-ca-phe.jpg"
+                                        src="/images/services/lap-dat-may.svg"
                                         alt="lắp đặt máy pha cà phê"
                                         style={{ maxWidth: 500, width: "100%" }}
                                     />
@@ -121,7 +192,7 @@ export default function ServicesPage() {
 
                                 <div className="about-image-block">
                                     <img
-                                        src="https://procaffe.vn/wp-content/uploads/2017/09/dao-tao-pha-che.jpg"
+                                        src="/images/services/dao-tao-pha-che.svg"
                                         alt="đào tạo pha chế cà phê"
                                         style={{ maxWidth: 500, width: "100%" }}
                                     />
@@ -137,14 +208,6 @@ export default function ServicesPage() {
                                     của kỹ thuật viên ra sao, phụ tùng chính hãng sẵn có hay không… đều phản ánh
                                     sự tín nhiệm của nhà cung cấp ấy.
                                 </p>
-
-                                <div className="about-image-block">
-                                    <img
-                                        src="https://procaffe.vn/wp-content/uploads/2017/09/bao-tri-may-pha-ca-phe-dinh-ky.jpg"
-                                        alt="bảo trì máy pha cà phê định kỳ"
-                                        style={{ maxWidth: 500, width: "100%" }}
-                                    />
-                                </div>
 
                                 <p>
                                     Vì vậy, ngoài việc so sánh các yếu tố giá cả, chất lượng, tính năng, hay

@@ -35,7 +35,7 @@ export default function MemberRegistrationPage() {
                                 {/* Banner */}
                                 <div className="article-banner">
                                     <img
-                                        src="https://procaffe.vn/wp-content/uploads/2024/02/MUA-ONLINE-PROCAFFE-2024-1.png"
+                                        src="/images/content/MUA-ONLINE-PROCAFFE-2024-1.svg"
                                         alt="Đăng ký thành viên MUA ONLINE - Miễn phí vận chuyển toàn quốc - Giảm đến 10% tất cả sản phẩm"
                                         style={{ width: "100%", height: "auto" }}
                                     />
