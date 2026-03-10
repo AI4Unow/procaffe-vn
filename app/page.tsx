@@ -3,6 +3,8 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import FloatingWidgets from "./components/floating-widgets";
 import HeroSlider from "./components/hero-slider";
+import BrandLogosCarousel from "./components/brand-logos-carousel";
+import VideoSlider from "./components/video-slider";
 import posts from "../data/posts.json";
 
 /* Slider banner images from FTP download */
@@ -130,16 +132,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Brand Logo Carousel */}
-      <section className="brand-partners">
-        <div className="brand-logos-track">
-          {[...brandLogos, ...brandLogos].map((brand, i) => (
-            <div key={i} className="brand-logo-item">
-              <img src={brand.src} alt={brand.alt} loading="lazy" />
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Brand Logo Carousel — draggable */}
+      <BrandLogosCarousel logos={brandLogos} />
 
       {/* Category Focus Blocks */}
       <section className="category-intro">
@@ -165,18 +159,11 @@ export default function HomePage() {
         ))}
       </section>
 
-      {/* YouTube Video + Blog Posts */}
+      {/* YouTube Video Slider + Blog Posts */}
       <section className="video-blog-section">
         <div className="video-blog-row">
           <div className="video-half">
-            <div className="video-embed">
-              <iframe
-                src="https://www.youtube.com/embed/ZbujxQ8iIWs"
-                title="ProCaffe YouTube"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+            <VideoSlider />
             <Link href="/blog" className="view-more-link">
               ≫ Xem thêm
             </Link>

@@ -6,6 +6,7 @@ import Link from "next/link";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import TrustBadgesSidebar from "../components/trust-badges-sidebar";
+import ProductReviewSection from "../components/product-review-section";
 import products from "../../data/products.json";
 import categories from "../../data/product-categories.json";
 
@@ -485,6 +486,12 @@ function ProductsContent() {
 
                             {/* Pagination bottom */}
                             <PaginationBlock />
+
+                            {/* Review Section */}
+                            <ProductReviewSection
+                                slug="products"
+                                productTitle="Cửa hàng ProCaffe"
+                            />
                         </div>
                     </div>
                 </div>

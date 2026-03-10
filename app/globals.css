@@ -543,6 +543,75 @@ h4 {
   }
 }
 
+/* Draggable brand logos track (replaces CSS-only animation) */
+.brand-logos-track-draggable {
+  display: flex;
+  gap: 30px;
+  user-select: none;
+  will-change: transform;
+}
+
+/* ===== VIDEO SLIDER ===== */
+.video-slider {
+  position: relative;
+}
+
+.video-slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.video-slider-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: var(--dark);
+}
+
+.video-slider-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #fff5ee;
+}
+
+.video-slider-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.video-slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.video-slider-dot.active {
+  background: var(--primary);
+}
+
+.video-slider-title {
+  text-align: center;
+  font-size: 13px;
+  color: var(--gray);
+  margin-top: 8px;
+}
+
+
 /* ===== CATEGORY INTRODUCTION BLOCKS ===== */
 .category-intro {
   background: var(--white);
@@ -3353,6 +3422,109 @@ section {
   color: #f5a623;
   font-size: 12px;
 }
+
+.sidebar-featured-products {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-product-thumb {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+.sidebar-product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sidebar-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ===== CONTACT INQUIRY FORM ===== */
+.inquiry-form {
+  background: #f9f6f2;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 32px 0;
+}
+
+.inquiry-form h3 {
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.inquiry-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.inquiry-form-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.inquiry-form input:focus,
+.inquiry-form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.inquiry-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.inquiry-form-submit {
+  grid-column: 1 / -1;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.inquiry-form-submit:hover {
+  background: #c74700;
+}
+
+.inquiry-form-success {
+  text-align: center;
+  padding: 16px;
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 14px;
+}
+
 
 /* Sidebar news */
 .sidebar-news-item {

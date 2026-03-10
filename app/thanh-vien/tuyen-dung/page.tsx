@@ -63,64 +63,7 @@ export default function RecruitmentPage() {
                         <div className="article-main">
                             <h1 className="article-title">PROCAFFE TUYỂN DỤNG</h1>
 
-                            {/* Company culture section */}
-                            <div className="recruitment-culture">
-                                <h2>Sứ mạng – Tầm nhìn – Chiến lược</h2>
-                                <p>
-                                    ProCaffe là đối tác đồng hành tin cậy, mang đến các giải pháp
-                                    nhanh chóng, dễ dàng, và ở đẳng cấp chuyên gia về cà phê, dụng
-                                    cụ pha chế cà phê, đồ uống và thực phẩm.
-                                </p>
-                                <p>
-                                    Mỗi ProCaffer (*) đều có thói quen giữ lời hứa, luôn phản hồi
-                                    kịp thời và thể hiện tính chuyên nghiệp trong mọi việc; luôn
-                                    hoàn thành công việc với tốc độ nhanh, và làm mọi việc trở nên
-                                    dễ dàng thuận tiện cho người khác; thể hiện tâm huyết, kỹ năng
-                                    và đẳng cấp của một chuyên gia trong việc mình làm.
-                                </p>
-                                <p>
-                                    Mỗi ProCaffer là đại diện duy nhất của ProCaffe khi tiếp xúc
-                                    với khách hàng. Từng ProCaffer không chỉ là chuyên gia trong
-                                    lĩnh vực chuyên môn, mà còn tự tin là đại diện xuất sắc mỗi
-                                    khi có cơ hội tiếp xúc với khách hàng dọc hành trình trải
-                                    nghiệm.
-                                </p>
-                                <p>
-                                    ProCaffers còn là khách hàng của nhau. Từng ProCaffer đều nỗ
-                                    lực để giữ lời hứa với cộng sự, làm mọi việc trở nên dễ dàng
-                                    thuận tiện cho đồng nghiệp, và nỗ lực để trở nên giỏi nhất
-                                    trong việc mình làm.
-                                </p>
-                                <p>
-                                    ProCaffe cam kết dành tất cả trái tim, ý chí, năng lượng, hi
-                                    vọng, nguồn lực, niềm tự hào, sự can đảm và kiên định để đạt
-                                    được các mục tiêu chiến lược đó.
-                                </p>
-                                <p className="procaffer-note">
-                                    (*) ProCaffer(s) là nhân sự thuộc ProCaffe, gồm các cổ đông
-                                    trực tiếp điều hành, ban lãnh đạo, các quản lý, nhân viên, cộng
-                                    tác viên.
-                                </p>
-                            </div>
-
-                            {/* CTA Banner */}
-                            <div className="cta-banner recruitment-cta">
-                                <p>
-                                    <strong>GỬI CV NGAY</strong> – Email:{" "}
-                                    <a href="mailto:info@procaffe.vn">info@procaffe.vn</a>
-                                </p>
-                                <p className="cta-phones">
-                                    Liên hệ:{" "}
-                                    <a href="tel:02835264108">028 3526 4108</a>
-                                </p>
-                            </div>
-
-                            {/* Job positions heading */}
-                            <h2 className="section-heading" style={{ marginTop: 40 }}>
-                                TUYỂN DỤNG
-                            </h2>
-
-                            {/* Job positions grid */}
+                            {/* Job positions grid — shown first for prominence */}
                             <div className="job-cards-grid">
                                 {jobPositions.map((job, idx) => (
                                     <div key={idx} className="job-card">
@@ -138,6 +81,18 @@ export default function RecruitmentPage() {
                                         </div>
                                     </div>
                                 ))}
+                            </div>
+
+                            {/* CTA Banner */}
+                            <div className="cta-banner recruitment-cta" style={{ marginTop: 24 }}>
+                                <p>
+                                    <strong>GỬI CV NGAY</strong> – Email:{" "}
+                                    <a href="mailto:info@procaffe.vn">info@procaffe.vn</a>
+                                </p>
+                                <p className="cta-phones">
+                                    Liên hệ:{" "}
+                                    <a href="tel:02835264108">028 3526 4108</a>
+                                </p>
                             </div>
 
                             {/* Detailed job descriptions */}
@@ -205,6 +160,28 @@ export default function RecruitmentPage() {
                                         trình phát triển rõ ràng? Ứng tuyển ngay hôm nay!
                                     </p>
                                 </div>
+                            </div>
+
+                            {/* Company culture section — moved below job listings */}
+                            <div className="recruitment-culture" style={{ marginTop: 32 }}>
+                                <h2>Sứ mạng – Tầm nhìn – Chiến lược</h2>
+                                <p>
+                                    ProCaffe là đối tác đồng hành tin cậy, mang đến các giải pháp
+                                    nhanh chóng, dễ dàng, và ở đẳng cấp chuyên gia về cà phê, dụng
+                                    cụ pha chế cà phê, đồ uống và thực phẩm.
+                                </p>
+                                <p>
+                                    Mỗi ProCaffer (*) đều có thói quen giữ lời hứa, luôn phản hồi
+                                    kịp thời và thể hiện tính chuyên nghiệp trong mọi việc; luôn
+                                    hoàn thành công việc với tốc độ nhanh, và làm mọi việc trở nên
+                                    dễ dàng thuận tiện cho người khác; thể hiện tâm huyết, kỹ năng
+                                    và đẳng cấp của một chuyên gia trong việc mình làm.
+                                </p>
+                                <p className="procaffer-note">
+                                    (*) ProCaffer(s) là nhân sự thuộc ProCaffe, gồm các cổ đông
+                                    trực tiếp điều hành, ban lãnh đạo, các quản lý, nhân viên, cộng
+                                    tác viên.
+                                </p>
                             </div>
 
                             {/* Bottom CTA */}

@@ -2,6 +2,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import FloatingWidgets from "../../components/floating-widgets";
 import ArticleSidebar from "../../components/article-sidebar";
+import InquiryForm from "./inquiry-form";
 import Link from "next/link";
 
 export default function ChoThuePage() {
@@ -206,6 +207,9 @@ export default function ChoThuePage() {
                                     Đọc thêm các kinh nghiệm quan trọng khi thuê máy pha cà phê{" "}
                                     <Link href="/blog">tại đây</Link>.
                                 </p>
+
+                                {/* Contact Inquiry Form */}
+                                <InquiryForm />
 
                                 <div
                                     className="cta-banner"
