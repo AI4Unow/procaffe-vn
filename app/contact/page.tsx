@@ -4,6 +4,11 @@ import FloatingWidgets from "../components/floating-widgets";
 import Link from "next/link";
 import ContactModal from "./ContactModal";
 
+export const metadata = {
+    title: "Liên hệ | ProCaffe - Showroom HCM & Hà Nội",
+    description: "Liên hệ ProCaffe: Showroom HCM Số 1 Đường C18 P. Bảy Hiền, Showroom Hà Nội Số 126 Nguyễn Văn Tuyết. Hotline: 090.456.98.78.",
+};
+
 const branchesMain = [
     {
         name: "Chi nhánh Hồ Chí Minh",

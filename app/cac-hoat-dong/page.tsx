@@ -3,6 +3,11 @@ import Footer from "../components/footer";
 import FloatingWidgets from "../components/floating-widgets";
 import Link from "next/link";
 
+export const metadata = {
+    title: "Các hoạt động | ProCaffe - Hành trình phát triển",
+    description: "Hành trình phát triển của ProCaffe từ năm 2009 đến nay. Các hoạt động, sự kiện và cột mốc quan trọng.",
+};
+
 const timelineData = [
     {
         year: "2025",

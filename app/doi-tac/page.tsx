@@ -3,6 +3,11 @@ import Footer from "../components/footer";
 import FloatingWidgets from "../components/floating-widgets";
 import Link from "next/link";
 
+export const metadata = {
+    title: "Đối tác | ProCaffe - Nhà phân phối máy pha cà phê",
+    description: "Các thương hiệu hàng đầu thế giới mà ProCaffe phân phối chính thức tại Việt Nam: Saeco, Wega, Gaggia, Eureka, Bialetti, Vitamix, Lelit, Fiorenzato, Mahlkönig.",
+};
+
 const partners = [
     { name: "Saeco", logo: "/images/brands/16.png" },
     { name: "Wega", logo: "/images/brands/11.png" },

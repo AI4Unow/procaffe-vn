@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import FloatingWidgets from "./components/floating-widgets";
+import HeroSlider from "./components/hero-slider";
 import posts from "../data/posts.json";
 
 /* Slider banner images from FTP download */
@@ -203,27 +204,5 @@ export default function HomePage() {
       <Footer />
       <FloatingWidgets />
     </>
-  );
-}
-
-/* Client-side Hero Slider component */
-function HeroSlider({ banners }: { banners: typeof sliderBanners }) {
-  return (
-    <section className="hero-slider">
-      <div className="slider-track">
-        {banners.map((b, i) => (
-          <div key={i} className="slider-slide">
-            <Link href={b.href}>
-              <img src={b.src} alt={b.alt} />
-            </Link>
-          </div>
-        ))}
-      </div>
-      <div className="slider-dots">
-        {banners.map((_, i) => (
-          <span key={i} className={`slider-dot${i === 0 ? " active" : ""}`} />
-        ))}
-      </div>
-    </section>
   );
 }

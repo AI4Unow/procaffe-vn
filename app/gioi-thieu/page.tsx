@@ -3,6 +3,11 @@ import Footer from "../components/footer";
 import FloatingWidgets from "../components/floating-widgets";
 import Link from "next/link";
 
+export const metadata = {
+    title: "Giới thiệu | ProCaffe - Sứ mạng, Tầm nhìn, Chiến lược",
+    description: "ProCaffe - Đối tác đồng hành tin cậy, mang đến các giải pháp nhanh chóng, dễ dàng, và ở đẳng cấp chuyên gia về cà phê tại Việt Nam từ năm 2009.",
+};
+
 export default function AboutPage() {
     return (
         <>

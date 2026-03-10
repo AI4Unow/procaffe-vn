@@ -3,6 +3,11 @@ import Footer from "../components/footer";
 import FloatingWidgets from "../components/floating-widgets";
 import Link from "next/link";
 
+export const metadata = {
+    title: "Khách hàng | ProCaffe - Máy pha cà phê chuyên nghiệp",
+    description: "Các doanh nghiệp, chuỗi F&B và khách sạn tin tưởng sử dụng sản phẩm và dịch vụ của ProCaffe: Trung Nguyên, Phúc Long, The Coffee House, Accor Hotels.",
+};
+
 const customers = [
     { name: "Trung Nguyên", category: "Chuỗi cà phê" },
     { name: "Phúc Long", category: "Chuỗi cà phê" },

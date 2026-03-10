@@ -108,6 +108,15 @@ const policies: Record<string, { title: string; content: string[] }> = {
     },
 };
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const policy = policies[slug];
+    return {
+        title: policy ? `${policy.title} | ProCaffe` : "Chính sách | ProCaffe",
+        description: policy ? policy.content[0] : "Các chính sách của ProCaffe.",
+    };
+}
+
 export default async function PolicyPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const policy = policies[slug];

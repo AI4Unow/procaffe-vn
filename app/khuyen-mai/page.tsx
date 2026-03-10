@@ -6,6 +6,11 @@ import Link from "next/link";
 import products from "../../data/products.json";
 import categories from "../../data/product-categories.json";
 
+export const metadata = {
+    title: "Khuyến mãi | ProCaffe - Máy pha cà phê giảm giá",
+    description: "Chương trình khuyến mãi máy pha cà phê, máy xay cà phê tại ProCaffe. Giảm giá hấp dẫn cho các dòng máy Saeco, Gaggia, Eureka, Lelit.",
+};
+
 const KHUYEN_MAI_SLUG = "may-pha-ca-phe-khuyen-mai";
 
 const promoProducts = products
