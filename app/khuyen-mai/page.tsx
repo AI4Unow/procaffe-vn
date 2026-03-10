@@ -132,7 +132,7 @@ export default function PromotionsPage() {
                             {/* Promo Banner */}
                             <div className="promo-banner">
                                 <img
-                                    src="https://procaffe.vn/wp-content/uploads/2026/03/3-25-spring.png"
+                                    src="https://procaffe.vn/wp-content/uploads/2026/03/banner-website.jpg"
                                     alt="Khuyến mãi tháng 3"
                                     loading="lazy"
                                 />
