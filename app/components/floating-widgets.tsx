@@ -39,6 +39,20 @@ export default function FloatingWidgets() {
                 <span className="zalo-badge">Zalo</span>
             </a>
 
+            {/* Floating Cart */}
+            <a
+                href="/products"
+                className="floating-btn floating-cart"
+                aria-label="Giỏ hàng"
+            >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="m1 1 4 2 2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+                <span className="cart-float-count">0</span>
+            </a>
+
             {/* Back to top */}
             {showBackTop && (
                 <button

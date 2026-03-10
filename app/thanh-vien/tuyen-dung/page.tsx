@@ -2,6 +2,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import FloatingWidgets from "../../components/floating-widgets";
 import TrustBadgesSidebar from "../../components/trust-badges-sidebar";
+import ArticleSidebar from "../../components/article-sidebar";
 import Link from "next/link";
 
 const jobPositions = [
@@ -220,7 +221,10 @@ export default function RecruitmentPage() {
                         </div>
 
                         {/* Sidebar */}
-                        <TrustBadgesSidebar />
+                        <aside className="sidebar">
+                            <TrustBadgesSidebar />
+                            <ArticleSidebar />
+                        </aside>
                     </div>
                 </div>
             </section>

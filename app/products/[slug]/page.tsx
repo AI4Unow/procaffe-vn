@@ -7,6 +7,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import TrustBadgesSidebar from "../../components/trust-badges-sidebar";
 import ProductReviewSection from "../../components/product-review-section";
+import ProductColorSwatches from "../../components/product-color-swatches";
 import products from "../../../data/products.json";
 import categories from "../../../data/product-categories.json";
 
@@ -197,6 +198,12 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                     <span className="price-value">{price.regular || "Liên hệ"}</span>
                                 )}
                             </div>
+
+                            {/* Color Swatches */}
+                            <ProductColorSwatches
+                                title={product.title}
+                                content={product.content || ""}
+                            />
 
                             <p className="product-vat-note">
                                 Giá đã bao gồm VAT. Trả góp lãi suất 0%

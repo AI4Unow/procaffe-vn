@@ -76,9 +76,9 @@ const sidebarCategories = SIDEBAR_CATEGORY_ORDER
 /* Brand categories (children of Thương hiệu id=350) */
 const BRAND_PARENT_ID = 350;
 
-function getBrandDescription(slug: string): string {
+function getCategoryDescription(slug: string): string {
     const cat = categories.find((c) => c.slug === slug);
-    if (cat && cat.parent === BRAND_PARENT_ID && cat.description) {
+    if (cat && cat.description) {
         return cat.description;
     }
     return "";
@@ -369,6 +369,9 @@ function ProductsContent() {
                                     090.456.98.78
                                 </a>
                             </div>
+
+                            {/* Trust badges */}
+                            <TrustBadgesSidebar />
                         </aside>
 
                         {/* Content */}
@@ -384,7 +387,7 @@ function ProductsContent() {
 
                             {/* Brand description for brand categories */}
                             {selectedCategory !== "all" &&
-                                getBrandDescription(selectedCategory) && (
+                                getCategoryDescription(selectedCategory) && (
                                     <div className="brand-description">
                                         <h2 className="brand-title">
                                             {categories
@@ -396,7 +399,7 @@ function ProductsContent() {
                                                 ?.name?.toUpperCase()}
                                         </h2>
                                         <p>
-                                            {getBrandDescription(
+                                            {getCategoryDescription(
                                                 selectedCategory
                                             )}
                                         </p>

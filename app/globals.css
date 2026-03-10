@@ -103,8 +103,8 @@ h4 {
 
 /* ===== TOP BAR ===== */
 .top-bar {
-  background: var(--dark-gray);
-  color: #ccc;
+  background: var(--primary);
+  color: #fff;
   font-size: 12px;
   padding: 6px 0;
 }
@@ -123,7 +123,7 @@ h4 {
 }
 
 .top-bar-phones a {
-  color: #ddd;
+  color: #fff;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -132,7 +132,7 @@ h4 {
 }
 
 .top-bar-phones a:hover {
-  color: var(--primary);
+  color: var(--dark);
 }
 
 .top-bar .phone-icon {
@@ -351,7 +351,7 @@ h4 {
 .hero-slider {
   position: relative;
   overflow: hidden;
-  background: #000;
+  background: var(--white);
 }
 
 .slider-track {
@@ -368,8 +368,7 @@ h4 {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 500px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 @keyframes slider-scroll {
@@ -485,11 +484,11 @@ h4 {
 }
 
 .slogan-text {
-  font-size: 14px;
-  color: var(--dark);
+  font-size: 16px;
+  color: var(--primary);
   text-align: center;
   white-space: nowrap;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .slogan-icon {
@@ -506,30 +505,30 @@ h4 {
 
 .brand-logos-track {
   display: flex;
-  gap: 20px;
-  animation: brand-scroll 30s linear infinite;
+  gap: 30px;
+  animation: brand-scroll 40s linear infinite;
 }
 
 .brand-logo-item {
   flex-shrink: 0;
-  width: 100px;
-  height: 60px;
+  width: 130px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .brand-logo-item img {
-  max-width: 90px;
-  max-height: 50px;
+  max-width: 120px;
+  max-height: 60px;
   object-fit: contain;
-  filter: grayscale(30%);
-  opacity: 0.8;
+  filter: none;
+  opacity: 1;
   transition: all 0.3s;
 }
 
 .brand-logo-item img:hover {
-  filter: grayscale(0);
+  filter: none;
   opacity: 1;
   transform: scale(1.1);
 }
@@ -726,10 +725,10 @@ h4 {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #2c2c2c;
+  background: #1a1a1a;
   color: #ccc;
   padding: 40px 0 30px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .footer-top-row {
@@ -776,17 +775,17 @@ h4 {
 .footer-col h4 {
   font-family: var(--font-body);
   color: #fff;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
   margin-bottom: 14px;
   text-transform: uppercase;
 }
 
 .footer-info-text p {
   margin-bottom: 8px;
-  line-height: 1.6;
-  color: #aaa;
-  font-size: 12px;
+  line-height: 1.7;
+  color: #bbb;
+  font-size: 13px;
 }
 
 .footer-info-text strong {
@@ -801,7 +800,7 @@ h4 {
 
 .footer-links a {
   color: #bbb;
-  font-size: 12px;
+  font-size: 13px;
   transition: color 0.2s;
 }
 
@@ -881,6 +880,28 @@ h4 {
   color: #fff;
 }
 
+.floating-cart {
+  background: var(--primary);
+  color: #fff;
+  position: relative;
+}
+
+.cart-float-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #fff;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .floating-label {
   position: absolute;
   right: 62px;
@@ -890,8 +911,7 @@ h4 {
   border-radius: 4px;
   font-size: 11px;
   white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s;
+  opacity: 1;
 }
 
 .floating-btn:hover .floating-label {
@@ -3989,8 +4009,51 @@ section {
 .product-vat-note {
   font-size: 12px;
   color: var(--gray);
-  margin-bottom: var(--space-md);
+  margin-bottom: 16px;
   font-style: italic;
+}
+
+/* Product Color Swatches */
+.product-color-swatches {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 8px;
+}
+
+.color-swatch-label {
+  font-size: 13px;
+  color: #555;
+  font-weight: 600;
+}
+
+.color-swatch-row {
+  display: flex;
+  gap: 8px;
+}
+
+.color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+}
+
+.color-swatch:hover {
+  transform: scale(1.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog results info */
+.blog-results-info {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
 }
 
 .product-excerpt {
@@ -4688,7 +4751,7 @@ section {
 }
 
 .job-card-title {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--dark);
   margin-bottom: 8px;
@@ -4705,12 +4768,13 @@ section {
 }
 
 .job-card-desc {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--gray);
-  line-height: 1.5;
-  margin-bottom: 8px;
+  line-height: 1.6;
+  margin-bottom: 10px;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

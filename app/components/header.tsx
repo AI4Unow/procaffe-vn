@@ -21,6 +21,7 @@ const navItems = [
             { label: "Các hoạt động", href: "/gioi-thieu#hoat-dong" },
             { label: "Đối tác", href: "/gioi-thieu#doi-tac" },
             { label: "Khách hàng", href: "/gioi-thieu#khach-hang" },
+            { label: "Nhà phân phối", href: "/gioi-thieu#doanh-nghiep" },
             { label: "Thông tin doanh nghiệp", href: "/gioi-thieu#doanh-nghiep" },
         ],
     },
@@ -95,6 +96,7 @@ const navItems = [
             { label: "Mua cà phê tặng máy", href: "/dich-vu/mua-ca-phe-tang-may" },
             { label: "Khóa học pha chế", href: "/dich-vu/khoa-hoc-pha-che-ca-phe" },
             { label: "Setup quán cà phê", href: "/dich-vu/setup-quan-cafe" },
+            { label: "Tư vấn và giải pháp", href: "/dich-vu/tu-van-giai-phap" },
         ],
     },
     {
@@ -116,6 +118,7 @@ const navItems = [
             { label: "Tuyển dụng", href: "/thanh-vien/tuyen-dung" },
             { label: "Khách hàng thành viên", href: "/thanh-vien/dang-ky" },
             { label: "Cộng tác viên", href: "/thanh-vien/cong-tac-vien" },
+            { label: "Đăng nhập", href: "/thanh-vien/dang-ky" },
         ],
     },
     {
@@ -123,6 +126,7 @@ const navItems = [
         href: "/khuyen-mai",
         children: [
             { label: "Chương trình ưu đãi", href: "/khuyen-mai" },
+            { label: "Xả kho", href: "/products?cat=xa-kho-hang-trung-bay" },
         ],
     },
     { label: "Sự kiện thương hiệu", href: "/su-kien" },
