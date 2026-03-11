@@ -16,7 +16,7 @@ function getProductImage(product: (typeof products)[0]): string {
         product.featured_image &&
         !product.featured_image.includes("youtube") &&
         !product.featured_image.includes("fbcdn") &&
-        product.featured_image.startsWith("http")
+        (product.featured_image.startsWith("http") || product.featured_image.startsWith("/images/"))
     ) {
         return product.featured_image;
     }
@@ -29,7 +29,7 @@ function extractGalleryImages(content: string): string[] {
     let m;
     while ((m = re.exec(content)) !== null) {
         if (
-            m[1].includes("procaffe.vn") &&
+            (m[1].includes("/images/") || m[1].includes("procaffe.vn")) &&
             !m[1].includes("icon") &&
             !m[1].includes("banner") &&
             !imgs.includes(m[1])
