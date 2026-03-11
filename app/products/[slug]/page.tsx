@@ -91,7 +91,8 @@ function extractPrice(product: (typeof products)[0]): {
 }
 
 function ProductDetailClient({ slug }: { slug: string }) {
-    const product = products.find((p) => p.slug === slug);
+    const product = products.find((p) => p.slug === slug)
+        || products.find((p) => { try { return decodeURIComponent(p.slug) === slug; } catch { return false; } });
     const [activeTab, setActiveTab] = useState<"description" | "specs" | "reviews">(
         "description"
     );

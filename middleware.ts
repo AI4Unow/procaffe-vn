@@ -4,12 +4,20 @@ import products from "./data/products.json";
 
 /**
  * Precompute the set of product slugs for O(1) lookup.
- * This enables root-level product URLs (WordPress-style: /slug/)
- * to be internally rewritten to /products/slug (Next.js app route).
+ * Also build a decoded→encoded map for slugs with URL-encoded characters.
  */
 const productSlugs = new Set(
     (products as { slug: string }[]).map((p) => p.slug)
 );
+
+/* Map decoded slugs back to their stored (possibly encoded) form */
+const decodedToStored = new Map<string, string>();
+for (const slug of productSlugs) {
+    try {
+        const decoded = decodeURIComponent(slug);
+        if (decoded !== slug) decodedToStored.set(decoded, slug);
+    } catch { /* ignore malformed URIs */ }
+}
 
 /**
  * Known top-level app routes that should NOT be intercepted.
@@ -55,6 +63,17 @@ export function middleware(request: NextRequest) {
         url.pathname = `/products/${slug}`;
         return NextResponse.rewrite(url);
     }
+
+    // Try URL-decoded version (handles slugs with encoded chars like %c2%b1 → ±)
+    try {
+        const decoded = decodeURIComponent(slug);
+        const storedSlug = decodedToStored.get(decoded) || (productSlugs.has(decoded) ? decoded : null);
+        if (storedSlug) {
+            const url = request.nextUrl.clone();
+            url.pathname = `/products/${storedSlug}`;
+            return NextResponse.rewrite(url);
+        }
+    } catch { /* ignore */ }
 
     return NextResponse.next();
 }
