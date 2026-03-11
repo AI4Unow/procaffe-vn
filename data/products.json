@@ -16123,5 +16123,725 @@
     "date": "2016-08-11T13:29:45",
     "regular_price": "58600000",
     "sale_price": "43986000"
+  },
+  {
+    "id": 22403,
+    "title": "Bialetti Allegra Fucsia",
+    "slug": "bialetti-allegra-fucsia",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2016/08/bialetti-allegra-fucsia.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22404,
+    "title": "Bialetti Allegra Rossa 2 Cup",
+    "slug": "bialetti-allegra-rossa-2",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-allegra-rossa.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22405,
+    "title": "Bialetti Allegra Silver 2 Cup",
+    "slug": "bialetti-allegra-silver-2",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-allegra-silver.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22406,
+    "title": "Bialetti Art Espresso Cups",
+    "slug": "bialetti-art-espresso-cups",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22407,
+    "title": "Bialetti Break Arancione",
+    "slug": "bialetti-break-arancione",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-break-arancione.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22408,
+    "title": "Bialetti Break Nera",
+    "slug": "bialetti-break-nera",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-break-nera.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22409,
+    "title": "Bialetti Dama Aluminium",
+    "slug": "bialetti-dama-aluminium",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22410,
+    "title": "Bialetti Dama Glamour Grigia",
+    "slug": "bialetti-dama-glamour-grigia",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-dama-glamour.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22411,
+    "title": "Bialetti Dama Glamour Pearl",
+    "slug": "bialetti-dama-glamour-pearl",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-dama-glamour.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22412,
+    "title": "Bialetti Dama Glamour Red",
+    "slug": "bialetti-dama-glamour-red",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-dama-glamour.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22413,
+    "title": "Bialetti Fiammetta Fucsia",
+    "slug": "bialetti-fiammetta-fucsia",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-fiammetta.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22414,
+    "title": "Bialetti Fiammetta Verde",
+    "slug": "bialetti-fiammetta-verde",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-fiammetta.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22415,
+    "title": "Bialetti Fiammetta Verde 2 Cup",
+    "slug": "bialetti-fiammetta-verde-2",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22416,
+    "title": "Bialetti Junior",
+    "slug": "bialetti-junior",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2016/08/bialetti-junior.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22417,
+    "title": "Bialetti Kitty Nera",
+    "slug": "bialetti-kitty-nera",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2020/06/bialetti-kitty-nera.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22418,
+    "title": "Bialetti Mini Express Italia 2 Cups",
+    "slug": "bialetti-mini-express-italia-2-cups",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22419,
+    "title": "Bialetti Moka Carousel Cups",
+    "slug": "bialetti-moka-carousel-cups",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22420,
+    "title": "Bialetti Moka Express Gold",
+    "slug": "bialetti-moka-express-gold",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22421,
+    "title": "Bialetti Moka Induction Gold",
+    "slug": "bialetti-moka-induction-gold",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22422,
+    "title": "Bialetti Morenita",
+    "slug": "bialetti-morenita",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2016/08/bialetti-morenita.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22423,
+    "title": "Bialetti Mug Miro",
+    "slug": "bialetti-mug-miro",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22424,
+    "title": "Bialetti Mukka Express",
+    "slug": "bialetti-mukka-express",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "https://procaffe.vn/wp-content/uploads/2016/08/bialetti-mukka.jpg",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22425,
+    "title": "Bialetti Nuova Dama Gran Gala",
+    "slug": "bialetti-nouva-dama-gran-gala",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22426,
+    "title": "Bialetti Orzo Express Fascia",
+    "slug": "bialetti-orzo-express-fascia",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22427,
+    "title": "Cà Phê Bialetti Perfetto Moka White",
+    "slug": "bialetti-perfetto-moka-white",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Cà Phê Rang Xay"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "ca-phe-rang-xay"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22428,
+    "title": "Bialetti Rossa",
+    "slug": "bialetti-rossa",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Ấm Pha Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "am-pha-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22429,
+    "title": "Bialetti Signature French Press",
+    "slug": "bialetti-signature-french-press",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22430,
+    "title": "Bialetti Tazzine Moka Color",
+    "slug": "bialetti-tazzine-moka-color",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22431,
+    "title": "Bialetti Teapot",
+    "slug": "bialetti-teapot",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22432,
+    "title": "Bình Xay Cà Phê Bialetti",
+    "slug": "binh-xay-ca-phe-bialetti",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22433,
+    "title": "Máy Tạo Bọt Sữa Bialetti Montalatte",
+    "slug": "may-tao-bot-sua-bialetti-montalatte",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22434,
+    "title": "Máy Xay Cà Phê Bialetti",
+    "slug": "may-xay-ca-phe-bialetti",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Máy Xay Cà Phê"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "may-xay-ca-phe"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22435,
+    "title": "Set 2 Tách Bialetti Moka Heart Cups",
+    "slug": "set-2-tach-bialetti-moka-heart-cups",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22436,
+    "title": "Set 4 Tách Bialetti Tazzine How To Make",
+    "slug": "set-4-tach-bialetti-tazzine-how-to-make-hts-99y0tz038",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22437,
+    "title": "Set 6 Tách Bialetti Tazzine Carosello",
+    "slug": "set-6-tach-bialetti-tazzine-carosello-hts-99y0tz037",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
+  },
+  {
+    "id": 22438,
+    "title": "Tách Bialetti New Arte",
+    "slug": "tach-bialetti-new-arte",
+    "excerpt": "",
+    "content": "",
+    "featured_image": "",
+    "categories": [
+      "Bialetti",
+      "Phụ kiện"
+    ],
+    "category_slugs": [
+      "bialetti",
+      "phu-kien"
+    ],
+    "category_ids": [],
+    "date": "2024-01-01T00:00:00",
+    "regular_price": "",
+    "sale_price": null
   }
 ]
