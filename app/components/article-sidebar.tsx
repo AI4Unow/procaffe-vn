@@ -60,7 +60,7 @@ export default function ArticleSidebar() {
                         return (
                             <Link
                                 key={product.id}
-                                href={`/products/${product.slug}`}
+                                href={`/${product.slug}`}
                                 className="sidebar-product-item"
                             >
                                 <div className="sidebar-product-thumb">

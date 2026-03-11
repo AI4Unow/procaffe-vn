@@ -339,7 +339,7 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                 {related.map((p) => (
                                     <Link
                                         key={p.id}
-                                        href={`/products/${p.slug}`}
+                                        href={`/${p.slug}`}
                                         className="product-card"
                                     >
                                         <div className="product-card-image">

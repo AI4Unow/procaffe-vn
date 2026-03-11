@@ -89,7 +89,7 @@ export default function TrustBadgesSidebar() {
                     {featuredProducts.map((p) => (
                         <Link
                             key={p.id}
-                            href={`/products/${p.slug}`}
+                            href={`/${p.slug}`}
                             className="trust-featured-item"
                         >
                             <img

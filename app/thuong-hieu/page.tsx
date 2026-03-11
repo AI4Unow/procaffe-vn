@@ -165,7 +165,7 @@ export default function ThuongHieuPage() {
                         {brandProducts.map((product) => (
                             <Link
                                 key={product.id}
-                                href={`/products/${product.slug}`}
+                                href={`/${product.slug}`}
                                 className="product-card"
                             >
                                 <div className="product-card-image">

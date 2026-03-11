@@ -61,7 +61,7 @@ export default function ChoThuePage() {
                                             <tr>
                                                 <td>
                                                     <strong>
-                                                        <Link href="/products/gaggia-magenta-prestige">
+                                                        <Link href="/gaggia-magenta-prestige">
                                                             Gaggia Magenta Prestige
                                                         </Link>
                                                     </strong>
@@ -75,7 +75,7 @@ export default function ChoThuePage() {
                                             <tr>
                                                 <td>
                                                     <strong>
-                                                        <Link href="/products/gaggia-magenta-plus">
+                                                        <Link href="/gaggia-magenta-plus">
                                                             Gaggia Magenta Plus
                                                         </Link>
                                                     </strong>
@@ -89,7 +89,7 @@ export default function ChoThuePage() {
                                             <tr>
                                                 <td>
                                                     <strong>
-                                                        <Link href="/products/saeco-royal-plus">
+                                                        <Link href="/saeco-royal-plus">
                                                             Saeco Royal Plus
                                                         </Link>
                                                     </strong>
@@ -108,7 +108,7 @@ export default function ChoThuePage() {
                                             <tr>
                                                 <td>
                                                     <strong>
-                                                        <Link href="/products/saeco-royal-otc">
+                                                        <Link href="/saeco-royal-otc">
                                                             Saeco Royal OTC
                                                         </Link>
                                                     </strong>

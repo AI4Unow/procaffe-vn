@@ -178,7 +178,7 @@ export default function PromotionsPage() {
                                     return (
                                         <Link
                                             key={product.id}
-                                            href={`/products/${product.slug}`}
+                                            href={`/${product.slug}`}
                                             className="product-card"
                                         >
                                             <div className="product-card-image">
