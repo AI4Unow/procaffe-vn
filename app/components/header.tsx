@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const phoneNumbers = [
     { label: "CSKH", number: "090.456.98.78" },
@@ -18,11 +19,10 @@ const navItems = [
         href: "/gioi-thieu",
         children: [
             { label: "Sứ mạng - Tầm nhìn", href: "/gioi-thieu#su-mang" },
-            { label: "Các hoạt động", href: "/gioi-thieu#hoat-dong" },
-            { label: "Đối tác", href: "/gioi-thieu#doi-tac" },
-            { label: "Khách hàng", href: "/gioi-thieu#khach-hang" },
+            { label: "Các hoạt động", href: "/cac-hoat-dong" },
+            { label: "Đối tác", href: "/doi-tac" },
+            { label: "Khách hàng", href: "/khach-hang" },
             { label: "Nhà phân phối", href: "/gioi-thieu#doanh-nghiep" },
-            { label: "Thông tin doanh nghiệp", href: "/gioi-thieu#doanh-nghiep" },
         ],
     },
     {
@@ -36,54 +36,56 @@ const navItems = [
             { label: "Ấm pha cà phê Bialetti", href: "/products?cat=am-pha-ca-phe" },
             { label: "Máy pha Specialty coffee", href: "/products?cat=may-pha-ca-phe" },
             { label: "Máy xay cà phê", href: "/products?cat=may-xay-ca-phe" },
+            { label: "Máy xay Vitamix", href: "/products?cat=vitamix" },
             { label: "Máy bán cà phê tự động", href: "/products?cat=may-pha-ca-phe" },
-            { label: "Phụ kiện", href: "/products?cat=phu-kien" },
+            { label: "Cà phê rang xay", href: "/products?cat=ca-phe-rang-xay" },
+            { label: "Phụ kiện - Phụ tùng", href: "/products?cat=phu-kien" },
         ],
     },
     {
         label: "Thương hiệu",
         href: "/thuong-hieu",
         children: [
-            { label: "Bialetti", href: "/products?cat=bialetti" },
-            { label: "Wega", href: "/products?cat=wega" },
-            { label: "Eureka", href: "/products?cat=eureka" },
-            { label: "Gaggia", href: "/products?cat=gaggia" },
-            { label: "Lelit", href: "/products?cat=lelit" },
-            { label: "La Pavoni", href: "/products?cat=la-pavoni" },
-            { label: "Gimoka", href: "/products?cat=gimoka" },
-            { label: "CREM", href: "/products?cat=coffee-queen" },
-            { label: "Mahlkönig", href: "/products?cat=mahlkonig" },
-            { label: "Bravilor Bonamat", href: "/products?cat=bravilor-bonamat" },
-            { label: "Konitz", href: "/products?cat=konitz" },
-            { label: "Procaffe", href: "/products?cat=procaffe" },
-            { label: "Heritage", href: "/products?cat=heritage" },
-            { label: "WPM", href: "/products?cat=wpm" },
-            { label: "Saeco", href: "/products?cat=saeco" },
-            { label: "Saeco Horeca", href: "/products?cat=saeco-horeca" },
-            { label: "Vitamix", href: "/products?cat=vitamix" },
-            { label: "Barista Attitude", href: "/products?cat=barista-attitude" },
-            { label: "Fiorenzato", href: "/products?cat=fiorenzato" },
-            { label: "Saeco Vending", href: "/products?cat=saeco-vending" },
             { label: "Astoria", href: "/products?cat=astoria" },
-            { label: "Casadio", href: "/products?cat=casadio" },
-            { label: "Cunill", href: "/products?cat=cunill" },
-            { label: "Kees van der Westen", href: "/products?cat=kees-van-der-westen" },
-            { label: "Synesso", href: "/products?cat=synesso" },
-            { label: "Dr.Coffee", href: "/products?cat=dr-coffee" },
-            { label: "Expobar", href: "/products?cat=expobar" },
-            { label: "Saeco Capsule", href: "/products?cat=saeco-capsule" },
             { label: "Baratza", href: "/products?cat=baratza" },
-            { label: "Cino", href: "/products?cat=cino" },
-            { label: "Faema", href: "/products?cat=faema" },
-            { label: "Macap", href: "/products?cat=macap" },
-            { label: "PUQpress", href: "/products?cat=puqpress" },
-            { label: "Turando", href: "/products?cat=turando" },
+            { label: "Barista Attitude", href: "/products?cat=barista-attitude" },
+            { label: "Bialetti", href: "/products?cat=bialetti" },
+            { label: "Bravilor Bonamat", href: "/products?cat=bravilor-bonamat" },
             { label: "BWT", href: "/products?cat=bwt" },
+            { label: "Casadio", href: "/products?cat=casadio" },
+            { label: "Cino", href: "/products?cat=cino" },
+            { label: "CREM", href: "/products?cat=coffee-queen" },
+            { label: "Cunill", href: "/products?cat=cunill" },
             { label: "Donlim", href: "/products?cat=donlim" },
+            { label: "Dr.Coffee", href: "/products?cat=dr-coffee" },
+            { label: "Eureka", href: "/products?cat=eureka" },
+            { label: "Expobar", href: "/products?cat=expobar" },
+            { label: "Faema", href: "/products?cat=faema" },
+            { label: "Fiorenzato", href: "/products?cat=fiorenzato" },
+            { label: "Gaggia", href: "/products?cat=gaggia" },
+            { label: "Gimoka", href: "/products?cat=gimoka" },
+            { label: "Heritage", href: "/products?cat=heritage" },
+            { label: "Kees van der Westen", href: "/products?cat=kees-van-der-westen" },
+            { label: "Konitz", href: "/products?cat=konitz" },
             { label: "Krups", href: "/products?cat=krups" },
             { label: "Kuvings", href: "/products?cat=kuvings" },
+            { label: "La Pavoni", href: "/products?cat=la-pavoni" },
             { label: "La Spaziale", href: "/products?cat=la-spaziale" },
+            { label: "Lelit", href: "/products?cat=lelit" },
+            { label: "Macap", href: "/products?cat=macap" },
+            { label: "Mahlkönig", href: "/products?cat=mahlkonig" },
+            { label: "Procaffe", href: "/products?cat=procaffe" },
+            { label: "PUQpress", href: "/products?cat=puqpress" },
+            { label: "Saeco", href: "/products?cat=saeco" },
+            { label: "Saeco Capsule", href: "/products?cat=saeco-capsule" },
+            { label: "Saeco Horeca", href: "/products?cat=saeco-horeca" },
+            { label: "Saeco Vending", href: "/products?cat=saeco-vending" },
+            { label: "Synesso", href: "/products?cat=synesso" },
+            { label: "Turando", href: "/products?cat=turando" },
+            { label: "Vitamix", href: "/products?cat=vitamix" },
             { label: "Waeco", href: "/products?cat=waeco" },
+            { label: "Wega", href: "/products?cat=wega" },
+            { label: "WPM", href: "/products?cat=wpm" },
         ],
     },
     {
@@ -136,6 +138,14 @@ const navItems = [
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const router = useRouter();
+
+    const handleSearch = () => {
+        if (searchQuery.trim()) {
+            router.push(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
+            setSearchQuery("");
+        }
+    };
 
     return (
         <>
@@ -159,8 +169,9 @@ export default function Header() {
                                 placeholder="Từ khóa"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
+                                onKeyDown={(e) => { if (e.key === "Enter") handleSearch(); }}
                             />
-                            <button type="button" aria-label="Tìm kiếm">
+                            <button type="button" aria-label="Tìm kiếm" onClick={handleSearch}>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
                                 </svg>

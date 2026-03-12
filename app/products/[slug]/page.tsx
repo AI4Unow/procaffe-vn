@@ -206,9 +206,7 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                 content={product.content || ""}
                             />
 
-                            <p className="product-vat-note">
-                                Giá đã bao gồm VAT. Trả góp lãi suất 0%
-                            </p>
+
 
                             {product.excerpt && (
                                 <div className="product-excerpt">
@@ -218,7 +216,7 @@ function ProductDetailClient({ slug }: { slug: string }) {
 
                             <div className="product-actions">
                                 <a
-                                    href="tel:09045698782"
+                                    href="tel:0904569878"
                                     className="btn-primary"
                                 >
                                     📞 Gọi ngay: 090.456.98.78

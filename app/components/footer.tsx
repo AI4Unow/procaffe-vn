@@ -14,7 +14,6 @@ export default function Footer() {
                             width={180}
                             height={50}
                         />
-                        <p className="footer-tagline">The leading <em>Total Coffee Solutions</em> Provider</p>
                     </div>
                     <div className="footer-badge-area">
                         <a href="http://online.gov.vn/Home/WebDetails/23426" target="_blank" rel="noopener noreferrer">

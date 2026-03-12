@@ -33,7 +33,20 @@ export default function ContactModal() {
           <input type="text" placeholder="Họ và tên *" required style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
           <input type="tel" placeholder="Điện thoại *" required style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
           <input type="email" placeholder="Email" style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
+          <select style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px', color: '#666' }} defaultValue="">
+            <option value="" disabled>Tỉnh/thành phố</option>
+            <option value="hcm">Hồ Chí Minh</option>
+            <option value="hn">Hà Nội</option>
+            <option value="dn">Đà Nẵng</option>
+            <option value="hp">Hải Phòng</option>
+            <option value="ct">Cần Thơ</option>
+            <option value="other">Khác</option>
+          </select>
           <textarea placeholder="Nội dung" rows={4} style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }}></textarea>
+          <div>
+            <label style={{ fontSize: '14px', color: '#666', marginBottom: '4px', display: 'block' }}>Tài liệu đính kèm</label>
+            <input type="file" accept=".pdf,.doc,.docx,.jpg,.png" style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px', width: '100%' }} />
+          </div>
           <button type="submit" style={{ padding: '12px', background: 'var(--primary)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
             GỬI LIÊN HỆ
           </button>
