@@ -64,6 +64,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -73,6 +74,7 @@ body {
   background: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -2525,8 +2527,17 @@ section {
     display: none;
   }
 
+  .main-nav .container {
+    justify-content: space-between;
+  }
+
   .mobile-menu-btn {
     display: flex;
+  }
+
+  /* Hide mega menu on mobile — use dropdown fallback */
+  .mega-menu {
+    display: none !important;
   }
 
   .main-nav.open .nav-links {
@@ -2646,6 +2657,12 @@ section {
   }
 
   /* Footer */
+  .footer-top-row {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 24px;

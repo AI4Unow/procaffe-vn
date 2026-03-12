@@ -141,41 +141,41 @@ const productMegaCategories = [
     {
         label: "Máy pha cappuccino tự động", href: "/products?cat=may-pha-ca-phe",
         featured: [
-            { title: "Saeco Royal Plus", slug: "saeco-royal-plus", image: "/images/products/saeco-royal-plus.jpg" },
-            { title: "Gaggia Magenta Prestige", slug: "gaggia-magenta-prestige", image: "/images/products/gaggia-magenta-prestige.jpg" },
+            { title: "Saeco Royal Plus", slug: "saeco-royal-plus", image: "/images/products-dl/may-pha-ca-phe-saeco-royal.jpg" },
+            { title: "Gaggia Magenta Prestige", slug: "gaggia-magenta-prestige", image: "/images/products-dl/Foto-interna-Magenta-Prestige-1-1024x614-1-900x600.jpeg" },
         ],
     },
     {
         label: "Máy pha espresso bán tự động", href: "/products?cat=may-pha-ca-phe",
         featured: [
-            { title: "Lelit MaraX3", slug: "lelit-marax3-pl62x3", image: "/images/products/lelit-marax3-pl62x3.jpg" },
-            { title: "Wega Polar", slug: "wega-polar", image: "/images/products/wega-polar.jpg" },
+            { title: "Lelit MaraX3", slug: "lelit-marax3-pl62x3", image: "/images/products-dl/focus2.jpg" },
+            { title: "Wega Polar", slug: "wega-polar", image: "/images/products-dl/Wega-Polar.png" },
         ],
     },
     {
         label: "Máy pha cà phê Capsule-Pod", href: "/products?cat=may-pha-ca-phe",
         featured: [
-            { title: "Saeco Aurora M1", slug: "saeco-aurora-m1", image: "/images/products/saeco-aurora-m1.jpg" },
+            { title: "Saeco Aurora M1", slug: "saeco-aurora-m1", image: "/images/products-dl/may-pha-cafe-saeco-aurora-m1-1.jpg" },
         ],
     },
     {
         label: "Ấm pha cà phê Bialetti", href: "/products?cat=am-pha-ca-phe",
         featured: [
-            { title: "Bialetti Moka Express", slug: "bialetti-moka-express-stranger-things", image: "/images/products/bialetti-moka-express-stranger-things.jpg" },
-            { title: "Bialetti Brikka", slug: "pheu-loc-ca-phe-bialetti-brikka", image: "/images/products/pheu-loc-ca-phe-bialetti-brikka.jpg" },
+            { title: "Bialetti Moka Express", slug: "bialetti-moka-express-stranger-things", image: "/images/products-dl/Bialetti-moka-express-stranger-things-scaled.jpg" },
+            { title: "Bialetti Brikka", slug: "pheu-loc-ca-phe-bialetti-brikka", image: "/images/products-dl/Pheu-loc-ca-phe-Bialetti-Brikka.jpg" },
         ],
     },
     {
         label: "Máy pha Specialty coffee", href: "/products?cat=may-pha-ca-phe",
         featured: [
-            { title: "Astoria Tanya", slug: "astoria-tanya-2-group", image: "/images/products/astoria-tanya-2-group.jpg" },
+            { title: "Astoria Tanya", slug: "astoria-tanya-2-group", image: "/images/products-dl/eac9a4430705885bd1147.jpg" },
         ],
     },
     {
         label: "Máy xay cà phê", href: "/products?cat=may-xay-ca-phe",
         featured: [
-            { title: "Mahlkönig E80W GbS", slug: "mahlkonig-e80w-gbs", image: "/images/products/mahlkonig-e80w-gbs.jpg" },
-            { title: "Eureka Mignon Pisa", slug: "eureka-mignon-pisa-single-dose", image: "/images/products/eureka-mignon-pisa-single-dose.jpg" },
+            { title: "Mahlkönig E80W GbS", slug: "mahlkonig-e80w-gbs", image: "/images/products-dl/Mahlkonig-E65W-GBS-Grind-by-Sync-1.jpg" },
+            { title: "Eureka Mignon Pisa", slug: "eureka-mignon-pisa-single-dose", image: "/images/products-dl/EUREKA-MIGNON-PISA-65.jpg" },
         ],
     },
     {
@@ -189,8 +189,8 @@ const productMegaCategories = [
     {
         label: "Cà phê rang xay", href: "/products?cat=ca-phe-rang-xay",
         featured: [
-            { title: "Procaffe Speciale", slug: "procaffe-speciale-hoa-tan-say-phun", image: "/images/products/procaffe-speciale-hoa-tan-say-phun.jpg" },
-            { title: "Procaffe Riccaroma", slug: "procaffe-riccaroma-2", image: "/images/products/procaffe-riccaroma-2.jpg" },
+            { title: "Procaffe Speciale", slug: "procaffe-speciale-hoa-tan-say-phun", image: "/images/products-dl/HACCP-900x800.png" },
+            { title: "Procaffe Riccaroma", slug: "procaffe-riccaroma-2", image: "/images/products-dl/Ricca.jpg" },
         ],
     },
     {
@@ -200,10 +200,10 @@ const productMegaCategories = [
 ];
 
 const defaultFeaturedProducts = [
-    { title: "Lelit MaraX3", slug: "lelit-marax3-pl62x3", image: "/images/products/lelit-marax3-pl62x3.jpg" },
-    { title: "Wega Polar", slug: "wega-polar", image: "/images/products/wega-polar.jpg" },
-    { title: "Mahlkönig E80W", slug: "mahlkonig-e80w-gbs", image: "/images/products/mahlkonig-e80w-gbs.jpg" },
-    { title: "Eureka Mignon Pisa", slug: "eureka-mignon-pisa-single-dose", image: "/images/products/eureka-mignon-pisa-single-dose.jpg" },
+    { title: "Lelit MaraX3", slug: "lelit-marax3-pl62x3", image: "/images/products-dl/focus2.jpg" },
+    { title: "Wega Polar", slug: "wega-polar", image: "/images/products-dl/Wega-Polar.png" },
+    { title: "Mahlkönig E80W", slug: "mahlkonig-e80w-gbs", image: "/images/products-dl/Mahlkonig-E65W-GBS-Grind-by-Sync-1.jpg" },
+    { title: "Eureka Mignon Pisa", slug: "eureka-mignon-pisa-single-dose", image: "/images/products-dl/EUREKA-MIGNON-PISA-65.jpg" },
 ];
 
 export default function Header() {
