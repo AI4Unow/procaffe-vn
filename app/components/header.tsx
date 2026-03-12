@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import ProductMegaMenu from "./product-mega-menu";
 
 const phoneNumbers = [
     { label: "CSKH", number: "090.456.98.78" },
@@ -135,6 +136,76 @@ const navItems = [
     { label: "Liên hệ", href: "/contact" },
 ];
 
+/* Featured products per subcategory for mega-menu */
+const productMegaCategories = [
+    {
+        label: "Máy pha cappuccino tự động", href: "/products?cat=may-pha-ca-phe",
+        featured: [
+            { title: "Saeco Royal Plus", slug: "saeco-royal-plus", image: "/images/products/saeco-royal-plus.jpg" },
+            { title: "Gaggia Magenta Prestige", slug: "gaggia-magenta-prestige", image: "/images/products/gaggia-magenta-prestige.jpg" },
+        ],
+    },
+    {
+        label: "Máy pha espresso bán tự động", href: "/products?cat=may-pha-ca-phe",
+        featured: [
+            { title: "Lelit MaraX3", slug: "lelit-marax3-pl62x3", image: "/images/products/lelit-marax3-pl62x3.jpg" },
+            { title: "Wega Polar", slug: "wega-polar", image: "/images/products/wega-polar.jpg" },
+        ],
+    },
+    {
+        label: "Máy pha cà phê Capsule-Pod", href: "/products?cat=may-pha-ca-phe",
+        featured: [
+            { title: "Saeco Aurora M1", slug: "saeco-aurora-m1", image: "/images/products/saeco-aurora-m1.jpg" },
+        ],
+    },
+    {
+        label: "Ấm pha cà phê Bialetti", href: "/products?cat=am-pha-ca-phe",
+        featured: [
+            { title: "Bialetti Moka Express", slug: "bialetti-moka-express-stranger-things", image: "/images/products/bialetti-moka-express-stranger-things.jpg" },
+            { title: "Bialetti Brikka", slug: "pheu-loc-ca-phe-bialetti-brikka", image: "/images/products/pheu-loc-ca-phe-bialetti-brikka.jpg" },
+        ],
+    },
+    {
+        label: "Máy pha Specialty coffee", href: "/products?cat=may-pha-ca-phe",
+        featured: [
+            { title: "Astoria Tanya", slug: "astoria-tanya-2-group", image: "/images/products/astoria-tanya-2-group.jpg" },
+        ],
+    },
+    {
+        label: "Máy xay cà phê", href: "/products?cat=may-xay-ca-phe",
+        featured: [
+            { title: "Mahlkönig E80W GbS", slug: "mahlkonig-e80w-gbs", image: "/images/products/mahlkonig-e80w-gbs.jpg" },
+            { title: "Eureka Mignon Pisa", slug: "eureka-mignon-pisa-single-dose", image: "/images/products/eureka-mignon-pisa-single-dose.jpg" },
+        ],
+    },
+    {
+        label: "Máy xay Vitamix", href: "/products?cat=vitamix",
+        featured: [],
+    },
+    {
+        label: "Máy bán cà phê tự động", href: "/products?cat=may-pha-ca-phe",
+        featured: [],
+    },
+    {
+        label: "Cà phê rang xay", href: "/products?cat=ca-phe-rang-xay",
+        featured: [
+            { title: "Procaffe Speciale", slug: "procaffe-speciale-hoa-tan-say-phun", image: "/images/products/procaffe-speciale-hoa-tan-say-phun.jpg" },
+            { title: "Procaffe Riccaroma", slug: "procaffe-riccaroma-2", image: "/images/products/procaffe-riccaroma-2.jpg" },
+        ],
+    },
+    {
+        label: "Phụ kiện - Phụ tùng", href: "/products?cat=phu-kien",
+        featured: [],
+    },
+];
+
+const defaultFeaturedProducts = [
+    { title: "Lelit MaraX3", slug: "lelit-marax3-pl62x3", image: "/images/products/lelit-marax3-pl62x3.jpg" },
+    { title: "Wega Polar", slug: "wega-polar", image: "/images/products/wega-polar.jpg" },
+    { title: "Mahlkönig E80W", slug: "mahlkonig-e80w-gbs", image: "/images/products/mahlkonig-e80w-gbs.jpg" },
+    { title: "Eureka Mignon Pisa", slug: "eureka-mignon-pisa-single-dose", image: "/images/products/eureka-mignon-pisa-single-dose.jpg" },
+];
+
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
@@ -228,7 +299,7 @@ export default function Header() {
                         </Link>
 
                         {navItems.map((item) => (
-                            <div key={item.label} className={`nav-item${item.children ? " has-dropdown" : ""}`}>
+                            <div key={item.label} className={`nav-item${item.children ? " has-dropdown" : ""}${item.label === "Sản phẩm" ? " has-mega-menu" : ""}`}>
                                 <Link href={item.href} onClick={() => setMobileMenuOpen(false)}>
                                     {item.label}
                                     {item.children && (
@@ -237,7 +308,12 @@ export default function Header() {
                                         </svg>
                                     )}
                                 </Link>
-                                {item.children && (
+                                {item.label === "Sản phẩm" ? (
+                                    <ProductMegaMenu
+                                        categories={productMegaCategories}
+                                        defaultFeatured={defaultFeaturedProducts}
+                                    />
+                                ) : item.children ? (
                                     <div className="dropdown-menu">
                                         {item.children.map((child) => (
                                             <Link key={child.label} href={child.href} onClick={() => setMobileMenuOpen(false)}>
@@ -246,7 +322,7 @@ export default function Header() {
                                             </Link>
                                         ))}
                                     </div>
-                                )}
+                                ) : null}
                             </div>
                         ))}
                     </div>
