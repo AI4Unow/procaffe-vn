@@ -77,6 +77,31 @@ const sidebarCategories = SIDEBAR_CATEGORY_ORDER
 /* Brand categories (children of Thương hiệu id=350) */
 const BRAND_PARENT_ID = 350;
 
+/* Brand slug → logo image mapping */
+const BRAND_LOGOS: Record<string, string> = {
+    saeco: "/images/brands/16.png",
+    wega: "/images/brands/11.png",
+    gaggia: "/images/brands/14.png",
+    eureka: "/images/brands/18.png",
+    bialetti: "/images/brands/12.png",
+    vitamix: "/images/brands/21.png",
+    lelit: "/images/brands/15.png",
+    fiorenzato: "/images/brands/8.png",
+    mahlkonig: "/images/brands/6.png",
+    "kees-van-der-westen": "/images/brands/1.png",
+    synesso: "/images/brands/20.png",
+    "barista-attitude": "/images/brands/7.png",
+    "coffee-queen": "/images/brands/19.png",
+    gimoka: "/images/brands/5.png",
+    astoria: "/images/brands/17.png",
+    "la-pavoni": "/images/brands/3.png",
+    cunill: "/images/brands/4.png",
+    wpm: "/images/brands/10.png",
+    procaffe: "/images/brands/9.png",
+    heritage: "/images/brands/13.png",
+    casadio: "/images/brands/2.png",
+};
+
 function getCategoryDescription(slug: string): string {
     const cat = categories.find((c) => c.slug === slug);
     if (cat && cat.description) {
@@ -386,24 +411,32 @@ function ProductsContent() {
                                 />
                             </div>
 
-                            {/* Brand description for brand categories */}
-                            {selectedCategory !== "all" &&
+                            {/* Brand hero banner for brand categories */}
+                            {selectedCategory !== "all" && isBrandCategory(selectedCategory) && (
+                                <div className="brand-hero-banner">
+                                    {BRAND_LOGOS[selectedCategory] && (
+                                        <div className="brand-hero-logo">
+                                            <img src={BRAND_LOGOS[selectedCategory]} alt={selectedCategory} />
+                                        </div>
+                                    )}
+                                    <div className="brand-hero-info">
+                                        <h2 className="brand-hero-title">
+                                            {categories.find(c => c.slug === selectedCategory)?.name?.toUpperCase()}
+                                        </h2>
+                                        {getCategoryDescription(selectedCategory) && (
+                                            <p className="brand-hero-desc">{getCategoryDescription(selectedCategory)}</p>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+                            {/* Category description for non-brand categories */}
+                            {selectedCategory !== "all" && !isBrandCategory(selectedCategory) &&
                                 getCategoryDescription(selectedCategory) && (
                                     <div className="brand-description">
                                         <h2 className="brand-title">
-                                            {categories
-                                                .find(
-                                                    (c) =>
-                                                        c.slug ===
-                                                        selectedCategory
-                                                )
-                                                ?.name?.toUpperCase()}
+                                            {categories.find(c => c.slug === selectedCategory)?.name?.toUpperCase()}
                                         </h2>
-                                        <p>
-                                            {getCategoryDescription(
-                                                selectedCategory
-                                            )}
-                                        </p>
+                                        <p>{getCategoryDescription(selectedCategory)}</p>
                                     </div>
                                 )}
 
