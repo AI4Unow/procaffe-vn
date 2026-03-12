@@ -90,6 +90,32 @@ function extractPrice(product: (typeof products)[0]): {
     return { regular: null, sale: null, salePercent: null };
 }
 
+/* Group products by similar base name to find variants */
+function getProductVariants(product: (typeof products)[0]) {
+    const baseName = product.title
+        .replace(/\s*-?\s*\d+\s*(cup|tách|group|lít|ly|ml|kg|g|oz)s?/gi, '')
+        .replace(/\s*-?\s*(đen|trắng|đỏ|bạc|chrome|black|white|red|silver|inox|nhôm)/gi, '')
+        .replace(/\s*\(.*\)\s*$/, '')
+        .trim();
+    if (baseName.length < 10) return [];
+    const variants = products.filter(p =>
+        p.id !== product.id &&
+        p.title.startsWith(baseName) &&
+        p.title.length - baseName.length < 30
+    );
+    return variants.slice(0, 5);
+}
+
+function getVariantLabel(fullTitle: string, baseName: string): string {
+    const base = fullTitle
+        .replace(/\s*-?\s*\d+\s*(cup|tách|group|lít|ly|ml|kg|g|oz)s?/gi, '')
+        .replace(/\s*-?\s*(đen|trắng|đỏ|bạc|chrome|black|white|red|silver|inox|nhôm)/gi, '')
+        .replace(/\s*\(.*\)\s*$/, '')
+        .trim();
+    const diff = fullTitle.replace(base, '').trim().replace(/^[-–]\s*/, '');
+    return diff || fullTitle;
+}
+
 function ProductDetailClient({ slug }: { slug: string }) {
     const product = products.find((p) => p.slug === slug)
         || products.find((p) => { try { return decodeURIComponent(p.slug) === slug; } catch { return false; } });
@@ -205,6 +231,25 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                 title={product.title}
                                 content={product.content || ""}
                             />
+
+                            {/* Product Variants */}
+                            {(() => {
+                                const variants = getProductVariants(product);
+                                if (variants.length === 0) return null;
+                                return (
+                                    <div className="product-variants">
+                                        <span className="variant-label">Phiên bản:</span>
+                                        <div className="variant-buttons">
+                                            <span className="variant-btn active">{product.title.length > 40 ? '...' + product.title.slice(-25) : product.title}</span>
+                                            {variants.map(v => (
+                                                <Link key={v.id} href={`/${v.slug}`} className="variant-btn">
+                                                    {v.title.length > 40 ? '...' + v.title.slice(-25) : v.title}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                );
+                            })()}
 
 
 
