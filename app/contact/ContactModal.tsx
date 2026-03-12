@@ -1,8 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function ContactModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [fileName, setFileName] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     // Show modal after 1 second
@@ -45,7 +47,25 @@ export default function ContactModal() {
           <textarea placeholder="Nội dung" rows={4} style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }}></textarea>
           <div>
             <label style={{ fontSize: '14px', color: '#666', marginBottom: '4px', display: 'block' }}>Tài liệu đính kèm</label>
-            <input type="file" accept=".pdf,.doc,.docx,.jpg,.png" style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px', width: '100%' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }}>
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                style={{ padding: '6px 14px', background: '#f0f0f0', border: '1px solid #ccc', borderRadius: '4px', cursor: 'pointer', fontSize: '13px', whiteSpace: 'nowrap' }}
+              >
+                Chọn tệp
+              </button>
+              <span style={{ fontSize: '13px', color: '#888', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {fileName || "Chưa chọn tệp"}
+              </span>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".pdf,.doc,.docx,.jpg,.png"
+                style={{ display: 'none' }}
+                onChange={(e) => setFileName(e.target.files?.[0]?.name || "")}
+              />
+            </div>
           </div>
           <button type="submit" style={{ padding: '12px', background: 'var(--primary)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
             GỬI LIÊN HỆ
