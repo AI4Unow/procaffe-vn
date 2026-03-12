@@ -12,6 +12,48 @@ import { sanitizeHtml } from "../../utils/sanitize-html";
 import products from "../../../data/products.json";
 import categories from "../../../data/product-categories.json";
 
+/** Inline callback form — POSTs phone to /api/contact. */
+function CallbackForm({ slug }: { slug: string }) {
+    const [phone, setPhone] = useState("");
+    const [sent, setSent] = useState(false);
+    const [error, setError] = useState("");
+
+    const handleSubmit = async () => {
+        if (!phone.trim()) return;
+        setError("");
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ phone, product_slug: slug, source: "product-callback" }),
+            });
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}));
+                setError(data.error || "Gửi thất bại");
+                return;
+            }
+        } catch {
+            setError("Không thể kết nối");
+            return;
+        }
+        setSent(true);
+        setTimeout(() => { setSent(false); setPhone(""); }, 5000);
+    };
+
+    if (sent) return <div className="callback-form"><p className="callback-label">✅ Chúng tôi sẽ gọi lại ngay!</p></div>;
+
+    return (
+        <div className="callback-form">
+            <p className="callback-label">Để lại số điện thoại, chúng tôi sẽ gọi lại ngay</p>
+            {error && <p style={{ color: "red", fontSize: "13px", margin: "4px 0" }}>{error}</p>}
+            <div className="callback-input-row">
+                <input type="tel" placeholder="Số điện thoại của bạn" className="callback-input" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <button className="callback-btn" onClick={handleSubmit}>Gửi</button>
+            </div>
+        </div>
+    );
+}
+
 function getProductImage(product: (typeof products)[0]): string {
     if (
         product.featured_image &&
@@ -278,22 +320,7 @@ function ProductDetailClient({ slug }: { slug: string }) {
                             </div>
 
                             {/* Callback Form */}
-                            <div className="callback-form">
-                                <p className="callback-label">
-                                    Để lại số điện thoại, chúng tôi sẽ gọi lại
-                                    ngay
-                                </p>
-                                <div className="callback-input-row">
-                                    <input
-                                        type="tel"
-                                        placeholder="Số điện thoại của bạn"
-                                        className="callback-input"
-                                    />
-                                    <button className="callback-btn">
-                                        Gửi
-                                    </button>
-                                </div>
-                            </div>
+                            <CallbackForm slug={product.slug} />
 
                             {/* Category tags */}
                             <div className="product-meta-section">

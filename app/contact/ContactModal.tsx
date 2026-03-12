@@ -5,11 +5,11 @@ export default function ContactModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [fileName, setFileName] = useState("");
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    // Show modal after 1 second
     const timer = setTimeout(() => setIsOpen(true), 1000);
     return () => clearTimeout(timer);
   }, []);
@@ -19,8 +19,9 @@ export default function ContactModal() {
     if (!formRef.current) return;
     const fd = new FormData(formRef.current);
     setSending(true);
+    setError("");
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -28,34 +29,46 @@ export default function ContactModal() {
           phone: fd.get("phone"),
           email: fd.get("email"),
           message: fd.get("message"),
+          city: fd.get("city"),
           source: "contact-modal",
         }),
       });
-    } catch { /* best-effort */ }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.error || "Gửi thất bại. Vui lòng thử lại.");
+        setSending(false);
+        return;
+      }
+    } catch {
+      setError("Không thể kết nối. Vui lòng thử lại.");
+      setSending(false);
+      return;
+    }
     setSending(false);
     setIsOpen(false);
-    alert("Đã gửi liên hệ!");
+    alert("Đã gửi liên hệ thành công!");
   };
 
   if (!isOpen) return null;
 
   return (
     <div style={{
-      position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, 
-      backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 9999, 
+      position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+      backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 9999,
       display: 'flex', alignItems: 'center', justifyContent: 'center'
     }}>
       <div style={{
-        background: '#fff', padding: '30px', borderRadius: '8px', 
+        background: '#fff', padding: '30px', borderRadius: '8px',
         width: '100%', maxWidth: '500px', position: 'relative'
       }}>
-        <button 
+        <button
           onClick={() => setIsOpen(false)}
           style={{ position: 'absolute', top: '10px', right: '15px', border: 'none', background: 'none', fontSize: '20px', cursor: 'pointer' }}
         >
           &times;
         </button>
         <h3 style={{ marginBottom: '20px', color: 'var(--primary)', textAlign: 'center', fontSize: '24px' }}>Form liên hệ</h3>
+        {error && <p style={{ color: 'red', fontSize: '14px', marginBottom: '10px', textAlign: 'center' }}>{error}</p>}
         <form ref={formRef} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }} onSubmit={handleSubmit}>
           <input name="name" type="text" placeholder="Họ và tên *" required style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
           <input name="phone" type="tel" placeholder="Điện thoại *" required style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />

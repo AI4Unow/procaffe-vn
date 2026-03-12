@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function InquiryForm() {
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState("");
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
@@ -12,15 +13,23 @@ export default function InquiryForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!name.trim() || !phone.trim()) return;
+        setError("");
         try {
-            await fetch("/api/contact", {
+            const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, phone, email, message, source: "rental-inquiry" }),
             });
-        } catch { /* best-effort */ }
+            if (!res.ok) {
+                const data = await res.json().catch(() => ({}));
+                setError(data.error || "Gửi thất bại. Vui lòng thử lại.");
+                return;
+            }
+        } catch {
+            setError("Không thể kết nối. Vui lòng thử lại.");
+            return;
+        }
         setSubmitted(true);
-        /* Reset after 5s */
         setTimeout(() => {
             setSubmitted(false);
             setName("");
@@ -43,6 +52,7 @@ export default function InquiryForm() {
     return (
         <form className="inquiry-form" onSubmit={handleSubmit}>
             <h3>📝 Đăng ký tư vấn thuê máy</h3>
+            {error && <p style={{ color: "red", fontSize: "14px", marginBottom: "8px" }}>{error}</p>}
             <div className="inquiry-form-grid">
                 <input
                     type="text"
