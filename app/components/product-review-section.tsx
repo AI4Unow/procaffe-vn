@@ -164,6 +164,20 @@ export default function ProductReviewSection({
         };
         saveUserReview(slug, newReview);
         setReviews(loadReviews(slug));
+        // Send to server (best-effort)
+        try {
+            fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: formName.trim(),
+                    message: formText.trim(),
+                    rating: formRating,
+                    product_slug: slug,
+                    source: "review",
+                }),
+            });
+        } catch { /* best-effort */ }
         setFormName("");
         setFormEmail("");
         setFormText("");

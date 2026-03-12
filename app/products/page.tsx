@@ -129,8 +129,9 @@ function ProductsContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const catFromUrl = searchParams.get("cat") || "all";
+    const searchFromUrl = searchParams.get("search") || "";
     const [selectedCategory, setSelectedCategory] = useState<string>(catFromUrl);
-    const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState(searchFromUrl);
     const [currentPage, setCurrentPage] = useState(1);
     const [sortBy, setSortBy] = useState<SortOption>("default");
     const [expandedCats, setExpandedCats] = useState<Set<number>>(new Set());
@@ -139,7 +140,9 @@ function ProductsContent() {
     /* Sync state when URL query param changes */
     useEffect(() => {
         const cat = searchParams.get("cat") || "all";
+        const search = searchParams.get("search") || "";
         setSelectedCategory(cat);
+        setSearchTerm(search);
         setCurrentPage(1);
     }, [searchParams]);
 
@@ -450,8 +453,9 @@ function ProductsContent() {
                             {/* Results info + Sort + Pagination top */}
                             <div className="listing-toolbar">
                                 <span className="results-info">
-                                    Hiển thị {startItem}–{endItem} trên{" "}
-                                    {filtered.length} kết quả
+                                    {filtered.length === 0
+                                        ? "0 kết quả"
+                                        : `Hiển thị ${startItem}–${endItem} trên ${filtered.length} kết quả`}
                                 </span>
                                 <div className="toolbar-right">
                                     <select

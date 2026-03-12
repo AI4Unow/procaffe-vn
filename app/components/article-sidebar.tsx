@@ -3,7 +3,7 @@ import posts from "../../data/posts.json";
 import products from "../../data/products.json";
 import TrustBadgesSidebar from "./trust-badges-sidebar";
 
-const recentPosts = posts
+const recentPosts = [...posts]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 4);
 

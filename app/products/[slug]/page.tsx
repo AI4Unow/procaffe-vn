@@ -8,6 +8,7 @@ import Footer from "../../components/footer";
 import TrustBadgesSidebar from "../../components/trust-badges-sidebar";
 import ProductReviewSection from "../../components/product-review-section";
 import ProductColorSwatches from "../../components/product-color-swatches";
+import { sanitizeHtml } from "../../utils/sanitize-html";
 import products from "../../../data/products.json";
 import categories from "../../../data/product-categories.json";
 
@@ -351,7 +352,7 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                 <div
                                     className="product-content-body"
                                     dangerouslySetInnerHTML={{
-                                        __html: product.content,
+                                        __html: sanitizeHtml(product.content),
                                     }}
                                 />
                             )}
@@ -359,7 +360,7 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                 <div
                                     className="product-content-body product-specs-only"
                                     dangerouslySetInnerHTML={{
-                                        __html: product.content,
+                                        __html: sanitizeHtml(product.content),
                                     }}
                                 />
                             )}

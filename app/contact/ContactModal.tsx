@@ -4,13 +4,38 @@ import { useState, useEffect, useRef } from "react";
 export default function ContactModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [fileName, setFileName] = useState("");
+  const [sending, setSending] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     // Show modal after 1 second
     const timer = setTimeout(() => setIsOpen(true), 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+    const fd = new FormData(formRef.current);
+    setSending(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: fd.get("name"),
+          phone: fd.get("phone"),
+          email: fd.get("email"),
+          message: fd.get("message"),
+          source: "contact-modal",
+        }),
+      });
+    } catch { /* best-effort */ }
+    setSending(false);
+    setIsOpen(false);
+    alert("Đã gửi liên hệ!");
+  };
 
   if (!isOpen) return null;
 
@@ -31,11 +56,11 @@ export default function ContactModal() {
           &times;
         </button>
         <h3 style={{ marginBottom: '20px', color: 'var(--primary)', textAlign: 'center', fontSize: '24px' }}>Form liên hệ</h3>
-        <form style={{ display: 'flex', flexDirection: 'column', gap: '15px' }} onSubmit={(e) => { e.preventDefault(); setIsOpen(false); alert('Đã gửi liên hệ!'); }}>
-          <input type="text" placeholder="Họ và tên *" required style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
-          <input type="tel" placeholder="Điện thoại *" required style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
-          <input type="email" placeholder="Email" style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
-          <select style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px', color: '#666' }} defaultValue="">
+        <form ref={formRef} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }} onSubmit={handleSubmit}>
+          <input name="name" type="text" placeholder="Họ và tên *" required style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
+          <input name="phone" type="tel" placeholder="Điện thoại *" required style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
+          <input name="email" type="email" placeholder="Email" style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} />
+          <select name="city" style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px', color: '#666' }} defaultValue="">
             <option value="" disabled>Tỉnh/thành phố</option>
             <option value="hcm">Hồ Chí Minh</option>
             <option value="hn">Hà Nội</option>
@@ -44,7 +69,7 @@ export default function ContactModal() {
             <option value="ct">Cần Thơ</option>
             <option value="other">Khác</option>
           </select>
-          <textarea placeholder="Nội dung" rows={4} style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }}></textarea>
+          <textarea name="message" placeholder="Nội dung" rows={4} style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }}></textarea>
           <div>
             <label style={{ fontSize: '14px', color: '#666', marginBottom: '4px', display: 'block' }}>Tài liệu đính kèm</label>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }}>
@@ -67,8 +92,8 @@ export default function ContactModal() {
               />
             </div>
           </div>
-          <button type="submit" style={{ padding: '12px', background: 'var(--primary)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
-            GỬI LIÊN HỆ
+          <button type="submit" disabled={sending} style={{ padding: '12px', background: 'var(--primary)', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>
+            {sending ? "Đang gửi..." : "GỬI LIÊN HỆ"}
           </button>
         </form>
       </div>

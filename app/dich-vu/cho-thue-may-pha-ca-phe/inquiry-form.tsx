@@ -9,9 +9,16 @@ export default function InquiryForm() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!name.trim() || !phone.trim()) return;
+        try {
+            await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, phone, email, message, source: "rental-inquiry" }),
+            });
+        } catch { /* best-effort */ }
         setSubmitted(true);
         /* Reset after 5s */
         setTimeout(() => {

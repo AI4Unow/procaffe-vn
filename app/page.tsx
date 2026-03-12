@@ -101,10 +101,10 @@ const categoryBlocks = [
     description:
       "Đầy đủ phụ kiện, linh kiện thay thế cho máy pha cà phê, máy xay cà phê. Từ tách cà phê, tamper, pitcher cho tới phin lọc, hóa chất vệ sinh máy, giúp bạn duy trì và tối ưu hiệu suất hoạt động của thiết bị.",
     links: [
-      { label: "Bộ tách và đĩa cà phê", href: "/products?cat=phu-kien" },
-      { label: "Phụ kiện pha cà phê", href: "/products?cat=phu-kien" },
-      { label: "Hóa chất vệ sinh máy", href: "/products?cat=phu-kien" },
-      { label: "Linh kiện thay thế", href: "/products?cat=phu-kien" },
+      { label: "Bộ tách và đĩa cà phê", href: "/products?cat=dung-cu-pha-che-phu-kien" },
+      { label: "Phụ kiện pha cà phê", href: "/products?cat=dung-cu-pha-che-phu-kien" },
+      { label: "Hóa chất vệ sinh máy", href: "/products?cat=dung-cu-pha-che-phu-kien" },
+      { label: "Linh kiện thay thế", href: "/products?cat=dung-cu-pha-che-phu-kien" },
     ],
     position: "right",
   },

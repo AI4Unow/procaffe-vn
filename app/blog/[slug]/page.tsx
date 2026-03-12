@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import ArticleSidebar from "../../components/article-sidebar";
+import { sanitizeHtml } from "../../utils/sanitize-html";
 import { posts, getRelatedPosts, BLOG_CATEGORIES } from "../../../data/blog-data";
 
 export function generateStaticParams() {
@@ -104,7 +105,7 @@ export default async function BlogPostPage({
                                 <div
                                     className="blog-post-content"
                                     dangerouslySetInnerHTML={{
-                                        __html: post.content || "",
+                                        __html: sanitizeHtml(post.content || ""),
                                     }}
                                 />
 

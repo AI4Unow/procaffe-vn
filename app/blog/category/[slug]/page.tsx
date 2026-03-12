@@ -81,9 +81,9 @@ export default function BlogCategoryPage() {
                         <div className="article-main">
                             {/* Results info */}
                             <div className="blog-results-info">
-                                Hiển thị {(currentPage - 1) * PER_PAGE + 1}–
-                                {Math.min(currentPage * PER_PAGE, allPosts.length)} trên{" "}
-                                {allPosts.length} bài viết
+                                {allPosts.length === 0
+                                    ? "0 bài viết"
+                                    : `Hiển thị ${(currentPage - 1) * PER_PAGE + 1}–${Math.min(currentPage * PER_PAGE, allPosts.length)} trên ${allPosts.length} bài viết`}
                             </div>
 
                             <div className="blog-archive-list">

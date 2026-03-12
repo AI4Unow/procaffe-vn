@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/logo-procaffe.png",
   },
-  metadataBase: new URL("https://procaffe-vn.vercel.app"),
+  metadataBase: new URL("https://procaffe.vn"),
   openGraph: {
     title: "ProCaffe - Máy Pha Cà Phê, Máy Xay Cà Phê Chuyên Nghiệp",
     description:
       "Nhà cung cấp hàng đầu các giải pháp toàn diện liên quan đến cà phê tại Việt Nam.",
-    url: "https://procaffe-vn.vercel.app",
+    url: "https://procaffe.vn",
     siteName: "ProCaffe",
     locale: "vi_VN",
     type: "website",

@@ -40,7 +40,7 @@ const navItems = [
             { label: "Máy xay Vitamix", href: "/products?cat=vitamix" },
             { label: "Máy bán cà phê tự động", href: "/products?cat=may-pha-ca-phe" },
             { label: "Cà phê rang xay", href: "/products?cat=ca-phe-rang-xay" },
-            { label: "Phụ kiện - Phụ tùng", href: "/products?cat=phu-kien" },
+            { label: "Phụ kiện - Phụ tùng", href: "/products?cat=dung-cu-pha-che-phu-kien" },
         ],
     },
     {
@@ -194,7 +194,7 @@ const productMegaCategories = [
         ],
     },
     {
-        label: "Phụ kiện - Phụ tùng", href: "/products?cat=phu-kien",
+        label: "Phụ kiện - Phụ tùng", href: "/products?cat=dung-cu-pha-che-phu-kien",
         featured: [],
     },
 ];
