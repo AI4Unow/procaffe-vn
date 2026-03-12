@@ -601,19 +601,23 @@ h4 {
 /* ===== CATEGORY INTRODUCTION BLOCKS ===== */
 .category-intro {
   background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .category-row {
   display: flex;
-  min-height: 340px;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .category-row-right {
-  flex-direction: row-reverse;
+  flex-direction: column;
 }
 
 .category-image-half {
-  width: 50%;
+  width: 100%;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -629,8 +633,8 @@ h4 {
 }
 
 .category-info-half {
-  width: 50%;
-  padding: 40px 48px;
+  width: 100%;
+  padding: 24px 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -643,10 +647,10 @@ h4 {
 
 .category-info-title {
   font-family: var(--font-body);
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--primary);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -655,14 +659,18 @@ h4 {
   font-size: 13px;
   color: var(--gray);
   line-height: 1.7;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .category-info-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .category-info-links li a {
@@ -677,6 +685,12 @@ h4 {
 .category-info-links li a:hover {
   color: var(--primary);
   padding-left: 6px;
+}
+
+@media (max-width: 768px) {
+  .category-intro {
+    grid-template-columns: 1fr;
+  }
 }
 
 .link-bullet {
