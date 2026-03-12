@@ -5620,6 +5620,127 @@ section {
   margin-bottom: 20px;
 }
 
+/* Recruitment culture section */
+.recruitment-culture {
+  background: #f9f5f0;
+  padding: 28px 24px;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary);
+}
+
+.recruitment-culture h2 {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.recruitment-culture p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.procaffer-note {
+  font-style: italic;
+  font-size: 12px !important;
+  color: #888 !important;
+}
+
+/* ===== CUSTOMER PAGE ===== */
+.customer-stats {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+  padding: 32px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.customer-group {
+  margin-bottom: 40px;
+}
+
+.customer-group-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary);
+  margin-bottom: 20px;
+}
+
+.customer-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.customer-logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.customer-logo-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(243, 112, 33, 0.1);
+  transform: translateY(-2px);
+}
+
+.customer-initials {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #e65100);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.customer-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .stat-number { font-size: 24px; }
+  .customer-logo-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+}
+
 /* Responsive: job cards */
 @media (max-width: 640px) {
   .job-cards-grid {
