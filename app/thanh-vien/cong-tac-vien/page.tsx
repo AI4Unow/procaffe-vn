@@ -2,6 +2,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import FloatingWidgets from "../../components/floating-widgets";
 import TrustBadgesSidebar from "../../components/trust-badges-sidebar";
+import ContactFormInline from "../../components/contact-form-inline";
 import Link from "next/link";
 
 export const metadata = {
@@ -63,6 +64,13 @@ export default function CollaboratorPage() {
                                         ký tham gia, vui lòng liên hệ trực tiếp với ProCaffe:
                                     </p>
                                 </div>
+
+                                {/* CTV Registration Form */}
+                                <ContactFormInline
+                                    source="ctv-registration"
+                                    title="📝 Đăng ký Cộng tác viên"
+                                    description="Điền thông tin để đăng ký tham gia chương trình CTV ProCaffe"
+                                />
 
                                 {/* CTA */}
                                 <div className="cta-banner">

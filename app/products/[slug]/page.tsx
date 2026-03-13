@@ -268,6 +268,11 @@ function ProductDetailClient({ slug }: { slug: string }) {
                                     <span className="price-value">{price.regular || "Liên hệ"}</span>
                                 )}
                             </div>
+                            {price.regular && (
+                                <p style={{ fontSize: 13, color: '#888', marginTop: 4 }}>
+                                    (Giá đã bao gồm VAT)
+                                </p>
+                            )}
 
                             {/* Color Swatches */}
                             <ProductColorSwatches

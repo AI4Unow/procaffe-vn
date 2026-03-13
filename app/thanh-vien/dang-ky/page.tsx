@@ -2,6 +2,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import FloatingWidgets from "../../components/floating-widgets";
 import TrustBadgesSidebar from "../../components/trust-badges-sidebar";
+import ContactFormInline from "../../components/contact-form-inline";
 import Link from "next/link";
 
 export const metadata = {
@@ -85,10 +86,17 @@ export default function MemberRegistrationPage() {
 
                                     <h2 style={{ marginTop: 32 }}>Đăng ký thành viên</h2>
                                     <p>
-                                        Để đăng ký thành viên ProCaffe, vui lòng liên hệ trực tiếp
-                                        tại Showroom hoặc gọi đến hotline:
+                                        Điền thông tin bên dưới để đăng ký thành viên ProCaffe,
+                                        hoặc liên hệ trực tiếp tại Showroom/Hotline.
                                     </p>
                                 </div>
+
+                                {/* Registration Form */}
+                                <ContactFormInline
+                                    source="member-registration"
+                                    title="📝 Đăng ký thành viên ProCaffe"
+                                    description="Điền thông tin để đăng ký thành viên và nhận ưu đãi đặc biệt"
+                                />
 
                                 {/* CTA */}
                                 <div className="cta-banner">

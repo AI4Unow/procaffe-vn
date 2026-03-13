@@ -593,7 +593,7 @@ h4 {
 }
 
 .slogan-text {
-  font-size: 18px;
+  font-size: 22px;
   color: var(--primary);
   text-align: center;
   white-space: nowrap;
@@ -622,16 +622,16 @@ h4 {
 
 .brand-logo-item {
   flex-shrink: 0;
-  width: 150px;
-  height: 80px;
+  width: 180px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .brand-logo-item img {
-  max-width: 140px;
-  max-height: 70px;
+  max-width: 170px;
+  max-height: 80px;
   object-fit: contain;
   filter: none;
   opacity: 1;
@@ -3144,6 +3144,16 @@ section {
   font-size: 15px;
   opacity: 0.9;
   margin-bottom: 20px;
+  color: #fff;
+}
+
+.cta-banner a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.cta-banner a:hover {
+  color: var(--primary-light);
 }
 
 .cta-phones {
@@ -3167,6 +3177,116 @@ section {
 
 .cta-phone-btn:hover {
   background: #e65100;
+}
+
+/* ===== INLINE CONTACT FORM ===== */
+.inline-form-wrapper {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  margin-top: 32px;
+}
+
+.inline-form-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.inline-form-desc {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.inline-form-error {
+  color: #d32f2f;
+  font-size: 13px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: #fde8e8;
+  border-radius: var(--radius-sm);
+}
+
+.inline-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.inline-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.inline-form input,
+.inline-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.inline-form input:focus,
+.inline-form textarea:focus {
+  border-color: var(--primary);
+}
+
+.inline-form-submit {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inline-form-submit:hover {
+  background: var(--primary-dark);
+}
+
+.inline-form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.inline-form-success {
+  text-align: center;
+  padding: 32px;
+}
+
+.inline-form-success .success-icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.inline-form-success h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.inline-form-success p {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .inline-form-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Service Pricing Tables */

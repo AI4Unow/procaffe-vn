@@ -1,7 +1,7 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import FloatingWidgets from "../components/floating-widgets";
-import TrustBadgesSidebar from "../components/trust-badges-sidebar";
+import ArticleSidebar from "../components/article-sidebar";
 import Link from "next/link";
 import posts from "../../data/posts.json";
 
@@ -84,7 +84,7 @@ export default function EventsPage() {
                             )}
                         </div>
 
-                        <TrustBadgesSidebar />
+                        <ArticleSidebar />
                     </div>
                 </div>
             </section>
